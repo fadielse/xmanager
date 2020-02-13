@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <tableCellView identifier="XcodeTemplateCell" id="StO-b2-Umr" customClass="XcodeTemplateCell" customModule="Xcode_Template_Manager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="267" height="222"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <customView translatesAutoresizingMaskIntoConstraints="NO" id="5dp-mA-Bwv">
+                    <rect key="frame" x="0.0" y="0.0" width="267" height="222"/>
+                    <subviews>
+                        <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aAR-Ql-o5V">
+                            <rect key="frame" x="0.0" y="0.0" width="267" height="222"/>
+                            <subviews>
+                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="rhE-io-1ew">
+                                    <rect key="frame" x="0.0" y="192" width="267" height="30"/>
+                                    <subviews>
+                                        <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rSF-A4-SB6">
+                                            <rect key="frame" x="14" y="7" width="239" height="16"/>
+                                            <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Label" id="LYa-rL-7Od">
+                                                <font key="font" usesAppearanceFont="YES"/>
+                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                            </textFieldCell>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rSF-A4-SB6" firstAttribute="centerY" secondItem="rhE-io-1ew" secondAttribute="centerY" id="3B8-dO-pxu"/>
+                                        <constraint firstAttribute="height" constant="30" id="Rbl-ac-D2U"/>
+                                        <constraint firstItem="rSF-A4-SB6" firstAttribute="leading" secondItem="rhE-io-1ew" secondAttribute="leading" constant="16" id="W6V-WJ-ckt"/>
+                                        <constraint firstAttribute="trailing" secondItem="rSF-A4-SB6" secondAttribute="trailing" constant="16" id="XHo-bG-rmN"/>
+                                    </constraints>
+                                </customView>
+                                <customView translatesAutoresizingMaskIntoConstraints="NO" id="lPg-X5-S8i">
+                                    <rect key="frame" x="0.0" y="0.0" width="267" height="184"/>
+                                    <subviews>
+                                        <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zCe-Gw-XyC">
+                                            <rect key="frame" x="0.0" y="0.0" width="267" height="184"/>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="zCe-Gw-XyC" secondAttribute="trailing" id="3Gf-We-Nmj"/>
+                                        <constraint firstAttribute="bottom" secondItem="zCe-Gw-XyC" secondAttribute="bottom" id="Me5-0d-UP2"/>
+                                        <constraint firstItem="zCe-Gw-XyC" firstAttribute="top" secondItem="lPg-X5-S8i" secondAttribute="top" id="N2s-CV-bGv"/>
+                                        <constraint firstItem="zCe-Gw-XyC" firstAttribute="leading" secondItem="lPg-X5-S8i" secondAttribute="leading" id="fKf-bf-HCM"/>
+                                    </constraints>
+                                </customView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="trailing" secondItem="lPg-X5-S8i" secondAttribute="trailing" id="5Hn-ZJ-csP"/>
+                                <constraint firstItem="lPg-X5-S8i" firstAttribute="trailing" secondItem="rhE-io-1ew" secondAttribute="trailing" id="ddw-X3-iY9"/>
+                            </constraints>
+                            <visibilityPriorities>
+                                <integer value="1000"/>
+                                <integer value="1000"/>
+                            </visibilityPriorities>
+                            <customSpacing>
+                                <real value="3.4028234663852886e+38"/>
+                                <real value="3.4028234663852886e+38"/>
+                            </customSpacing>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="aAR-Ql-o5V" firstAttribute="top" secondItem="5dp-mA-Bwv" secondAttribute="top" id="E7n-Nl-DFW"/>
+                        <constraint firstAttribute="bottom" secondItem="aAR-Ql-o5V" secondAttribute="bottom" id="EIC-U0-n54"/>
+                        <constraint firstAttribute="trailing" secondItem="aAR-Ql-o5V" secondAttribute="trailing" id="fZc-Da-LFl"/>
+                        <constraint firstItem="aAR-Ql-o5V" firstAttribute="leading" secondItem="5dp-mA-Bwv" secondAttribute="leading" id="zyA-Nf-vUs"/>
+                    </constraints>
+                </customView>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="5dp-mA-Bwv" secondAttribute="bottom" id="EGZ-vl-vwm"/>
+                <constraint firstAttribute="trailing" secondItem="5dp-mA-Bwv" secondAttribute="trailing" id="SCR-bk-dbq"/>
+                <constraint firstItem="5dp-mA-Bwv" firstAttribute="leading" secondItem="StO-b2-Umr" secondAttribute="leading" id="eqv-J9-ag5"/>
+                <constraint firstItem="5dp-mA-Bwv" firstAttribute="top" secondItem="StO-b2-Umr" secondAttribute="top" id="lmD-gV-MOy"/>
+            </constraints>
+            <connections>
+                <outlet property="labelName" destination="rSF-A4-SB6" id="t0Q-NQ-kWC"/>
+                <outlet property="stackViewTemplateData" destination="zCe-Gw-XyC" id="Fbo-54-peq"/>
+            </connections>
+            <point key="canvasLocation" x="-36.5" y="-63"/>
+        </tableCellView>
+    </objects>
+</document>
