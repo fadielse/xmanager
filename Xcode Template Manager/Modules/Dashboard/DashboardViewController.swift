@@ -23,6 +23,10 @@ class DashboardViewController: BaseViewController {
         }
     }
     
+    @IBAction func onNewButtonClicked(_ sender: Any) {
+        self.goToScreen(withStoryboardId: "NewForm", andViewControllerId: "NewFormViewController")
+    }
+    
     func setupTableView() {
         tableView.delegate = self
         tableView.dataSource = self

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Dt-iA-Elx">
+    <dependencies>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Create New-->
+        <scene sceneID="TPP-cd-7S4">
+            <objects>
+                <viewController title="Create New" storyboardIdentifier="NewFormViewController" id="4Dt-iA-Elx" customClass="NewFormViewController" customModule="Xcode_Template_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="W35-fs-qT4">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Hvh-01-37h">
+                                <rect key="frame" x="185" y="132" width="81" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Button" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="MU8-Vi-n5j">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="onButtonClicked:" target="4Dt-iA-Elx" id="WjL-id-qMe"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <segue destination="XNe-8a-XUs" kind="sheet" identifier="showCreateTemplate" id="d2m-eF-0Bw"/>
+                    </connections>
+                </viewController>
+                <customObject id="GXU-nI-VAu" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-43" y="-67"/>
+        </scene>
+        <!--Create Template View Controller-->
+        <scene sceneID="fXl-tX-fkO">
+            <objects>
+                <viewController storyboardIdentifier="CreateTemplateViewController" id="XNe-8a-XUs" customClass="CreateTemplateViewController" customModule="Xcode_Template_Manager" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" id="IKn-vB-VQ5">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pel-fj-2cx">
+                                <rect key="frame" x="207" y="142" width="42" height="16"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="FORM" id="1GB-kZ-BVA">
+                                    <font key="font" usesAppearanceFont="YES"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="Ojh-4g-13e" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-43" y="360"/>
+        </scene>
+    </scenes>
+</document>

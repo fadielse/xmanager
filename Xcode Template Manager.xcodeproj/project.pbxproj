@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B39EB3E23F6977A00F50E0D /* NewFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B39EB3C23F6977A00F50E0D /* NewFormViewController.swift */; };
+		1B39EB4123F6A55600F50E0D /* NewForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B39EB4023F6A55600F50E0D /* NewForm.storyboard */; };
 		1B4F2A9C23F2A2E800A2A32E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F2A9B23F2A2E800A2A32E /* AppDelegate.swift */; };
 		1B4F2A9E23F2A2E800A2A32E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F2A9D23F2A2E800A2A32E /* DashboardViewController.swift */; };
 		1B4F2AA023F2A2EA00A2A32E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B4F2A9F23F2A2EA00A2A32E /* Assets.xcassets */; };
@@ -14,9 +16,13 @@
 		1B65DCA023F5202900E267AB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B65DC9F23F5202900E267AB /* BaseViewController.swift */; };
 		1B65DCA523F5383A00E267AB /* XcodeTemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B65DCA423F5383A00E267AB /* XcodeTemplateCell.swift */; };
 		1B65DCA723F538BF00E267AB /* XcodeTemplateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B65DCA623F538BF00E267AB /* XcodeTemplateCell.xib */; };
+		1BA08DE123F6A7B100C50619 /* CreateTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA08DE023F6A7B100C50619 /* CreateTemplateViewController.swift */; };
+		1BA08DE423F6AA4000C50619 /* NSViewController+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA08DE323F6AA4000C50619 /* NSViewController+Router.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B39EB3C23F6977A00F50E0D /* NewFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFormViewController.swift; sourceTree = "<group>"; };
+		1B39EB4023F6A55600F50E0D /* NewForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewForm.storyboard; sourceTree = "<group>"; };
 		1B4F2A9823F2A2E800A2A32E /* Xcode Template Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Xcode Template Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B4F2A9B23F2A2E800A2A32E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B4F2A9D23F2A2E800A2A32E /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
@@ -27,6 +33,8 @@
 		1B65DC9F23F5202900E267AB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1B65DCA423F5383A00E267AB /* XcodeTemplateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeTemplateCell.swift; sourceTree = "<group>"; };
 		1B65DCA623F538BF00E267AB /* XcodeTemplateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XcodeTemplateCell.xib; sourceTree = "<group>"; };
+		1BA08DE023F6A7B100C50619 /* CreateTemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTemplateViewController.swift; sourceTree = "<group>"; };
+		1BA08DE323F6AA4000C50619 /* NSViewController+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Router.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +48,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B39EB3A23F6970700F50E0D /* Dashboard */ = {
+			isa = PBXGroup;
+			children = (
+				1B4F2A9D23F2A2E800A2A32E /* DashboardViewController.swift */,
+				1B4F2AA123F2A2EA00A2A32E /* Dashboard.storyboard */,
+				1B65DCA323F537DF00E267AB /* Cells */,
+			);
+			path = Dashboard;
+			sourceTree = "<group>";
+		};
+		1B39EB3B23F6971300F50E0D /* NewForm */ = {
+			isa = PBXGroup;
+			children = (
+				1B39EB3C23F6977A00F50E0D /* NewFormViewController.swift */,
+				1B39EB4023F6A55600F50E0D /* NewForm.storyboard */,
+				1BA08DE023F6A7B100C50619 /* CreateTemplateViewController.swift */,
+			);
+			path = NewForm;
+			sourceTree = "<group>";
+		};
 		1B4F2A8F23F2A2E800A2A32E = {
 			isa = PBXGroup;
 			children = (
@@ -61,6 +89,7 @@
 			children = (
 				1B4F2A9B23F2A2E800A2A32E /* AppDelegate.swift */,
 				1B65DC9E23F5200800E267AB /* Base */,
+				1BA08DE223F6AA2000C50619 /* Extensions */,
 				1B65DCA123F5206100E267AB /* Modules */,
 				1B65DCA223F5207300E267AB /* SupportFIles */,
 			);
@@ -78,9 +107,8 @@
 		1B65DCA123F5206100E267AB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				1B4F2A9D23F2A2E800A2A32E /* DashboardViewController.swift */,
-				1B4F2AA123F2A2EA00A2A32E /* Dashboard.storyboard */,
-				1B65DCA323F537DF00E267AB /* Cells */,
+				1B39EB3B23F6971300F50E0D /* NewForm */,
+				1B39EB3A23F6970700F50E0D /* Dashboard */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -102,6 +130,14 @@
 				1B65DCA623F538BF00E267AB /* XcodeTemplateCell.xib */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		1BA08DE223F6AA2000C50619 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				1BA08DE323F6AA4000C50619 /* NSViewController+Router.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +201,7 @@
 				1B4F2AA023F2A2EA00A2A32E /* Assets.xcassets in Resources */,
 				1B4F2AA323F2A2EA00A2A32E /* Dashboard.storyboard in Resources */,
 				1B65DCA723F538BF00E267AB /* XcodeTemplateCell.xib in Resources */,
+				1B39EB4123F6A55600F50E0D /* NewForm.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -179,6 +216,9 @@
 				1B65DCA523F5383A00E267AB /* XcodeTemplateCell.swift in Sources */,
 				1B4F2A9C23F2A2E800A2A32E /* AppDelegate.swift in Sources */,
 				1B65DCA023F5202900E267AB /* BaseViewController.swift in Sources */,
+				1BA08DE423F6AA4000C50619 /* NSViewController+Router.swift in Sources */,
+				1BA08DE123F6A7B100C50619 /* CreateTemplateViewController.swift in Sources */,
+				1B39EB3E23F6977A00F50E0D /* NewFormViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
