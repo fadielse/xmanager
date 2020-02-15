@@ -18,6 +18,9 @@
 		1B65DCA723F538BF00E267AB /* XcodeTemplateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B65DCA623F538BF00E267AB /* XcodeTemplateCell.xib */; };
 		1BA08DE123F6A7B100C50619 /* CreateTemplateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA08DE023F6A7B100C50619 /* CreateTemplateViewController.swift */; };
 		1BA08DE423F6AA4000C50619 /* NSViewController+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA08DE323F6AA4000C50619 /* NSViewController+Router.swift */; };
+		FF6605D323F7B5EF0052BCD7 /* template_data.json in Resources */ = {isa = PBXBuildFile; fileRef = FF6605D223F7B5EF0052BCD7 /* template_data.json */; };
+		FF6605D623F7BC5E0052BCD7 /* TemplateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6605D523F7BC5E0052BCD7 /* TemplateList.swift */; };
+		FF6605D923F7BC8E0052BCD7 /* TemplateListDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6605D823F7BC8E0052BCD7 /* TemplateListDAO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		1B65DCA623F538BF00E267AB /* XcodeTemplateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XcodeTemplateCell.xib; sourceTree = "<group>"; };
 		1BA08DE023F6A7B100C50619 /* CreateTemplateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateTemplateViewController.swift; sourceTree = "<group>"; };
 		1BA08DE323F6AA4000C50619 /* NSViewController+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Router.swift"; sourceTree = "<group>"; };
+		FF6605D223F7B5EF0052BCD7 /* template_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = template_data.json; sourceTree = "<group>"; };
+		FF6605D523F7BC5E0052BCD7 /* TemplateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateList.swift; sourceTree = "<group>"; };
+		FF6605D823F7BC8E0052BCD7 /* TemplateListDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateListDAO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +95,9 @@
 			children = (
 				1B4F2A9B23F2A2E800A2A32E /* AppDelegate.swift */,
 				1B65DC9E23F5200800E267AB /* Base */,
+				FF6605D723F7BC6A0052BCD7 /* DTO */,
 				1BA08DE223F6AA2000C50619 /* Extensions */,
+				FF6605D423F7BBFB0052BCD7 /* Models */,
 				1B65DCA123F5206100E267AB /* Modules */,
 				1B65DCA223F5207300E267AB /* SupportFIles */,
 			);
@@ -116,6 +124,7 @@
 		1B65DCA223F5207300E267AB /* SupportFIles */ = {
 			isa = PBXGroup;
 			children = (
+				FF6605D123F7B5CC0052BCD7 /* JSONs */,
 				1B4F2A9F23F2A2EA00A2A32E /* Assets.xcassets */,
 				1B4F2AA423F2A2EA00A2A32E /* Info.plist */,
 				1B4F2AA523F2A2EA00A2A32E /* Xcode_Template_Manager.entitlements */,
@@ -138,6 +147,30 @@
 				1BA08DE323F6AA4000C50619 /* NSViewController+Router.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FF6605D123F7B5CC0052BCD7 /* JSONs */ = {
+			isa = PBXGroup;
+			children = (
+				FF6605D223F7B5EF0052BCD7 /* template_data.json */,
+			);
+			path = JSONs;
+			sourceTree = "<group>";
+		};
+		FF6605D423F7BBFB0052BCD7 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FF6605D523F7BC5E0052BCD7 /* TemplateList.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FF6605D723F7BC6A0052BCD7 /* DTO */ = {
+			isa = PBXGroup;
+			children = (
+				FF6605D823F7BC8E0052BCD7 /* TemplateListDAO.swift */,
+			);
+			path = DTO;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -201,6 +234,7 @@
 				1B4F2AA023F2A2EA00A2A32E /* Assets.xcassets in Resources */,
 				1B4F2AA323F2A2EA00A2A32E /* Dashboard.storyboard in Resources */,
 				1B65DCA723F538BF00E267AB /* XcodeTemplateCell.xib in Resources */,
+				FF6605D323F7B5EF0052BCD7 /* template_data.json in Resources */,
 				1B39EB4123F6A55600F50E0D /* NewForm.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -217,6 +251,8 @@
 				1B4F2A9C23F2A2E800A2A32E /* AppDelegate.swift in Sources */,
 				1B65DCA023F5202900E267AB /* BaseViewController.swift in Sources */,
 				1BA08DE423F6AA4000C50619 /* NSViewController+Router.swift in Sources */,
+				FF6605D923F7BC8E0052BCD7 /* TemplateListDAO.swift in Sources */,
+				FF6605D623F7BC5E0052BCD7 /* TemplateList.swift in Sources */,
 				1BA08DE123F6A7B100C50619 /* CreateTemplateViewController.swift in Sources */,
 				1B39EB3E23F6977A00F50E0D /* NewFormViewController.swift in Sources */,
 			);

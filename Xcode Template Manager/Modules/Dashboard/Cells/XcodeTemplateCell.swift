@@ -13,7 +13,7 @@ class XcodeTemplateCell: NSTableCellView {
     @IBOutlet weak var labelName: NSTextField!
     @IBOutlet weak var stackViewTemplateData: NSStackView!
     
-    var dataView: [NSView] = []
+    var data: [String] = []
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -21,20 +21,26 @@ class XcodeTemplateCell: NSTableCellView {
     }
     
     func showData() {
-        for _ in 1...10 {
-            let view = NSView(frame: NSRect(x: 0, y: 0, width: self.frame.width, height: 40))
-            view.layer?.backgroundColor = .white
-            dataView.append(view)
+        if stackViewTemplateData.subviews.count > 0 {
+            for view in stackViewTemplateData.subviews {
+                view.isHidden = false
+            }
+        } else {
+            for _ in data {
+                let view = NSView(frame: NSRect(x: 0, y: 0, width: self.frame.width, height: 40))
+                view.layer?.backgroundColor = .white
+                stackViewTemplateData.addArrangedSubview(view)
+            }
         }
         
-        for view in dataView {
-            stackViewTemplateData.addView(view, in: .leading)
-        }
+        print(labelName.stringValue)
+        print("number of data \(data.count)")
+        print("number of view \(stackViewTemplateData.subviews.count)")
     }
     
     func removeData() {
-        for view in dataView {
-            stackViewTemplateData.removeView(view)
+        for view in stackViewTemplateData.subviews {
+            view.isHidden = true
         }
     }
 }
