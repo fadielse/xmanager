@@ -21,6 +21,14 @@
 		FF6605D323F7B5EF0052BCD7 /* template_data.json in Resources */ = {isa = PBXBuildFile; fileRef = FF6605D223F7B5EF0052BCD7 /* template_data.json */; };
 		FF6605D623F7BC5E0052BCD7 /* TemplateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6605D523F7BC5E0052BCD7 /* TemplateList.swift */; };
 		FF6605D923F7BC8E0052BCD7 /* TemplateListDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6605D823F7BC8E0052BCD7 /* TemplateListDAO.swift */; };
+		FFB3458223F8408E0060D8FE /* TemplateNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3458023F8408E0060D8FE /* TemplateNameCell.swift */; };
+		FFB3458323F8408E0060D8FE /* TemplateNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB3458123F8408E0060D8FE /* TemplateNameCell.xib */; };
+		FFB3458723F84D7F0060D8FE /* UrlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3458623F84D7F0060D8FE /* UrlList.swift */; };
+		FFB3458923F84D980060D8FE /* UrlListDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3458823F84D980060D8FE /* UrlListDAO.swift */; };
+		FFC9F0FC23F82961009CDEAD /* UrlConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9F0FB23F82961009CDEAD /* UrlConstant.swift */; };
+		FFC9F0FE23F829F7009CDEAD /* Url+StringFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9F0FD23F829F7009CDEAD /* Url+StringFormat.swift */; };
+		FFC9F10323F83846009CDEAD /* TemplateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9F10223F83846009CDEAD /* TemplateDetailViewController.swift */; };
+		FFC9F10523F83864009CDEAD /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9F10423F83864009CDEAD /* WelcomeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +49,14 @@
 		FF6605D223F7B5EF0052BCD7 /* template_data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = template_data.json; sourceTree = "<group>"; };
 		FF6605D523F7BC5E0052BCD7 /* TemplateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateList.swift; sourceTree = "<group>"; };
 		FF6605D823F7BC8E0052BCD7 /* TemplateListDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateListDAO.swift; sourceTree = "<group>"; };
+		FFB3458023F8408E0060D8FE /* TemplateNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateNameCell.swift; sourceTree = "<group>"; };
+		FFB3458123F8408E0060D8FE /* TemplateNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TemplateNameCell.xib; sourceTree = "<group>"; };
+		FFB3458623F84D7F0060D8FE /* UrlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlList.swift; sourceTree = "<group>"; };
+		FFB3458823F84D980060D8FE /* UrlListDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlListDAO.swift; sourceTree = "<group>"; };
+		FFC9F0FB23F82961009CDEAD /* UrlConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConstant.swift; sourceTree = "<group>"; };
+		FFC9F0FD23F829F7009CDEAD /* Url+StringFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Url+StringFormat.swift"; sourceTree = "<group>"; };
+		FFC9F10223F83846009CDEAD /* TemplateDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateDetailViewController.swift; sourceTree = "<group>"; };
+		FFC9F10423F83864009CDEAD /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,9 +73,9 @@
 		1B39EB3A23F6970700F50E0D /* Dashboard */ = {
 			isa = PBXGroup;
 			children = (
-				1B4F2A9D23F2A2E800A2A32E /* DashboardViewController.swift */,
-				1B4F2AA123F2A2EA00A2A32E /* Dashboard.storyboard */,
-				1B65DCA323F537DF00E267AB /* Cells */,
+				FFC9F0FF23F837DA009CDEAD /* Main */,
+				FFC9F10023F837E4009CDEAD /* TemplateDetail */,
+				FFC9F10123F837FA009CDEAD /* Welcome */,
 			);
 			path = Dashboard;
 			sourceTree = "<group>";
@@ -67,9 +83,9 @@
 		1B39EB3B23F6971300F50E0D /* NewForm */ = {
 			isa = PBXGroup;
 			children = (
-				1B39EB3C23F6977A00F50E0D /* NewFormViewController.swift */,
 				1B39EB4023F6A55600F50E0D /* NewForm.storyboard */,
 				1BA08DE023F6A7B100C50619 /* CreateTemplateViewController.swift */,
+				1B39EB3C23F6977A00F50E0D /* NewFormViewController.swift */,
 			);
 			path = NewForm;
 			sourceTree = "<group>";
@@ -95,7 +111,8 @@
 			children = (
 				1B4F2A9B23F2A2E800A2A32E /* AppDelegate.swift */,
 				1B65DC9E23F5200800E267AB /* Base */,
-				FF6605D723F7BC6A0052BCD7 /* DTO */,
+				FFC9F0FA23F82940009CDEAD /* Constants */,
+				FF6605D723F7BC6A0052BCD7 /* DAO */,
 				1BA08DE223F6AA2000C50619 /* Extensions */,
 				FF6605D423F7BBFB0052BCD7 /* Models */,
 				1B65DCA123F5206100E267AB /* Modules */,
@@ -145,6 +162,7 @@
 			isa = PBXGroup;
 			children = (
 				1BA08DE323F6AA4000C50619 /* NSViewController+Router.swift */,
+				FFC9F0FD23F829F7009CDEAD /* Url+StringFormat.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -161,16 +179,62 @@
 			isa = PBXGroup;
 			children = (
 				FF6605D523F7BC5E0052BCD7 /* TemplateList.swift */,
+				FFB3458623F84D7F0060D8FE /* UrlList.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		FF6605D723F7BC6A0052BCD7 /* DTO */ = {
+		FF6605D723F7BC6A0052BCD7 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
 				FF6605D823F7BC8E0052BCD7 /* TemplateListDAO.swift */,
+				FFB3458823F84D980060D8FE /* UrlListDAO.swift */,
 			);
-			path = DTO;
+			path = DAO;
+			sourceTree = "<group>";
+		};
+		FFB3457F23F83FEB0060D8FE /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FFB3458023F8408E0060D8FE /* TemplateNameCell.swift */,
+				FFB3458123F8408E0060D8FE /* TemplateNameCell.xib */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		FFC9F0FA23F82940009CDEAD /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				FFC9F0FB23F82961009CDEAD /* UrlConstant.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		FFC9F0FF23F837DA009CDEAD /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1B4F2A9D23F2A2E800A2A32E /* DashboardViewController.swift */,
+				1B4F2AA123F2A2EA00A2A32E /* Dashboard.storyboard */,
+				1B65DCA323F537DF00E267AB /* Cells */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		FFC9F10023F837E4009CDEAD /* TemplateDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FFC9F10223F83846009CDEAD /* TemplateDetailViewController.swift */,
+				FFB3457F23F83FEB0060D8FE /* Cells */,
+			);
+			path = TemplateDetail;
+			sourceTree = "<group>";
+		};
+		FFC9F10123F837FA009CDEAD /* Welcome */ = {
+			isa = PBXGroup;
+			children = (
+				FFC9F10423F83864009CDEAD /* WelcomeViewController.swift */,
+			);
+			path = Welcome;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -231,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FFB3458323F8408E0060D8FE /* TemplateNameCell.xib in Resources */,
 				1B4F2AA023F2A2EA00A2A32E /* Assets.xcassets in Resources */,
 				1B4F2AA323F2A2EA00A2A32E /* Dashboard.storyboard in Resources */,
 				1B65DCA723F538BF00E267AB /* XcodeTemplateCell.xib in Resources */,
@@ -247,14 +312,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				1B4F2A9E23F2A2E800A2A32E /* DashboardViewController.swift in Sources */,
+				FFB3458723F84D7F0060D8FE /* UrlList.swift in Sources */,
+				FFC9F0FE23F829F7009CDEAD /* Url+StringFormat.swift in Sources */,
+				FFB3458223F8408E0060D8FE /* TemplateNameCell.swift in Sources */,
 				1B65DCA523F5383A00E267AB /* XcodeTemplateCell.swift in Sources */,
 				1B4F2A9C23F2A2E800A2A32E /* AppDelegate.swift in Sources */,
+				FFC9F0FC23F82961009CDEAD /* UrlConstant.swift in Sources */,
 				1B65DCA023F5202900E267AB /* BaseViewController.swift in Sources */,
+				FFC9F10523F83864009CDEAD /* WelcomeViewController.swift in Sources */,
 				1BA08DE423F6AA4000C50619 /* NSViewController+Router.swift in Sources */,
 				FF6605D923F7BC8E0052BCD7 /* TemplateListDAO.swift in Sources */,
 				FF6605D623F7BC5E0052BCD7 /* TemplateList.swift in Sources */,
 				1BA08DE123F6A7B100C50619 /* CreateTemplateViewController.swift in Sources */,
 				1B39EB3E23F6977A00F50E0D /* NewFormViewController.swift in Sources */,
+				FFB3458923F84D980060D8FE /* UrlListDAO.swift in Sources */,
+				FFC9F10323F83846009CDEAD /* TemplateDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +461,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Xcode Template Manager/Xcode_Template_Manager.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Xcode Template Manager/SupportFiles/Xcode_Template_Manager.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -410,7 +482,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Xcode Template Manager/Xcode_Template_Manager.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "Xcode Template Manager/SupportFiles/Xcode_Template_Manager.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;

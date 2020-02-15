@@ -48,4 +48,27 @@ class BaseViewController: NSViewController {
         self.view.enterFullScreenMode(NSScreen.main!, withOptions:optionsDictionary)
         self.view.wantsLayer = true
     }
+    
+    internal func showAlert(withMessage message: String) {
+        let alert = NSAlert()
+        alert.messageText = ""
+        alert.informativeText = message
+        alert.alertStyle = .warning
+        alert.addButton(withTitle: "OK")
+        alert.addButton(withTitle: "Cancel")
+        alert.runModal()
+    }
+    
+    func contentsOf(folder: URL) -> [URL] {
+        let fileManager = FileManager.default
+        do {
+            let contents = try fileManager.contentsOfDirectory(atPath: folder.path)
+            let urls = contents
+                .filter { _ in return true }
+            .map { return folder.appendingPathComponent($0) }
+            return urls
+        } catch {
+            return []
+        }
+    }
 }
