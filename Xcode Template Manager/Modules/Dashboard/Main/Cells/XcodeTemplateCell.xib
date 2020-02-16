@@ -25,8 +25,8 @@
                                         <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="rSF-A4-SB6">
                                             <rect key="frame" x="14" y="17" width="239" height="16"/>
                                             <textFieldCell key="cell" lineBreakMode="clipping" alignment="left" title="Label" id="LYa-rL-7Od">
-                                                <font key="font" usesAppearanceFont="YES"/>
-                                                <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                                <font key="font" metaFont="system"/>
+                                                <color key="textColor" name="systemTealColor" catalog="System" colorSpace="catalog"/>
                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                             </textFieldCell>
                                         </textField>

@@ -38,6 +38,9 @@ class TemplateDetailViewController: BaseViewController {
         if let directoryUrl = directoryUrl {
             let urlListDao = UrlListDAO(urls: contentsOf(folder: directoryUrl))
             templateList = urlListDao.urlList
+            templateList = templateList.sorted { a, b -> Bool in
+                return a.url!.absoluteString < b.url!.absoluteString
+            }
         }
     }
     

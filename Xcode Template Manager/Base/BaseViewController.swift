@@ -64,8 +64,8 @@ class BaseViewController: NSViewController {
         do {
             let contents = try fileManager.contentsOfDirectory(atPath: folder.path)
             let urls = contents
-                .filter { _ in return true }
-            .map { return folder.appendingPathComponent($0) }
+                .filter { return $0.first != "." }
+                .map { return folder.appendingPathComponent($0) }
             return urls
         } catch {
             return []
