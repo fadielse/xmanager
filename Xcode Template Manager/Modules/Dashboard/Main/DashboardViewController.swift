@@ -13,15 +13,20 @@ class DashboardViewController: BaseViewController {
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var containerView: NSView!
     
+    let fileManager = FileManager.default
+    
     var templateDetailViewController : TemplateDetailViewController!
     var welcomeViewController : WelcomeViewController!
     
-    var selectedRow: Int?
+    var selectedRow: Int? {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     var templateList: [URL] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-//        getDataFromJson()
         templateList = contentsOf(folder: UrlConstant.basePath)
         setupTableView()
         setupContainerView()
@@ -34,31 +39,14 @@ class DashboardViewController: BaseViewController {
     }
     
     @IBAction func onNewButtonClicked(_ sender: Any) {
-        self.goToScreen(withStoryboardId: "NewForm", andViewControllerId: "NewFormViewController")
-        let manager = FileManager.default
-        let path = "XcodeTemplate"
-        do {
-            try manager.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
-            showAlert(withMessage: "directory created")
-        } catch let error as NSError {
-            showAlert(withMessage: "Failed to create directory")
-            print("Failed to create directory: \(error.localizedDescription)")
+        if let newFormViewController = self.goToScreen(withStoryboardId: "NewForm", andViewControllerId: "NewFormViewController") as? NewFormViewController {
+            newFormViewController.delegate = self
         }
-
-        if !manager.fileExists(atPath: "\(path)/file.txt") {
-            if manager.createFile(atPath: "\(path)/file.txt", contents: nil, attributes: nil) {
-                showAlert(withMessage: "file created")
-                print("file created")
-            }
-        }
-
-        do {
-            let contents = try manager.contentsOfDirectory(atPath: path)
-            let urls = contents.filter { _ in return true } //.map { return folder.appendingPathComponent($0) }
-            print(urls)
-        } catch {
-            print("url not valid")
-        }
+    }
+    
+    func reloadData() {
+        templateList = contentsOf(folder: UrlConstant.basePath)
+        tableView.reloadData()
     }
     
     func setupTableView() {
@@ -93,40 +81,40 @@ class DashboardViewController: BaseViewController {
         templateDetailViewController.reloadContent()
     }
     
-    func getDataFromJson() {
-//        do {
-//            let path = Bundle.main.path(forResource: "template_data", ofType: "json")
-//            let jsonData = try Data(contentsOf: URL(fileURLWithPath: path!), options: .mappedIfSafe)
-//            if let json = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [[String: Any]] {
-//                let templateListDao = TemplateListDAO(data: json)
-//                templateList = templateListDao.templateList
-//            } else {
-//                print("JSONSerialization Failed")
-//            }
-//        } catch let error as NSError {
-//            print("Failed to load: \(error.localizedDescription)")
-//        }
+    func updateGroupName(withName name: String) {
+        let pathUrl = UrlConstant.basePath
+        
+        guard let selectedRow = selectedRow, templateList.indices.contains(selectedRow) else {
+            showAlert(withMessage: "Original Group not exists")
+            return
+        }
+        
+        let originalGroupPathUrl = templateList[selectedRow]
+        let newGroupPathUrl = pathUrl.appendingPathComponent(name)
+        
+        let fileList = contentsOf(folder: pathUrl)
+        if fileList.contains(newGroupPathUrl) {
+            showAlert(withMessage: "Group name already exists")
+        } else {
+            do {
+                try fileManager.moveItem(at: originalGroupPathUrl, to: newGroupPathUrl)
+            } catch {
+                showAlert(withMessage: error.localizedDescription)
+            }
+        }
     }
     
-    func getDocumentsDirectory() -> URL {
-        // find all possible documents directories for this user
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
-
-        // just send back the first one, which ought to be the only one
-        return paths[0]
-    }
-    
-    func createFile() {
-        let str = "Test Message"
-        let url = self.getDocumentsDirectory().appendingPathComponent("message.txt")
-
+    func deleteTemplate() {
+        guard let selectedRow = selectedRow, templateList.indices.contains(selectedRow) else {
+            showAlert(withMessage: "Template is not exists")
+            return
+        }
+        
         do {
-            try FileManager.default.createDirectory(at: self.getDocumentsDirectory().appendingPathComponent("/abc"), withIntermediateDirectories: true, attributes: nil)
-            try str.write(to: url, atomically: true, encoding: .utf8)
-            let input = try String(contentsOf: url)
-            print(input)
+            try fileManager.removeItem(at: templateList[selectedRow])
+            self.selectedRow = nil
         } catch {
-            print(error.localizedDescription)
+            showAlert(withMessage: error.localizedDescription)
         }
     }
 }
@@ -139,7 +127,10 @@ extension DashboardViewController: NSTableViewDelegate, NSTableViewDataSource {
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
         if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "XcodeTemplateCell"), owner: nil) as? XcodeTemplateCell {
+            cell.delegate = self
+            cell.isSelected = selectedRow == row
             cell.labelName.stringValue = templateList[row].toDirectoryName()
+            cell.draw(cell.visibleRect)
             return cell
         }
         return nil
@@ -147,9 +138,34 @@ extension DashboardViewController: NSTableViewDelegate, NSTableViewDataSource {
     
     func tableViewSelectionDidChange(_ notification: Notification) {
         let tableView = notification.object as! NSTableView
-        if let _ = tableView.view(atColumn: 0, row: tableView.selectedRow, makeIfNecessary: true) as? XcodeTemplateCell {
+        if let cell = tableView.view(atColumn: 0, row: tableView.selectedRow, makeIfNecessary: true) as? XcodeTemplateCell {
             selectedRow = tableView.selectedRow
+            cell.isSelected = true
+            cell.draw(cell.visibleRect)
             showTemplateDetail()
         }
+    }
+}
+
+extension DashboardViewController: NewFormViewControllerDelegate {
+    func newFormViewController(successCreateGroupWithViewController viewController: NewFormViewController) {
+        reloadData()
+    }
+}
+
+extension DashboardViewController: XcodeTemplateCellDelegate {
+    func XcodeTemplateCell(didUpdateNameWithCell cell: XcodeTemplateCell) {
+        updateGroupName(withName: cell.labelName.stringValue)
+        reloadData()
+    }
+    
+    func XcodeTemplateCell(deleteGroupWithCell cell: XcodeTemplateCell) {
+        let alert = showAlertConfirm(withTitle: "Warning!", andMessage: "Are you sure you would like to delete this template?")
+        alert.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
+            if modalResponse == NSApplication.ModalResponse.alertFirstButtonReturn {
+                self.deleteTemplate()
+                self.reloadData()
+            }
+        })
     }
 }

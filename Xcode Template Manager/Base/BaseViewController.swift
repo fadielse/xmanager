@@ -55,11 +55,22 @@ class BaseViewController: NSViewController {
         alert.informativeText = message
         alert.alertStyle = .warning
         alert.addButton(withTitle: "OK")
-        alert.addButton(withTitle: "Cancel")
-        alert.runModal()
+        alert.beginSheetModal(for: self.view.window!, completionHandler: nil)
     }
     
-    func contentsOf(folder: URL) -> [URL] {
+    @discardableResult
+    internal func showAlertConfirm(withTitle title: String, andMessage message: String, andActionButtonTitle actionButtonTitle: String? = "Delete") -> NSAlert {
+        let alert = NSAlert()
+        alert.messageText = title
+        alert.informativeText = message
+        alert.addButton(withTitle: actionButtonTitle ?? "Delete")
+        alert.addButton(withTitle: "Cancel")
+        alert.alertStyle = NSAlert.Style.warning
+        
+        return alert
+    }
+    
+    internal func contentsOf(folder: URL) -> [URL] {
         let fileManager = FileManager.default
         do {
             let contents = try fileManager.contentsOfDirectory(atPath: folder.path)

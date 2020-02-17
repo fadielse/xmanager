@@ -14,14 +14,14 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        createBaseFolderIfExists()
+        createBaseFolderIfNotExists()
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
         // Insert code here to tear down your application
     }
 
-    func createBaseFolderIfExists() {
+    func createBaseFolderIfNotExists() {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(".XcodeTemplateManager")
         do {
             try FileManager.default.createDirectory(at: paths, withIntermediateDirectories: true, attributes: nil)

@@ -8,39 +8,60 @@
 
 import Cocoa
 
-class XcodeTemplateCell: NSTableCellView {
+protocol XcodeTemplateCellDelegate {
+    func XcodeTemplateCell(didUpdateNameWithCell cell: XcodeTemplateCell)
+    func XcodeTemplateCell(deleteGroupWithCell cell: XcodeTemplateCell)
+}
+
+class XcodeTemplateCell: NSTableRowView {
 
     @IBOutlet weak var labelName: NSTextField!
-    @IBOutlet weak var stackViewTemplateData: NSStackView!
+    @IBOutlet weak var viewEdit: NSView!
+    @IBOutlet weak var viewDelete: NSView!
     
+    var delegate: XcodeTemplateCellDelegate?
     var data: [String] = []
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
         
-    }
-    
-    func showData() {
-        if stackViewTemplateData.subviews.count > 0 {
-            for view in stackViewTemplateData.subviews {
-                view.isHidden = false
-            }
+        if isSelected {
+            let selectionRect = NSInsetRect(self.bounds, 0, 0)
+            ColorConstant.darkBlue?.setFill()
+            let selectionPath = NSBezierPath.init(rect: selectionRect)
+            selectionPath.fill()
         } else {
-            for _ in data {
-                let view = NSView(frame: NSRect(x: 0, y: 0, width: self.frame.width, height: 40))
-                view.layer?.backgroundColor = .white
-                stackViewTemplateData.addArrangedSubview(view)
-            }
+            let selectionRect = NSInsetRect(self.bounds, 0, 0)
+            NSColor(calibratedWhite: 0.85, alpha: 0).setFill()
+            let selectionPath = NSBezierPath.init(rect: selectionRect)
+            selectionPath.fill()
         }
         
-        print(labelName.stringValue)
-        print("number of data \(data.count)")
-        print("number of view \(stackViewTemplateData.subviews.count)")
+        viewEdit.isHidden = !isSelected
+        viewDelete.isHidden = !isSelected
     }
     
-    func removeData() {
-        for view in stackViewTemplateData.subviews {
-            view.isHidden = true
+    @IBAction func onEditButtonClicked(_ sender: Any) {
+        labelName.isEditable = true
+        labelName.becomeFirstResponder()
+        labelName.delegate = self
+    }
+    
+    @IBAction func onDeleteButtonClicked(_ sender: Any) {
+        delegate?.XcodeTemplateCell(deleteGroupWithCell: self)
+    }
+}
+
+extension XcodeTemplateCell: NSTextFieldDelegate {
+    
+    func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+        if (commandSelector == #selector(NSResponder.insertNewline(_:))) {
+            labelName.resignFirstResponder()
+            labelName.isEditable = false
+            delegate?.XcodeTemplateCell(didUpdateNameWithCell: self)
+            return true
         }
+        
+        return false
     }
 }
