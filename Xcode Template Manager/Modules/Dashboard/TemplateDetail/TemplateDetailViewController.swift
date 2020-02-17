@@ -13,6 +13,7 @@ class TemplateDetailViewController: BaseViewController {
     @IBOutlet weak var collectionView: NSCollectionView!
     @IBOutlet weak var templateImageView1: NSImageView!
     @IBOutlet weak var templateImageView2: NSImageView!
+    @IBOutlet weak var viewAddTemplateButton: NSView!
     
     var directoryUrl: URL?
     var templateList: [UrlList] = [] {
@@ -30,6 +31,7 @@ class TemplateDetailViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        view.wantsLayer = true
         getListFile()
         setupCollectionView()
     }
@@ -51,9 +53,10 @@ class TemplateDetailViewController: BaseViewController {
         let flowLayout = NSCollectionViewFlowLayout()
         flowLayout.itemSize = NSSize(width: 160.0, height: 35.0)
         flowLayout.sectionInset = NSEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.minimumLineSpacing = 0
         flowLayout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = flowLayout
-        view.wantsLayer = true
         
         if let url = templateList.first?.url {
             getListTemplate(withUrl: url)

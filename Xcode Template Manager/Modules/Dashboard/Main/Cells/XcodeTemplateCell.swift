@@ -32,7 +32,7 @@ class XcodeTemplateCell: NSTableRowView {
             selectionPath.fill()
         } else {
             let selectionRect = NSInsetRect(self.bounds, 0, 0)
-            NSColor(calibratedWhite: 0.85, alpha: 0).setFill()
+            ColorConstant.darkBackground?.setFill()
             let selectionPath = NSBezierPath.init(rect: selectionRect)
             selectionPath.fill()
         }

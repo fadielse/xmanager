@@ -12,11 +12,6 @@ class BaseViewController: NSViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setWindowSize()
-    }
-    
-    func setWindowSize() {
-        preferredContentSize = NSSize(width: 1280, height: 800)
     }
     
     func setFullScreen() {

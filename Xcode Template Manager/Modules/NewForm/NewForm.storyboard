@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Dt-iA-Elx">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Dt-iA-Elx">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -20,60 +20,57 @@
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="yXV-fR-iYz">
                                         <rect key="frame" x="0.0" y="48" width="450" height="48"/>
                                         <subviews>
-                                            <box borderType="none" title="Name" translatesAutoresizingMaskIntoConstraints="NO" id="4cG-5N-1y3">
-                                                <rect key="frame" x="17" y="-4" width="416" height="44"/>
-                                                <view key="contentView" id="HEJ-mq-9jt">
-                                                    <rect key="frame" x="0.0" y="0.0" width="416" height="28"/>
-                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                    <subviews>
-                                                        <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X3z-N8-Q6y">
-                                                            <rect key="frame" x="0.0" y="0.0" width="416" height="28"/>
-                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="LnP-f9-RiO">
-                                                                <font key="font" usesAppearanceFont="YES"/>
-                                                                <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
-                                                                <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                                                            </textFieldCell>
-                                                        </textField>
-                                                    </subviews>
-                                                    <constraints>
-                                                        <constraint firstAttribute="trailing" secondItem="X3z-N8-Q6y" secondAttribute="trailing" id="8KX-SM-pit"/>
-                                                        <constraint firstAttribute="bottom" secondItem="X3z-N8-Q6y" secondAttribute="bottom" id="OGT-Kr-9cD"/>
-                                                        <constraint firstItem="X3z-N8-Q6y" firstAttribute="leading" secondItem="HEJ-mq-9jt" secondAttribute="leading" id="fUg-zJ-WeT"/>
-                                                        <constraint firstItem="X3z-N8-Q6y" firstAttribute="top" secondItem="HEJ-mq-9jt" secondAttribute="top" id="p5w-sx-Gbj"/>
-                                                    </constraints>
-                                                </view>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="410" id="XD0-oB-Wdz"/>
-                                                </constraints>
-                                                <font key="titleFont" size="12" name=".AppleSystemUIFont"/>
-                                            </box>
+                                            <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X3z-N8-Q6y">
+                                                <rect key="frame" x="17" y="12" width="416" height="24"/>
+                                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" placeholderString="Name" drawsBackground="YES" id="LnP-f9-RiO">
+                                                    <font key="font" metaFont="system" size="15"/>
+                                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                                </textFieldCell>
+                                            </textField>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="4cG-5N-1y3" secondAttribute="bottom" id="Fu9-zj-WR8"/>
-                                            <constraint firstAttribute="trailing" secondItem="4cG-5N-1y3" secondAttribute="trailing" constant="20" id="H3B-4A-fYy"/>
-                                            <constraint firstItem="4cG-5N-1y3" firstAttribute="leading" secondItem="yXV-fR-iYz" secondAttribute="leading" constant="20" id="Hsp-fm-x3d"/>
-                                            <constraint firstItem="4cG-5N-1y3" firstAttribute="top" secondItem="yXV-fR-iYz" secondAttribute="top" constant="8" id="Jep-Wf-Ved"/>
+                                            <constraint firstAttribute="bottom" secondItem="X3z-N8-Q6y" secondAttribute="bottom" constant="12" id="5VM-w2-q1S"/>
                                             <constraint firstAttribute="height" constant="48" id="Re0-ws-HWY"/>
+                                            <constraint firstItem="X3z-N8-Q6y" firstAttribute="top" secondItem="yXV-fR-iYz" secondAttribute="top" constant="12" id="b14-BI-woI"/>
+                                            <constraint firstItem="X3z-N8-Q6y" firstAttribute="leading" secondItem="yXV-fR-iYz" secondAttribute="leading" constant="17" id="xpq-Vb-rvJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="X3z-N8-Q6y" secondAttribute="trailing" constant="17" id="ybt-Oe-0e1"/>
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="dRr-KZ-b78">
                                         <rect key="frame" x="0.0" y="0.0" width="450" height="40"/>
                                         <subviews>
-                                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GlG-Dw-G3q">
-                                                <rect key="frame" x="185" y="3" width="81" height="32"/>
-                                                <buttonCell key="cell" type="push" title="Create" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jEd-OC-mkA">
-                                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                                                    <font key="font" metaFont="system"/>
-                                                </buttonCell>
-                                                <connections>
-                                                    <action selector="onButtonCreateClicked:" target="4Dt-iA-Elx" id="UAa-cX-b0z"/>
-                                                </connections>
-                                            </button>
+                                            <customView translatesAutoresizingMaskIntoConstraints="NO" id="XTe-8S-gah" customClass="BaseNSView" customModule="Xcode_Template_Manager" customModuleProvider="target">
+                                                <rect key="frame" x="171" y="5" width="109" height="30"/>
+                                                <subviews>
+                                                    <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GlG-Dw-G3q">
+                                                        <rect key="frame" x="0.0" y="0.0" width="109" height="30"/>
+                                                        <buttonCell key="cell" type="square" title="Create" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyDown" inset="2" id="jEd-OC-mkA">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="system"/>
+                                                        </buttonCell>
+                                                        <color key="contentTintColor" red="0.73333333333333328" green="0.88235294117647056" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <connections>
+                                                            <action selector="onButtonCreateClicked:" target="4Dt-iA-Elx" id="UAa-cX-b0z"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="GlG-Dw-G3q" firstAttribute="centerY" secondItem="XTe-8S-gah" secondAttribute="centerY" id="0yQ-Oc-ENW"/>
+                                                    <constraint firstItem="GlG-Dw-G3q" firstAttribute="centerX" secondItem="XTe-8S-gah" secondAttribute="centerX" id="13L-AB-wC9"/>
+                                                    <constraint firstAttribute="width" constant="109" id="1JQ-91-elQ"/>
+                                                    <constraint firstAttribute="trailing" secondItem="GlG-Dw-G3q" secondAttribute="trailing" id="7rQ-ZU-Yi2"/>
+                                                    <constraint firstAttribute="bottom" secondItem="GlG-Dw-G3q" secondAttribute="bottom" id="Gye-1f-8Jw"/>
+                                                    <constraint firstItem="GlG-Dw-G3q" firstAttribute="leading" secondItem="XTe-8S-gah" secondAttribute="leading" id="K25-oV-rOu"/>
+                                                    <constraint firstItem="GlG-Dw-G3q" firstAttribute="top" secondItem="XTe-8S-gah" secondAttribute="top" id="RaC-Vp-Mp3"/>
+                                                    <constraint firstAttribute="height" constant="30" id="SFh-6t-nQe"/>
+                                                </constraints>
+                                            </customView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="GlG-Dw-G3q" firstAttribute="centerX" secondItem="dRr-KZ-b78" secondAttribute="centerX" id="1jl-CD-hQd"/>
                                             <constraint firstAttribute="height" constant="40" id="HNS-xg-Dh9"/>
-                                            <constraint firstItem="GlG-Dw-G3q" firstAttribute="centerY" secondItem="dRr-KZ-b78" secondAttribute="centerY" id="eO2-Yy-uN6"/>
+                                            <constraint firstItem="XTe-8S-gah" firstAttribute="centerY" secondItem="dRr-KZ-b78" secondAttribute="centerY" id="MeF-gT-p2B"/>
+                                            <constraint firstItem="XTe-8S-gah" firstAttribute="centerX" secondItem="dRr-KZ-b78" secondAttribute="centerX" id="OkT-8n-Erw"/>
                                         </constraints>
                                     </customView>
                                 </subviews>

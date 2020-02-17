@@ -12,6 +12,7 @@ class DashboardViewController: BaseViewController {
     
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var containerView: NSView!
+    @IBOutlet weak var buttonDeploy: NSButton!
     
     let fileManager = FileManager.default
     
@@ -20,6 +21,11 @@ class DashboardViewController: BaseViewController {
     
     var selectedRow: Int? {
         didSet {
+            if let _ = selectedRow {
+                buttonDeploy.isEnabled = true
+            } else {
+                buttonDeploy.isEnabled = false
+            }
             tableView.reloadData()
         }
     }
@@ -27,6 +33,7 @@ class DashboardViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.view.window?.delegate = self
         templateList = contentsOf(folder: UrlConstant.basePath)
         setupTableView()
         setupContainerView()
@@ -167,5 +174,12 @@ extension DashboardViewController: XcodeTemplateCellDelegate {
                 self.reloadData()
             }
         })
+    }
+}
+
+extension DashboardViewController: NSWindowDelegate {
+    
+    func windowDidResize(_ notification: Notification) {
+        print("window resized")
     }
 }
