@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Dt-iA-Elx">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="4Dt-iA-Elx">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -11,14 +11,14 @@
             <objects>
                 <viewController title="Create New Group" storyboardIdentifier="NewFormViewController" id="4Dt-iA-Elx" customClass="NewFormViewController" customModule="Xcode_Template_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" id="W35-fs-qT4">
-                        <rect key="frame" x="0.0" y="0.0" width="450" height="96"/>
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="98"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <stackView distribution="fill" orientation="vertical" alignment="leading" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rqg-Vn-8Eg">
-                                <rect key="frame" x="0.0" y="0.0" width="450" height="96"/>
+                            <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="0.0" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rqg-Vn-8Eg">
+                                <rect key="frame" x="0.0" y="0.0" width="450" height="98"/>
                                 <subviews>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="yXV-fR-iYz">
-                                        <rect key="frame" x="0.0" y="48" width="450" height="48"/>
+                                        <rect key="frame" x="0.0" y="50" width="450" height="48"/>
                                         <subviews>
                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="X3z-N8-Q6y">
                                                 <rect key="frame" x="17" y="12" width="416" height="24"/>
@@ -38,10 +38,10 @@
                                         </constraints>
                                     </customView>
                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="dRr-KZ-b78">
-                                        <rect key="frame" x="0.0" y="0.0" width="450" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="450" height="50"/>
                                         <subviews>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="XTe-8S-gah" customClass="BaseNSView" customModule="Xcode_Template_Manager" customModuleProvider="target">
-                                                <rect key="frame" x="171" y="5" width="109" height="30"/>
+                                                <rect key="frame" x="171" y="10" width="109" height="30"/>
                                                 <subviews>
                                                     <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="GlG-Dw-G3q">
                                                         <rect key="frame" x="0.0" y="0.0" width="109" height="30"/>
@@ -68,7 +68,7 @@
                                             </customView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="HNS-xg-Dh9"/>
+                                            <constraint firstAttribute="height" constant="50" id="HNS-xg-Dh9"/>
                                             <constraint firstItem="XTe-8S-gah" firstAttribute="centerY" secondItem="dRr-KZ-b78" secondAttribute="centerY" id="MeF-gT-p2B"/>
                                             <constraint firstItem="XTe-8S-gah" firstAttribute="centerX" secondItem="dRr-KZ-b78" secondAttribute="centerX" id="OkT-8n-Erw"/>
                                         </constraints>

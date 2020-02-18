@@ -7,12 +7,19 @@
 //
 
 import Cocoa
+import NotificationCenter
+
+extension NotificationCenterConstant {
+    
+    static let reloadContainerView = NSNotification.Name("reloadContainerView")
+}
 
 class DashboardViewController: BaseViewController {
     
     @IBOutlet weak var tableView: NSTableView!
     @IBOutlet weak var containerView: NSView!
     @IBOutlet weak var buttonDeploy: NSButton!
+    @IBOutlet weak var labelLog: NSTextField!
     
     let fileManager = FileManager.default
     
@@ -29,14 +36,16 @@ class DashboardViewController: BaseViewController {
             tableView.reloadData()
         }
     }
-    var templateList: [URL] = []
+    var templateList: [UrlList] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.window?.delegate = self
-        templateList = contentsOf(folder: UrlConstant.basePath)
+        setupObserver()
+        getGroupList()
         setupTableView()
         setupContainerView()
+        updateLog(withMessage: "Finished running Xcode Template Manager")
     }
 
     override var representedObject: Any? {
@@ -51,8 +60,23 @@ class DashboardViewController: BaseViewController {
         }
     }
     
+    func setupObserver() {
+        NotificationCenter.default.addObserver(forName: NotificationCenterConstant.reloadContainerView, object: nil, queue: nil) { _ in
+            self.showTemplateDetail()
+        }
+    }
+    
+    func getGroupList() {
+        let urlListDao = UrlListDAO(urls: contentsOf(folder: UrlConstant.basePath))
+        templateList = urlListDao.urlList
+        templateList = templateList.sorted { a, b -> Bool in
+            return a.url!.absoluteString < b.url!.absoluteString
+        }
+    }
+    
     func reloadData() {
-        templateList = contentsOf(folder: UrlConstant.basePath)
+        getGroupList()
+        showTemplateDetail()
         tableView.reloadData()
     }
     
@@ -82,21 +106,29 @@ class DashboardViewController: BaseViewController {
             sView.removeFromSuperview()
         }
 
-        templateDetailViewController.directoryUrl = templateList[selectedRow]
+        templateDetailViewController.directoryUrl = templateList[selectedRow].url
         templateDetailViewController.view.frame = self.containerView.bounds
         self.containerView.addSubview(templateDetailViewController.view)
         templateDetailViewController.reloadContent()
+        if let loaded = templateList[selectedRow].url?.toDirectoryName() {
+            updateLog(withMessage: "Success load template : \(loaded)")
+        } else {
+            updateLog(withMessage: "Error load template : Source not found")
+        }
+    }
+    
+    func updateLog(withMessage message: String) {
+        labelLog.stringValue = message
     }
     
     func updateGroupName(withName name: String) {
         let pathUrl = UrlConstant.basePath
         
-        guard let selectedRow = selectedRow, templateList.indices.contains(selectedRow) else {
+        guard let selectedRow = selectedRow, templateList.indices.contains(selectedRow), let originalGroupPathUrl = templateList[selectedRow].url else {
             showAlert(withMessage: "Original Group not exists")
             return
         }
         
-        let originalGroupPathUrl = templateList[selectedRow]
         let newGroupPathUrl = pathUrl.appendingPathComponent(name)
         
         let fileList = contentsOf(folder: pathUrl)
@@ -112,14 +144,14 @@ class DashboardViewController: BaseViewController {
     }
     
     func deleteTemplate() {
-        guard let selectedRow = selectedRow, templateList.indices.contains(selectedRow) else {
+        guard let selectedRow = selectedRow, templateList.indices.contains(selectedRow), let urlToDelete = templateList[selectedRow].url else {
             showAlert(withMessage: "Template is not exists")
             return
         }
         
         do {
-            try fileManager.removeItem(at: templateList[selectedRow])
-            self.selectedRow = nil
+            try fileManager.removeItem(at: urlToDelete)
+            self.selectedRow = 0
         } catch {
             showAlert(withMessage: error.localizedDescription)
         }
@@ -133,10 +165,10 @@ extension DashboardViewController: NSTableViewDelegate, NSTableViewDataSource {
     }
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "XcodeTemplateCell"), owner: nil) as? XcodeTemplateCell {
+        if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "XcodeTemplateCell"), owner: nil) as? XcodeTemplateCell, let groupName = templateList[row].url?.toDirectoryName() {
             cell.delegate = self
             cell.isSelected = selectedRow == row
-            cell.labelName.stringValue = templateList[row].toDirectoryName()
+            cell.labelName.stringValue = groupName
             cell.draw(cell.visibleRect)
             return cell
         }
@@ -155,12 +187,18 @@ extension DashboardViewController: NSTableViewDelegate, NSTableViewDataSource {
 }
 
 extension DashboardViewController: NewFormViewControllerDelegate {
+    
     func newFormViewController(successCreateGroupWithViewController viewController: NewFormViewController) {
+        getGroupList()
+        selectedRow = templateList.firstIndex(where: { urlList -> Bool in
+            return urlList.url == UrlConstant.basePath.appendingPathComponent(viewController.textFieldName.stringValue)
+        })
         reloadData()
     }
 }
 
 extension DashboardViewController: XcodeTemplateCellDelegate {
+    
     func XcodeTemplateCell(didUpdateNameWithCell cell: XcodeTemplateCell) {
         updateGroupName(withName: cell.labelName.stringValue)
         reloadData()

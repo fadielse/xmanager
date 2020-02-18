@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import NotificationCenter
 
 class BaseWindowController: NSWindowController, NSWindowDelegate {
 
@@ -15,8 +16,8 @@ class BaseWindowController: NSWindowController, NSWindowDelegate {
     
         window?.delegate = self
     }
-
-    private func windowDidResize(notification: NSNotification) {
-        print("asdasdasd")
+    
+    func windowDidEndLiveResize(_ notification: Notification) {
+        NotificationCenter.default.post(name: NotificationCenterConstant.reloadContainerView, object: nil)
     }
 }

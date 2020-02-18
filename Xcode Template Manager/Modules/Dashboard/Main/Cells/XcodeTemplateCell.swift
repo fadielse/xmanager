@@ -27,12 +27,12 @@ class XcodeTemplateCell: NSTableRowView {
         
         if isSelected {
             let selectionRect = NSInsetRect(self.bounds, 0, 0)
-            ColorConstant.darkBlue?.setFill()
+            ColorConstant.darkBlue.setFill()
             let selectionPath = NSBezierPath.init(rect: selectionRect)
             selectionPath.fill()
         } else {
             let selectionRect = NSInsetRect(self.bounds, 0, 0)
-            ColorConstant.darkBackground?.setFill()
+            ColorConstant.darkBackground.setFill()
             let selectionPath = NSBezierPath.init(rect: selectionRect)
             selectionPath.fill()
         }
@@ -56,6 +56,11 @@ extension XcodeTemplateCell: NSTextFieldDelegate {
     
     func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
         if (commandSelector == #selector(NSResponder.insertNewline(_:))) {
+            guard !labelName.stringValue.isEmpty else {
+                labelName.resignFirstResponder()
+                labelName.isEditable = false
+                return false
+            }
             labelName.resignFirstResponder()
             labelName.isEditable = false
             delegate?.XcodeTemplateCell(didUpdateNameWithCell: self)

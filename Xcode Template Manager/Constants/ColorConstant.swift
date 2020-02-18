@@ -10,9 +10,9 @@ import Cocoa
 
 struct ColorConstant {
     
-    static let darkBackground = NSColor(named: "darkBackground")
-    static let darkBlue = NSColor(named: "darkBlue")
-    static let coldBlue = NSColor(named: "coldBlue")
-    static let winter = NSColor(named: "winter")
-    static let semiDarkBackground = NSColor(named: "semiDarkBackground")
+    static let darkBackground = NSColor(named: "darkBackground")!
+    static let darkBlue = NSColor(named: "darkBlue")!
+    static let coldBlue = NSColor(named: "coldBlue")!
+    static let winter = NSColor(named: "winter")!
+    static let semiDarkBackground = NSColor(named: "semiDarkBackground")!
 }

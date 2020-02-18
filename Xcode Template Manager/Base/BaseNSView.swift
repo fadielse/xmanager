@@ -14,7 +14,7 @@ class BaseNSView: NSView {
         super.draw(dirtyRect)
 
         layer?.cornerRadius = 5.0
-        ColorConstant.darkBlue?.setFill()
+        ColorConstant.darkBlue.setFill()
         dirtyRect.fill()
     }
     

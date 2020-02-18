@@ -18,19 +18,31 @@ class NewFormViewController: BaseViewController {
     
     var delegate: NewFormViewControllerDelegate?
     
+    var pathUrl: URL = UrlConstant.basePath
+    var fileType: EnumNewFileType = .group
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.preferredContentSize = NSMakeSize(self.view.frame.size.width, self.view.frame.size.height);
     }
     
     @IBAction func onButtonCreateClicked(_ sender: Any) {
+        guard !textFieldName.stringValue.isEmpty else {
+            return
+        }
         createGroupIfNotExixts()
     }
     
     func createGroupIfNotExixts() {
         let fileManager = FileManager.default
-        let pathUrl = UrlConstant.basePath
-        let newGroupPathUrl = pathUrl.appendingPathComponent(textFieldName.stringValue)
+        var newGroupPathUrl = pathUrl
+        
+        switch fileType {
+        case .group:
+            newGroupPathUrl = newGroupPathUrl.appendingPathComponent(textFieldName.stringValue)
+        case .xctemplate:
+            newGroupPathUrl = newGroupPathUrl.appendingPathComponent("\(textFieldName.stringValue).xctemplate")
+        }
         
         let fileList = contentsOf(folder: pathUrl)
         if fileList.contains(newGroupPathUrl) {

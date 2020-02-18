@@ -17,4 +17,8 @@ struct UrlListDAO {
             self.urlList.append(UrlList(url: url))
         }
     }
+    
+    func isEmptyList() -> Bool {
+        return urlList.count <= 0
+    }
 }

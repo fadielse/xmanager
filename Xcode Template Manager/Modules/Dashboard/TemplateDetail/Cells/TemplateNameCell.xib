@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="TemplateNameCell" customModule="Xcode_Template_Manager" customModuleProvider="target">
             <connections>
+                <outlet property="contentView" destination="Hz6-mo-xeY" id="jIk-e2-TX4"/>
                 <outlet property="labelName" destination="l29-rM-cWM" id="lQQ-1V-PBJ"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -32,14 +33,28 @@
                 <box horizontalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="2KA-Xk-dUe">
                     <rect key="frame" x="358" y="0.0" width="5" height="40"/>
                 </box>
+                <button hidden="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0Up-Qf-sf1">
+                    <rect key="frame" x="0.0" y="0.0" width="361" height="40"/>
+                    <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="7RD-0a-F5I">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onCellButtonClicked:" target="-2" id="Klh-L5-4MS"/>
+                    </connections>
+                </button>
             </subviews>
             <constraints>
                 <constraint firstItem="l29-rM-cWM" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" constant="16" id="ATy-Ix-BNn"/>
+                <constraint firstItem="0Up-Qf-sf1" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="Gae-c0-EeQ"/>
                 <constraint firstItem="eQr-tb-jGL" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="IMP-ps-jJK"/>
+                <constraint firstAttribute="bottom" secondItem="0Up-Qf-sf1" secondAttribute="bottom" id="Jyg-N4-jzE"/>
                 <constraint firstAttribute="bottom" secondItem="eQr-tb-jGL" secondAttribute="bottom" id="RMs-Jl-5fp"/>
                 <constraint firstAttribute="trailing" secondItem="2KA-Xk-dUe" secondAttribute="trailing" id="TmW-tc-Xxz"/>
                 <constraint firstItem="eQr-tb-jGL" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="aYH-T1-HDv"/>
+                <constraint firstAttribute="trailing" secondItem="0Up-Qf-sf1" secondAttribute="trailing" id="g0M-J3-bOa"/>
                 <constraint firstAttribute="trailing" secondItem="l29-rM-cWM" secondAttribute="trailing" constant="16" id="gNW-Za-zRj"/>
+                <constraint firstItem="0Up-Qf-sf1" firstAttribute="leading" secondItem="Hz6-mo-xeY" secondAttribute="leading" id="kwe-Mc-7me"/>
                 <constraint firstItem="2KA-Xk-dUe" firstAttribute="top" secondItem="Hz6-mo-xeY" secondAttribute="top" id="qO2-PT-RFE"/>
                 <constraint firstItem="l29-rM-cWM" firstAttribute="centerY" secondItem="Hz6-mo-xeY" secondAttribute="centerY" id="s92-P6-Oit"/>
                 <constraint firstAttribute="bottom" secondItem="2KA-Xk-dUe" secondAttribute="bottom" id="wSM-t8-L1t"/>

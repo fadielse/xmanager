@@ -11,23 +11,40 @@ import Cocoa
 class TemplateDetailViewController: BaseViewController {
     
     @IBOutlet weak var collectionView: NSCollectionView!
+    @IBOutlet weak var viewName: NSView!
+    @IBOutlet weak var viewHeaderIcon: NSView!
+    @IBOutlet weak var viewTemplateIcon: NSView!
+    @IBOutlet weak var viewMockup: NSView!
+    @IBOutlet weak var textFieldName: NSTextField!
     @IBOutlet weak var templateImageView1: NSImageView!
     @IBOutlet weak var templateImageView2: NSImageView!
     @IBOutlet weak var viewAddTemplateButton: NSView!
     
+    let fileManager = FileManager.default
+    
     var directoryUrl: URL?
     var templateList: [UrlList] = [] {
         didSet {
-            if let url = templateList.first?.url {
+            if templateList.indices.contains(selectedTemplateIndex), let url = templateList[selectedTemplateIndex].url {
                 getListTemplate(withUrl: url)
             }
         }
     }
     var fileList: [UrlList] = []  {
-           didSet {
-               setTemplateImage()
-           }
-       }
+        didSet {
+            setTemplateImage()
+            setName()
+            collectionView.reloadData()
+        }
+    }
+    var selectedTemplateIndex: Int = 0 {
+        didSet {
+            if templateList.indices.contains(selectedTemplateIndex), let url = templateList[selectedTemplateIndex].url {
+                getListTemplate(withUrl: url)
+            }
+            collectionView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,12 +53,63 @@ class TemplateDetailViewController: BaseViewController {
         setupCollectionView()
     }
     
+    @IBAction func onButtonAddClicked(_ sender: Any) {
+        if let newFormViewController = self.goToScreen(withStoryboardId: "NewForm", andViewControllerId: "NewFormViewController") as? NewFormViewController, let directoryUrl = directoryUrl {
+            newFormViewController.delegate = self
+            newFormViewController.pathUrl = directoryUrl
+            newFormViewController.fileType = .xctemplate
+        } else {
+            showAlert(withMessage: "Something went wrong.")
+        }
+    }
+    
+    @IBAction func onButtonEditNameClicked(_ sender: Any) {
+        textFieldName.isEditable = true
+        textFieldName.isEnabled = true
+        textFieldName.becomeFirstResponder()
+    }
+    
+    // MARK: - Private Method
+    
+    func updateTemplateName(withName name: String) {
+        guard let directoryUrl = directoryUrl, templateList.indices.contains(selectedTemplateIndex), let originalGroupPathUrl = templateList[selectedTemplateIndex].url else {
+            showAlert(withMessage: "Original Template not exists")
+            return
+        }
+        
+        let newGroupPathUrl = directoryUrl.appendingPathComponent("\(name).xctemplate")
+        
+        let fileList = contentsOf(folder: directoryUrl)
+        if fileList.contains(newGroupPathUrl) {
+            showAlert(withMessage: "Template name already exists")
+        } else {
+            do {
+                try fileManager.moveItem(at: originalGroupPathUrl, to: newGroupPathUrl)
+                getListFile()
+                
+                selectedTemplateIndex = templateList.firstIndex(where: { urlList -> Bool in
+                    return urlList.url == directoryUrl.appendingPathComponent("\(newGroupPathUrl.toDirectoryName()).xctemplate")
+                }) ?? 0
+                collectionView.reloadData()
+            } catch {
+                showAlert(withMessage: error.localizedDescription)
+            }
+        }
+    }
+    
+    // MARK: - Method
+    
     func getListFile() {
         if let directoryUrl = directoryUrl {
             let urlListDao = UrlListDAO(urls: contentsOf(folder: directoryUrl))
-            templateList = urlListDao.urlList
-            templateList = templateList.sorted { a, b -> Bool in
+            templateList = urlListDao.urlList.sorted { a, b -> Bool in
                 return a.url!.absoluteString < b.url!.absoluteString
+            }
+            
+            if urlListDao.isEmptyList() {
+                updateViewForEmptyGroup()
+            } else {
+                updateViewForTemplate()
             }
         }
     }
@@ -57,13 +125,10 @@ class TemplateDetailViewController: BaseViewController {
         flowLayout.minimumLineSpacing = 0
         flowLayout.scrollDirection = .horizontal
         collectionView.collectionViewLayout = flowLayout
-        
-        if let url = templateList.first?.url {
-            getListTemplate(withUrl: url)
-        }
     }
     
     func reloadContent() {
+        selectedTemplateIndex = 0
         getListFile()
         collectionView.reloadData()
     }
@@ -73,7 +138,19 @@ class TemplateDetailViewController: BaseViewController {
         fileList = urlListDao.urlList
     }
     
+    func setName() {
+        textFieldName.delegate = self
+        textFieldName.isEditable = false
+        textFieldName.isEnabled = false
+        if templateList.indices.contains(selectedTemplateIndex), let name = templateList[selectedTemplateIndex].url?.toDirectoryName() {
+            textFieldName.stringValue = name
+        }
+    }
+    
     func setTemplateImage() {
+        templateImageView1.image = NSImage(named: "img-square-placeholder")
+        templateImageView2.image = NSImage(named: "img-square-placeholder")
+        
         for item in fileList {
             if item.isTemplateImage1(), let url = item.url {
                 templateImageView1.image = NSImage(byReferencing: url)
@@ -81,6 +158,20 @@ class TemplateDetailViewController: BaseViewController {
                 templateImageView2.image = NSImage(byReferencing: url)
             }
         }
+    }
+    
+    func updateViewForEmptyGroup() {
+        viewName.isHidden = true
+        viewHeaderIcon.isHidden = true
+        viewTemplateIcon.isHidden = true
+        viewMockup.isHidden = true
+    }
+    
+    func updateViewForTemplate() {
+        viewName.isHidden = false
+        viewHeaderIcon.isHidden = false
+        viewTemplateIcon.isHidden = false
+        viewMockup.isHidden = false
     }
 }
 
@@ -93,7 +184,12 @@ extension TemplateDetailViewController: NSCollectionViewDelegate, NSCollectionVi
     func collectionView(_ itemForRepresentedObjectAtcollectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
       
         if let cell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TemplateNameCell"), for: indexPath) as? TemplateNameCell {
-            cell.labelName.stringValue = templateList[indexPath.item].url?.toDirectoryName() ?? ""
+            cell.isSelected = selectedTemplateIndex == indexPath.item
+            
+            if templateList.indices.contains(indexPath.item) {
+                cell.labelName.stringValue = templateList[indexPath.item].url?.toDirectoryName() ?? ""
+            }
+            
             return cell
         }
         
@@ -101,5 +197,49 @@ extension TemplateDetailViewController: NSCollectionViewDelegate, NSCollectionVi
     }
     
     func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        guard let indexPath = indexPaths.first else {
+            return
+        }
+        
+        selectedTemplateIndex = indexPath.item
+    }
+}
+
+extension TemplateDetailViewController: NewFormViewControllerDelegate {
+    
+    func newFormViewController(successCreateGroupWithViewController viewController: NewFormViewController) {
+        guard let directoryUrl = directoryUrl else {
+            return
+        }
+        
+        getListFile()
+        
+        selectedTemplateIndex = templateList.firstIndex(where: { urlList -> Bool in
+            return urlList.url == directoryUrl.appendingPathComponent("\(viewController.textFieldName.stringValue).xctemplate")
+        }) ?? 0
+        collectionView.reloadData()
+    }
+}
+
+extension TemplateDetailViewController: NSTextFieldDelegate {
+    
+    func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+        if (commandSelector == #selector(NSResponder.insertNewline(_:))) {
+            guard !textFieldName.stringValue.isEmpty else {
+                textFieldName.resignFirstResponder()
+                textFieldName.isEditable = false
+                textFieldName.isEnabled = false
+                textFieldName.stringValue = templateList[selectedTemplateIndex].url?.toDirectoryName() ?? ""
+                return false
+            }
+            
+            textFieldName.resignFirstResponder()
+            textFieldName.isEditable = false
+            textFieldName.isEnabled = false
+            updateTemplateName(withName: textFieldName.stringValue)
+            return true
+        }
+        
+        return false
     }
 }
