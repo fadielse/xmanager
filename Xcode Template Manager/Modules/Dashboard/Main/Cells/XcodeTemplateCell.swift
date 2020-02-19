@@ -65,8 +65,11 @@ extension XcodeTemplateCell: NSTextFieldDelegate {
             labelName.isEditable = false
             delegate?.XcodeTemplateCell(didUpdateNameWithCell: self)
             return true
+        } else if (commandSelector == #selector(NSResponder.cancelOperation(_:))) {
+            labelName.resignFirstResponder()
+            labelName.isEditable = false
+            labelName.isEnabled = false
         }
-        
         return false
     }
 }

@@ -19,10 +19,12 @@ class TemplateDetailViewController: BaseViewController {
     @IBOutlet weak var templateImageView1: NSImageView!
     @IBOutlet weak var templateImageView2: NSImageView!
     @IBOutlet weak var viewAddTemplateButton: NSView!
+    @IBOutlet weak var buttonTemplateIcon: DragView!
     
     let fileManager = FileManager.default
     
     var directoryUrl: URL?
+    var directoryTemplateName: String?
     var templateList: [UrlList] = [] {
         didSet {
             if templateList.indices.contains(selectedTemplateIndex), let url = templateList[selectedTemplateIndex].url {
@@ -41,6 +43,7 @@ class TemplateDetailViewController: BaseViewController {
         didSet {
             if templateList.indices.contains(selectedTemplateIndex), let url = templateList[selectedTemplateIndex].url {
                 getListTemplate(withUrl: url)
+                directoryTemplateName = "\(url.toDirectoryName()).xctemplate"
             }
             collectionView.reloadData()
         }
@@ -49,8 +52,10 @@ class TemplateDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.wantsLayer = true
+        buttonTemplateIcon.delegate = self
         getListFile()
         setupCollectionView()
+        prepareTrackingArea()
     }
     
     @IBAction func onButtonAddClicked(_ sender: Any) {
@@ -69,9 +74,36 @@ class TemplateDetailViewController: BaseViewController {
         textFieldName.becomeFirstResponder()
     }
     
+    @IBAction func onButtonTemplateIconClicked(_ sender: Any) {
+    }
+    
+    // Mark: - Some Event
+    
+    func myTrakingArea(control: NSControl) -> NSTrackingArea {
+        return NSTrackingArea.init(rect: control.bounds,
+                                   options: [.mouseEnteredAndExited, .activeAlways],
+        owner: control,
+        userInfo: nil)
+    }
+    
+    override func mouseEntered(with event: NSEvent) {
+        buttonTemplateIcon.title = "Drag and drop an image file here \n (.png)"
+        buttonTemplateIcon.layer?.backgroundColor = ColorConstant.mouseHoverBackground.cgColor
+    }
+    
+    override func mouseExited(with event: NSEvent) {
+        buttonTemplateIcon.title = ""
+        buttonTemplateIcon.layer?.backgroundColor = .clear
+    }
+    
     // MARK: - Private Method
     
-    func updateTemplateName(withName name: String) {
+    private func prepareTrackingArea() {
+        let mouseTrackingArea = myTrakingArea(control: self.buttonTemplateIcon)
+        buttonTemplateIcon.addTrackingArea(mouseTrackingArea)
+    }
+    
+    private func updateTemplateName(withName name: String) {
         guard let directoryUrl = directoryUrl, templateList.indices.contains(selectedTemplateIndex), let originalGroupPathUrl = templateList[selectedTemplateIndex].url else {
             showAlert(withMessage: "Original Template not exists")
             return
@@ -238,8 +270,77 @@ extension TemplateDetailViewController: NSTextFieldDelegate {
             textFieldName.isEnabled = false
             updateTemplateName(withName: textFieldName.stringValue)
             return true
+        } else if (commandSelector == #selector(NSResponder.cancelOperation(_:))) {
+            textFieldName.resignFirstResponder()
+            textFieldName.isEditable = false
+            textFieldName.isEnabled = false
+        }
+        return false
+    }
+}
+
+extension TemplateDetailViewController: DragViewDelegate {
+    
+    func dragView(didDragFileWithUrls Urls: [URL]) {
+        
+        // sort by smallest image
+        let sortedUrls = Urls.sorted { (a, b) -> Bool in
+            var aWidth: Int = 0
+            var bWidth: Int = 0
+            
+            let aPath = a.path
+            if let mditem = MDItemCreate(nil, aPath as CFString),
+                let mdnames = MDItemCopyAttributeNames(mditem),
+                let mdattrs = MDItemCopyAttributes(mditem, mdnames) as? [String:Any] {
+                aWidth = mdattrs["kMDItemPixelWidth"] as? Int ?? 0
+            } else {
+                print("Can't get attributes for \(aPath)")
+                return false
+            }
+            
+            let bPath = b.path
+            if let mditem = MDItemCreate(nil, bPath as CFString),
+               let mdnames = MDItemCopyAttributeNames(mditem),
+               let mdattrs = MDItemCopyAttributes(mditem, mdnames) as? [String:Any] {
+                bWidth = mdattrs["kMDItemPixelWidth"] as? Int ?? 0
+            } else {
+                print("Can't get attributes for \(aPath)")
+                return false
+            }
+            
+            return aWidth < bWidth
         }
         
-        return false
+        guard let directoryTemplateName = directoryTemplateName else {
+            print("Template directory not found")
+            return
+        }
+        
+        var count = 0
+        for imageUrl in sortedUrls {
+            guard count <= 1 else {
+                break
+            }
+            
+            let imageName = count == 0 ? "\(directoryTemplateName)/TemplateIcon.\(imageUrl.pathExtension.lowercased())" : "\(directoryTemplateName)/TemplateIcon@2x.\(imageUrl.pathExtension.lowercased())"
+            if let copyUrl = directoryUrl?.appendingPathComponent(imageName) {
+                do {
+                    if fileManager.fileExists(atPath: copyUrl.path) {
+                        try fileManager.removeItem(at: copyUrl)
+                    }
+                    try fileManager.copyItem(at: imageUrl, to: copyUrl)
+                } catch let error {
+                    print("Failed to set image : \(error.localizedDescription)")
+                }
+            } else {
+                print("Failed to set image")
+                break
+            }
+            
+            count += 1
+        }
+        
+        getListFile()
+        collectionView.reloadData()
     }
 }

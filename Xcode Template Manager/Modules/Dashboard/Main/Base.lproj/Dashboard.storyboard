@@ -73,7 +73,7 @@
             <objects>
                 <windowController id="B8D-0N-5wS" customClass="BaseWindowController" customModule="Xcode_Template_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" appearanceType="darkAqua" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA" customClass="BaseWindow" customModule="Xcode_Template_Manager" customModuleProvider="target">
-                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
+                        <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" texturedBackground="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="0.0" y="757" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
@@ -367,17 +367,17 @@
             <objects>
                 <viewController storyboardIdentifier="TemplateDetailViewController" id="o8I-RX-fc4" customClass="TemplateDetailViewController" customModule="Xcode_Template_Manager" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" appearanceType="darkAqua" id="27B-6F-5Ki">
-                        <rect key="frame" x="0.0" y="0.0" width="997" height="903"/>
+                        <rect key="frame" x="0.0" y="0.0" width="997" height="851"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Nk8-Ea-auJ">
-                                <rect key="frame" x="0.0" y="0.0" width="997" height="903"/>
+                                <rect key="frame" x="0.0" y="0.0" width="997" height="851"/>
                                 <subviews>
                                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W2Y-aF-WwR">
-                                        <rect key="frame" x="16" y="16" width="965" height="871"/>
+                                        <rect key="frame" x="16" y="16" width="965" height="819"/>
                                         <subviews>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="NAJ-pE-d2P">
-                                                <rect key="frame" x="0.0" y="821" width="965" height="50"/>
+                                                <rect key="frame" x="0.0" y="769" width="965" height="50"/>
                                                 <subviews>
                                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="HHT-45-iwc" customClass="BaseNSView" customModule="Xcode_Template_Manager" customModuleProvider="target">
                                                         <rect key="frame" x="0.0" y="10" width="40" height="40"/>
@@ -458,7 +458,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </customView>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="mwj-bx-uNo">
-                                                <rect key="frame" x="0.0" y="780" width="965" height="25"/>
+                                                <rect key="frame" x="0.0" y="728" width="965" height="25"/>
                                                 <subviews>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nCH-k1-WEr">
                                                         <rect key="frame" x="18" y="5" width="48" height="15"/>
@@ -505,7 +505,7 @@
                                                 </constraints>
                                             </customView>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="dHj-M7-Mh7">
-                                                <rect key="frame" x="0.0" y="734" width="965" height="30"/>
+                                                <rect key="frame" x="0.0" y="682" width="965" height="30"/>
                                                 <subviews>
                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="1hL-EM-irb">
                                                         <rect key="frame" x="18" y="8" width="84" height="15"/>
@@ -524,10 +524,10 @@
                                                 </constraints>
                                             </customView>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="rtv-gi-29E">
-                                                <rect key="frame" x="0.0" y="598" width="248" height="120"/>
+                                                <rect key="frame" x="0.0" y="516" width="293" height="150"/>
                                                 <subviews>
                                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qZg-p9-bBH">
-                                                        <rect key="frame" x="0.0" y="0.0" width="248" height="120"/>
+                                                        <rect key="frame" x="30" y="15" width="248" height="120"/>
                                                         <subviews>
                                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="flz-6o-HNV">
                                                                 <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
@@ -610,27 +610,41 @@
                                                         </customSpacing>
                                                     </stackView>
                                                     <button imageHugsTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ye2-bQ-2Xu">
-                                                        <rect key="frame" x="0.0" y="0.0" width="248" height="120"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="293" height="150"/>
                                                         <buttonCell key="cell" type="squareTextured" bezelStyle="texturedSquare" imagePosition="only" alignment="center" imageScaling="proportionallyDown" inset="2" id="EPy-SF-jcR">
                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                             <font key="font" metaFont="system"/>
                                                         </buttonCell>
                                                     </button>
+                                                    <button translatesAutoresizingMaskIntoConstraints="NO" id="JhJ-tZ-JJR" customClass="DragView" customModule="Xcode_Template_Manager" customModuleProvider="target">
+                                                        <rect key="frame" x="15" y="0.0" width="278" height="150"/>
+                                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyUpOrDown" inset="2" id="54w-e2-Wfs" customClass="Dra">
+                                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                                            <font key="font" metaFont="systemSemibold" size="16"/>
+                                                        </buttonCell>
+                                                        <connections>
+                                                            <action selector="onButtonTemplateIconClicked:" target="o8I-RX-fc4" id="kiT-Dn-5VR"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <constraints>
-                                                    <constraint firstAttribute="trailing" secondItem="qZg-p9-bBH" secondAttribute="trailing" id="0bF-9Z-rOV"/>
+                                                    <constraint firstAttribute="trailing" secondItem="qZg-p9-bBH" secondAttribute="trailing" constant="15" id="0bF-9Z-rOV"/>
                                                     <constraint firstItem="ye2-bQ-2Xu" firstAttribute="leading" secondItem="rtv-gi-29E" secondAttribute="leading" id="0xh-Zh-B03"/>
                                                     <constraint firstAttribute="trailing" secondItem="ye2-bQ-2Xu" secondAttribute="trailing" id="4ln-3z-WQC"/>
-                                                    <constraint firstAttribute="height" constant="120" id="8ab-9H-zon"/>
-                                                    <constraint firstAttribute="bottom" secondItem="qZg-p9-bBH" secondAttribute="bottom" id="VmR-kj-HJ5"/>
+                                                    <constraint firstAttribute="height" constant="150" id="8ab-9H-zon"/>
+                                                    <constraint firstAttribute="bottom" secondItem="JhJ-tZ-JJR" secondAttribute="bottom" id="8ay-Me-MHH"/>
+                                                    <constraint firstAttribute="bottom" secondItem="qZg-p9-bBH" secondAttribute="bottom" constant="15" id="VmR-kj-HJ5"/>
+                                                    <constraint firstAttribute="trailing" secondItem="JhJ-tZ-JJR" secondAttribute="trailing" id="Wq2-M7-XFg"/>
+                                                    <constraint firstItem="JhJ-tZ-JJR" firstAttribute="leading" secondItem="rtv-gi-29E" secondAttribute="leading" constant="15" id="a82-xo-Rza"/>
                                                     <constraint firstItem="ye2-bQ-2Xu" firstAttribute="top" secondItem="rtv-gi-29E" secondAttribute="top" id="aza-xQ-abL"/>
-                                                    <constraint firstItem="qZg-p9-bBH" firstAttribute="leading" secondItem="rtv-gi-29E" secondAttribute="leading" id="dkX-rp-CXS"/>
+                                                    <constraint firstItem="JhJ-tZ-JJR" firstAttribute="top" secondItem="rtv-gi-29E" secondAttribute="top" id="b2g-er-N7Z"/>
+                                                    <constraint firstItem="qZg-p9-bBH" firstAttribute="leading" secondItem="rtv-gi-29E" secondAttribute="leading" constant="30" id="dkX-rp-CXS"/>
                                                     <constraint firstAttribute="bottom" secondItem="ye2-bQ-2Xu" secondAttribute="bottom" id="kpY-RK-l3i"/>
-                                                    <constraint firstItem="qZg-p9-bBH" firstAttribute="top" secondItem="rtv-gi-29E" secondAttribute="top" id="sha-T9-NIN"/>
+                                                    <constraint firstItem="qZg-p9-bBH" firstAttribute="top" secondItem="rtv-gi-29E" secondAttribute="top" constant="15" id="sha-T9-NIN"/>
                                                 </constraints>
                                             </customView>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="m0E-AA-peQ">
-                                                <rect key="frame" x="0.0" y="0.0" width="965" height="582"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="965" height="500"/>
                                             </customView>
                                         </subviews>
                                         <visibilityPriorities>
@@ -665,6 +679,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonTemplateIcon" destination="JhJ-tZ-JJR" id="OxM-Pb-jvs"/>
                         <outlet property="collectionView" destination="hWj-0B-PJc" id="3qz-dO-Iq3"/>
                         <outlet property="templateImageView1" destination="Skc-Ok-5Ms" id="8xA-dC-KoU"/>
                         <outlet property="templateImageView2" destination="DhI-L2-ILY" id="G6L-8t-4Q3"/>
@@ -678,7 +693,7 @@
                 </viewController>
                 <customObject id="RGU-ke-Gc6" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-605" y="1454"/>
+            <point key="canvasLocation" x="-569" y="1442"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="uf4-bd-oLH">

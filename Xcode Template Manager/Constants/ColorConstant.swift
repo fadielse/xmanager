@@ -15,4 +15,5 @@ struct ColorConstant {
     static let coldBlue = NSColor(named: "coldBlue")!
     static let winter = NSColor(named: "winter")!
     static let semiDarkBackground = NSColor(named: "semiDarkBackground")!
+    static let mouseHoverBackground = NSColor(named: "mouseHoverBackground")!
 }
