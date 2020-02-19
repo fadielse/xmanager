@@ -10,7 +10,7 @@ import Foundation
 
 extension URL {
     
-    func toDirectoryName() -> String {
+    func getName() -> String {
         return String(absoluteString.split(separator: "/").last?.removingPercentEncoding ?? "").replacingOccurrences(of: ".xctemplate", with: "")
     }
 }

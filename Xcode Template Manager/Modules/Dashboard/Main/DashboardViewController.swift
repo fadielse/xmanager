@@ -88,8 +88,8 @@ class DashboardViewController: BaseViewController {
     }
     
     func setupContainerView() {
-        templateDetailViewController = (NSStoryboard(name: "Dashboard", bundle: nil).instantiateController(withIdentifier: "TemplateDetailViewController") as! TemplateDetailViewController)
-        welcomeViewController = (NSStoryboard(name: "Dashboard", bundle: nil).instantiateController(withIdentifier: "WelcomeViewController") as! WelcomeViewController)
+        templateDetailViewController = (NSStoryboard(name: "TemplateDetail", bundle: nil).instantiateController(withIdentifier: "TemplateDetailViewController") as! TemplateDetailViewController)
+        welcomeViewController = (NSStoryboard(name: "Welcome", bundle: nil).instantiateController(withIdentifier: "WelcomeViewController") as! WelcomeViewController)
         
         self.addChild(templateDetailViewController)
         self.addChild(welcomeViewController)
@@ -110,7 +110,7 @@ class DashboardViewController: BaseViewController {
         templateDetailViewController.view.frame = self.containerView.bounds
         self.containerView.addSubview(templateDetailViewController.view)
         templateDetailViewController.reloadContent()
-        if let loaded = templateList[selectedRow].url?.toDirectoryName() {
+        if let loaded = templateList[selectedRow].url?.getName() {
             updateLog(withMessage: "Success load template : \(loaded)")
         } else {
             updateLog(withMessage: "Error load template : Source not found")
@@ -165,7 +165,7 @@ extension DashboardViewController: NSTableViewDelegate, NSTableViewDataSource {
     }
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "XcodeTemplateCell"), owner: nil) as? XcodeTemplateCell, let groupName = templateList[row].url?.toDirectoryName() {
+        if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "XcodeTemplateCell"), owner: nil) as? XcodeTemplateCell, let groupName = templateList[row].url?.getName() {
             cell.delegate = self
             cell.isSelected = selectedRow == row
             cell.labelName.stringValue = groupName

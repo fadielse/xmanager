@@ -17,18 +17,17 @@ struct UrlList {
     }
     
     func isTemplateImage1() -> Bool {
-        guard let url = url else {
-            return false
-        }
-        
+        guard let url = url else { return false }
         return url.absoluteString.contains("TemplateIcon.png")
     }
     
     func isTemplateImage2() -> Bool {
-        guard let url = url else {
-            return false
-        }
-        
+        guard let url = url else { return false }
         return url.absoluteString.contains("TemplateIcon@2x.png")
+    }
+    
+    func isTemplateConfiguration() -> Bool {
+        guard let url = url else { return false }
+        return url.absoluteString.contains("TemplateInfo.plist")
     }
 }

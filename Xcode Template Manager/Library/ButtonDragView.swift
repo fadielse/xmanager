@@ -1,5 +1,5 @@
 //
-//  DragView.swift
+//  ButtonDragView.swift
 //  Xcode Template Manager
 //
 //  Created by Fadilah Hasan on 19/02/20.
@@ -8,14 +8,14 @@
 
 import Cocoa
 
-protocol DragViewDelegate {
-    func dragView(didDragFileWithUrls Urls: [URL])
+protocol ButtonDragViewDelegate {
+    func buttonDragView(didDragFileWithUrls urls: [URL])
 }
 
-class DragView: NSButton {
+class ButtonDragView: NSButton {
     
     let NSFilenamesPboardType = NSPasteboard.PasteboardType("NSFilenamesPboardType")
-    var delegate: DragViewDelegate?
+    var delegate: ButtonDragViewDelegate?
 
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
@@ -54,7 +54,7 @@ class DragView: NSButton {
         if let board = sender.draggingPasteboard.propertyList(forType: NSFilenamesPboardType) as? NSArray, let imagePath = board as? [String] {
             // THIS IS WERE YOU GET THE PATH FOR THE DROPPED FILE
             droppedFilePath = imagePath.map(NSURL.init) as [URL]
-            self.delegate?.dragView(didDragFileWithUrls: droppedFilePath)
+            self.delegate?.buttonDragView(didDragFileWithUrls: droppedFilePath)
             return true
         }
         return false

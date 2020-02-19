@@ -19,7 +19,9 @@ class TemplateDetailViewController: BaseViewController {
     @IBOutlet weak var templateImageView1: NSImageView!
     @IBOutlet weak var templateImageView2: NSImageView!
     @IBOutlet weak var viewAddTemplateButton: NSView!
-    @IBOutlet weak var buttonTemplateIcon: DragView!
+    @IBOutlet weak var buttonTemplateIcon: ButtonDragView!
+    @IBOutlet weak var sourceTableView: TableDragView!
+    @IBOutlet weak var viewFooterSourceTable: NSView!
     
     let fileManager = FileManager.default
     
@@ -36,14 +38,20 @@ class TemplateDetailViewController: BaseViewController {
         didSet {
             setTemplateImage()
             setName()
+            updateSourceFiles()
             collectionView.reloadData()
+        }
+    }
+    var sourceFiles: [UrlList] = []  {
+        didSet {
+            sourceTableView.reloadData()
         }
     }
     var selectedTemplateIndex: Int = 0 {
         didSet {
             if templateList.indices.contains(selectedTemplateIndex), let url = templateList[selectedTemplateIndex].url {
                 getListTemplate(withUrl: url)
-                directoryTemplateName = "\(url.toDirectoryName()).xctemplate"
+                directoryTemplateName = "\(url.getName()).xctemplate"
             }
             collectionView.reloadData()
         }
@@ -55,6 +63,7 @@ class TemplateDetailViewController: BaseViewController {
         buttonTemplateIcon.delegate = self
         getListFile()
         setupCollectionView()
+        setupSourceTableView()
         prepareTrackingArea()
     }
     
@@ -103,6 +112,19 @@ class TemplateDetailViewController: BaseViewController {
         buttonTemplateIcon.addTrackingArea(mouseTrackingArea)
     }
     
+    private func setupSourceTableView() {
+        sourceTableView.delegate = self
+        sourceTableView.dataSource = self
+        sourceTableView.dragDelegate = self
+        
+        sourceTableView.register(NSNib(nibNamed: "SourceFileTableCell", bundle: nil), forIdentifier: NSUserInterfaceItemIdentifier(rawValue: "SourceFileTableCell"))
+        
+        viewFooterSourceTable.wantsLayer = true
+        viewFooterSourceTable.layer?.backgroundColor = ColorConstant.darkBackground.cgColor
+        viewFooterSourceTable.layer?.borderWidth = 1.0
+        viewFooterSourceTable.layer?.borderColor = NSColor.init(white: 0.7, alpha: 0.5).cgColor
+    }
+    
     private func updateTemplateName(withName name: String) {
         guard let directoryUrl = directoryUrl, templateList.indices.contains(selectedTemplateIndex), let originalGroupPathUrl = templateList[selectedTemplateIndex].url else {
             showAlert(withMessage: "Original Template not exists")
@@ -120,7 +142,7 @@ class TemplateDetailViewController: BaseViewController {
                 getListFile()
                 
                 selectedTemplateIndex = templateList.firstIndex(where: { urlList -> Bool in
-                    return urlList.url == directoryUrl.appendingPathComponent("\(newGroupPathUrl.toDirectoryName()).xctemplate")
+                    return urlList.url == directoryUrl.appendingPathComponent("\(newGroupPathUrl.getName()).xctemplate")
                 }) ?? 0
                 collectionView.reloadData()
             } catch {
@@ -129,162 +151,10 @@ class TemplateDetailViewController: BaseViewController {
         }
     }
     
-    // MARK: - Method
-    
-    func getListFile() {
-        if let directoryUrl = directoryUrl {
-            let urlListDao = UrlListDAO(urls: contentsOf(folder: directoryUrl))
-            templateList = urlListDao.urlList.sorted { a, b -> Bool in
-                return a.url!.absoluteString < b.url!.absoluteString
-            }
-            
-            if urlListDao.isEmptyList() {
-                updateViewForEmptyGroup()
-            } else {
-                updateViewForTemplate()
-            }
-        }
-    }
-    
-    func setupCollectionView() {
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
-        let flowLayout = NSCollectionViewFlowLayout()
-        flowLayout.itemSize = NSSize(width: 160.0, height: 35.0)
-        flowLayout.sectionInset = NSEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        flowLayout.minimumInteritemSpacing = 0
-        flowLayout.minimumLineSpacing = 0
-        flowLayout.scrollDirection = .horizontal
-        collectionView.collectionViewLayout = flowLayout
-    }
-    
-    func reloadContent() {
-        selectedTemplateIndex = 0
-        getListFile()
-        collectionView.reloadData()
-    }
-    
-    func getListTemplate(withUrl url: URL) {
-        let urlListDao = UrlListDAO(urls: contentsOf(folder: url))
-        fileList = urlListDao.urlList
-    }
-    
-    func setName() {
-        textFieldName.delegate = self
-        textFieldName.isEditable = false
-        textFieldName.isEnabled = false
-        if templateList.indices.contains(selectedTemplateIndex), let name = templateList[selectedTemplateIndex].url?.toDirectoryName() {
-            textFieldName.stringValue = name
-        }
-    }
-    
-    func setTemplateImage() {
-        templateImageView1.image = NSImage(named: "img-square-placeholder")
-        templateImageView2.image = NSImage(named: "img-square-placeholder")
-        
-        for item in fileList {
-            if item.isTemplateImage1(), let url = item.url {
-                templateImageView1.image = NSImage(byReferencing: url)
-            } else if item.isTemplateImage2(), let url = item.url {
-                templateImageView2.image = NSImage(byReferencing: url)
-            }
-        }
-    }
-    
-    func updateViewForEmptyGroup() {
-        viewName.isHidden = true
-        viewHeaderIcon.isHidden = true
-        viewTemplateIcon.isHidden = true
-        viewMockup.isHidden = true
-    }
-    
-    func updateViewForTemplate() {
-        viewName.isHidden = false
-        viewHeaderIcon.isHidden = false
-        viewTemplateIcon.isHidden = false
-        viewMockup.isHidden = false
-    }
-}
-
-extension TemplateDetailViewController: NSCollectionViewDelegate, NSCollectionViewDataSource {
-    
-    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
-        return templateList.count
-    }
-    
-    func collectionView(_ itemForRepresentedObjectAtcollectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
-      
-        if let cell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TemplateNameCell"), for: indexPath) as? TemplateNameCell {
-            cell.isSelected = selectedTemplateIndex == indexPath.item
-            
-            if templateList.indices.contains(indexPath.item) {
-                cell.labelName.stringValue = templateList[indexPath.item].url?.toDirectoryName() ?? ""
-            }
-            
-            return cell
-        }
-        
-        return NSCollectionViewItem()
-    }
-    
-    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
-        guard let indexPath = indexPaths.first else {
-            return
-        }
-        
-        selectedTemplateIndex = indexPath.item
-    }
-}
-
-extension TemplateDetailViewController: NewFormViewControllerDelegate {
-    
-    func newFormViewController(successCreateGroupWithViewController viewController: NewFormViewController) {
-        guard let directoryUrl = directoryUrl else {
-            return
-        }
-        
-        getListFile()
-        
-        selectedTemplateIndex = templateList.firstIndex(where: { urlList -> Bool in
-            return urlList.url == directoryUrl.appendingPathComponent("\(viewController.textFieldName.stringValue).xctemplate")
-        }) ?? 0
-        collectionView.reloadData()
-    }
-}
-
-extension TemplateDetailViewController: NSTextFieldDelegate {
-    
-    func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
-        if (commandSelector == #selector(NSResponder.insertNewline(_:))) {
-            guard !textFieldName.stringValue.isEmpty else {
-                textFieldName.resignFirstResponder()
-                textFieldName.isEditable = false
-                textFieldName.isEnabled = false
-                textFieldName.stringValue = templateList[selectedTemplateIndex].url?.toDirectoryName() ?? ""
-                return false
-            }
-            
-            textFieldName.resignFirstResponder()
-            textFieldName.isEditable = false
-            textFieldName.isEnabled = false
-            updateTemplateName(withName: textFieldName.stringValue)
-            return true
-        } else if (commandSelector == #selector(NSResponder.cancelOperation(_:))) {
-            textFieldName.resignFirstResponder()
-            textFieldName.isEditable = false
-            textFieldName.isEnabled = false
-        }
-        return false
-    }
-}
-
-extension TemplateDetailViewController: DragViewDelegate {
-    
-    func dragView(didDragFileWithUrls Urls: [URL]) {
+    private func processingDropTemplateIcon(withUrls urls: [URL]) {
         
         // sort by smallest image
-        let sortedUrls = Urls.sorted { (a, b) -> Bool in
+        let sortedUrls = urls.sorted { (a, b) -> Bool in
             var aWidth: Int = 0
             var bWidth: Int = 0
             
@@ -323,6 +193,7 @@ extension TemplateDetailViewController: DragViewDelegate {
             }
             
             let imageName = count == 0 ? "\(directoryTemplateName)/TemplateIcon.\(imageUrl.pathExtension.lowercased())" : "\(directoryTemplateName)/TemplateIcon@2x.\(imageUrl.pathExtension.lowercased())"
+            
             if let copyUrl = directoryUrl?.appendingPathComponent(imageName) {
                 do {
                     if fileManager.fileExists(atPath: copyUrl.path) {
@@ -342,5 +213,236 @@ extension TemplateDetailViewController: DragViewDelegate {
         
         getListFile()
         collectionView.reloadData()
+    }
+    
+    private func processingDropSourceFiles(withUrls urls: [URL]) {
+        
+        guard let directoryTemplateName = directoryTemplateName else {
+            print("Template directory not found")
+            return
+        }
+        
+        for sourceUrl in urls {
+            let sourceTemplatePath = "\(directoryTemplateName)/\(sourceUrl.getName())"
+            
+            if let copyUrl = directoryUrl?.appendingPathComponent(sourceTemplatePath) {
+                do {
+                    if fileManager.fileExists(atPath: copyUrl.path) {
+                        try fileManager.removeItem(at: copyUrl)
+                    }
+                    try fileManager.copyItem(at: sourceUrl, to: copyUrl)
+                } catch let error {
+                    print("Failed to set image : \(error.localizedDescription)")
+                }
+            } else {
+                print("Failed to set image")
+                break
+            }
+        }
+        
+        getListFile()
+        collectionView.reloadData()
+    }
+    
+    func updateSourceFiles() {
+        sourceFiles = fileList.filter { (file) -> Bool in
+            if file.isTemplateImage1() || file.isTemplateImage2() { return false }
+            return true
+        }
+    }
+    
+    // MARK: - Method
+    
+    func getListTemplate(withUrl url: URL) {
+        let urlListDao = UrlListDAO(urls: contentsOf(folder: url))
+        fileList = urlListDao.urlList
+    }
+    
+    func getListFile() {
+        if let directoryUrl = directoryUrl {
+            let urlListDao = UrlListDAO(urls: contentsOf(folder: directoryUrl))
+            templateList = urlListDao.urlList.sorted { a, b -> Bool in
+                return a.url!.absoluteString < b.url!.absoluteString
+            }
+            
+            if urlListDao.isEmptyList() {
+                updateViewForEmptyGroup()
+            } else {
+                updateViewForTemplate()
+            }
+        }
+    }
+    
+    func setupCollectionView() {
+        collectionView.delegate = self
+        collectionView.dataSource = self
+        
+        let flowLayout = NSCollectionViewFlowLayout()
+        flowLayout.itemSize = NSSize(width: 160.0, height: 35.0)
+        flowLayout.sectionInset = NSEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        flowLayout.minimumInteritemSpacing = 0
+        flowLayout.minimumLineSpacing = 0
+        flowLayout.scrollDirection = .horizontal
+        collectionView.collectionViewLayout = flowLayout
+    }
+    
+    func reloadContent() {
+        selectedTemplateIndex = 0
+        getListFile()
+        collectionView.reloadData()
+    }
+    
+    func setName() {
+        textFieldName.delegate = self
+        textFieldName.isEditable = false
+        textFieldName.isEnabled = false
+        if templateList.indices.contains(selectedTemplateIndex), let name = templateList[selectedTemplateIndex].url?.getName() {
+            textFieldName.stringValue = name
+        }
+    }
+    
+    func setTemplateImage() {
+        templateImageView1.image = NSImage(named: "img-square-placeholder")
+        templateImageView2.image = NSImage(named: "img-square-placeholder")
+        
+        for item in fileList {
+            if item.isTemplateImage1(), let url = item.url {
+                templateImageView1.image = NSImage(byReferencing: url)
+            } else if item.isTemplateImage2(), let url = item.url {
+                templateImageView2.image = NSImage(byReferencing: url)
+            }
+        }
+    }
+    
+    func updateViewForEmptyGroup() {
+        viewName.isHidden = true
+        viewHeaderIcon.isHidden = true
+        viewTemplateIcon.isHidden = true
+        viewMockup.isHidden = true
+    }
+    
+    func updateViewForTemplate() {
+        viewName.isHidden = false
+        viewHeaderIcon.isHidden = false
+        viewTemplateIcon.isHidden = false
+        viewMockup.isHidden = false
+    }
+}
+
+// MARK: - NSCollection Delegate and Data Source
+
+extension TemplateDetailViewController: NSCollectionViewDelegate, NSCollectionViewDataSource {
+    
+    func collectionView(_ collectionView: NSCollectionView, numberOfItemsInSection section: Int) -> Int {
+        return templateList.count
+    }
+    
+    func collectionView(_ itemForRepresentedObjectAtcollectionView: NSCollectionView, itemForRepresentedObjectAt indexPath: IndexPath) -> NSCollectionViewItem {
+      
+        if let cell = collectionView.makeItem(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "TemplateNameCell"), for: indexPath) as? TemplateNameCell {
+            cell.isSelected = selectedTemplateIndex == indexPath.item
+            
+            if templateList.indices.contains(indexPath.item) {
+                cell.labelName.stringValue = templateList[indexPath.item].url?.getName() ?? ""
+            }
+            
+            return cell
+        }
+        
+        return NSCollectionViewItem()
+    }
+    
+    func collectionView(_ collectionView: NSCollectionView, didSelectItemsAt indexPaths: Set<IndexPath>) {
+        guard let indexPath = indexPaths.first else {
+            return
+        }
+        
+        selectedTemplateIndex = indexPath.item
+    }
+}
+
+// MARK: - NewFormViewControllerDelegate
+
+extension TemplateDetailViewController: NewFormViewControllerDelegate {
+    
+    func newFormViewController(successCreateGroupWithViewController viewController: NewFormViewController) {
+        guard let directoryUrl = directoryUrl else {
+            return
+        }
+        
+        getListFile()
+        
+        selectedTemplateIndex = templateList.firstIndex(where: { urlList -> Bool in
+            return urlList.url == directoryUrl.appendingPathComponent("\(viewController.textFieldName.stringValue).xctemplate")
+        }) ?? 0
+        collectionView.reloadData()
+    }
+}
+
+// MARK: - NSTextFieldDelegate
+
+extension TemplateDetailViewController: NSTextFieldDelegate {
+    
+    func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
+        if (commandSelector == #selector(NSResponder.insertNewline(_:))) {
+            guard !textFieldName.stringValue.isEmpty else {
+                textFieldName.resignFirstResponder()
+                textFieldName.isEditable = false
+                textFieldName.isEnabled = false
+                textFieldName.stringValue = templateList[selectedTemplateIndex].url?.getName() ?? ""
+                return false
+            }
+            
+            textFieldName.resignFirstResponder()
+            textFieldName.isEditable = false
+            textFieldName.isEnabled = false
+            updateTemplateName(withName: textFieldName.stringValue)
+            return true
+        } else if (commandSelector == #selector(NSResponder.cancelOperation(_:))) {
+            textFieldName.resignFirstResponder()
+            textFieldName.isEditable = false
+            textFieldName.isEnabled = false
+        }
+        return false
+    }
+}
+
+// MARK: - ButtonDragViewDelegate
+
+extension TemplateDetailViewController: ButtonDragViewDelegate {
+    
+    func buttonDragView(didDragFileWithUrls urls: [URL]) {
+        processingDropTemplateIcon(withUrls: urls)
+    }
+}
+
+// MARK: - NSTableViewDelegate, NSTableViewDataSource, TableDragViewDelegate
+
+extension TemplateDetailViewController: NSTableViewDelegate, NSTableViewDataSource, TableDragViewDelegate {
+    
+    func numberOfRows(in tableView: NSTableView) -> Int {
+        return sourceFiles.count
+    }
+    
+    func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
+        guard let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "SourceFileTableCell"), owner: nil) as? SourceFileTableCell,
+            sourceFiles.indices.contains(row) else {
+            return nil
+        }
+        
+        guard let fileName = sourceFiles[row].url?.getName() else { return nil }
+        
+        cell.labelName.stringValue = fileName
+        return cell
+    }
+    
+    func tableView(_ tableView: NSTableView, shouldSelectRow row: Int) -> Bool {
+        guard sourceFiles.indices.contains(row) else { return true }
+        guard sourceFiles[row].isTemplateConfiguration() else { return true }
+        return false
+    }
+    
+    func tableDragView(didDragFileWithUrls urls: [URL]) {
+        processingDropSourceFiles(withUrls: urls)
     }
 }
