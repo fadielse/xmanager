@@ -22,6 +22,7 @@ class TemplateDetailViewController: BaseViewController {
     @IBOutlet weak var buttonTemplateIcon: ButtonDragView!
     @IBOutlet weak var sourceTableView: TableDragView!
     @IBOutlet weak var viewFooterSourceTable: NSView!
+    @IBOutlet weak var dragAndDropSourceView: DragAndDropView!
     
     let fileManager = FileManager.default
     
@@ -44,6 +45,7 @@ class TemplateDetailViewController: BaseViewController {
     }
     var sourceFiles: [UrlList] = []  {
         didSet {
+            toggleDragAndDropSourceView()
             sourceTableView.reloadData()
         }
     }
@@ -251,6 +253,10 @@ class TemplateDetailViewController: BaseViewController {
         }
     }
     
+    func toggleDragAndDropSourceView() {
+        dragAndDropSourceView.isHidden = !sourceFiles.isEmpty
+    }
+    
     // MARK: - Method
     
     func getListTemplate(withUrl url: URL) {
@@ -375,6 +381,7 @@ extension TemplateDetailViewController: NewFormViewControllerDelegate {
         selectedTemplateIndex = templateList.firstIndex(where: { urlList -> Bool in
             return urlList.url == directoryUrl.appendingPathComponent("\(viewController.textFieldName.stringValue).xctemplate")
         }) ?? 0
+        
         collectionView.reloadData()
     }
 }
@@ -433,6 +440,7 @@ extension TemplateDetailViewController: NSTableViewDelegate, NSTableViewDataSour
         guard let fileName = sourceFiles[row].url?.getName() else { return nil }
         
         cell.labelName.stringValue = fileName
+        cell.labelName.toolTip = fileName
         return cell
     }
     

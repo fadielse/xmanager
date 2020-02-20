@@ -28,14 +28,26 @@ class TableDragView: NSTableView {
                                  NSPasteboard.PasteboardType(kUTTypeItem as String)])
     }
 
+    let fileTypes = [".swift, .h, .m, .storyboard, .xib"]
+    var fileTypeIsOk = false
     var droppedFilePath: [URL] = []
 
     override func draggingEntered(_ sender: NSDraggingInfo) -> NSDragOperation {
-        return .copy
+        if isFileAllowed(drag: sender) {
+            fileTypeIsOk = true
+            return .copy
+        } else {
+            fileTypeIsOk = false
+            return []
+        }
     }
 
     override func draggingUpdated(_ sender: NSDraggingInfo) -> NSDragOperation {
-        return .copy
+        if fileTypeIsOk {
+            return .copy
+        } else {
+            return []
+        }
     }
 
     override func performDragOperation(_ sender: NSDraggingInfo) -> Bool {
@@ -44,6 +56,24 @@ class TableDragView: NSTableView {
             droppedFilePath = imagePath.map(NSURL.init) as [URL]
             self.dragDelegate?.tableDragView(didDragFileWithUrls: droppedFilePath)
             return true
+        }
+        return false
+    }
+    
+    func isFileAllowed(drag: NSDraggingInfo) -> Bool {
+        if let board = drag.draggingPasteboard.propertyList(forType: NSFilenamesPboardType) as? NSArray, let path = board[0] as? String {
+            var isDirectory: ObjCBool = false
+            
+            // Directory not allowed
+            if FileManager.default.fileExists(atPath: path, isDirectory: &isDirectory) {
+                return !isDirectory.boolValue
+            }
+            
+            // Validate allowed file extensions
+            let url = NSURL(fileURLWithPath: path)
+            if let fileExtension = url.pathExtension?.lowercased() {
+                return fileTypes.contains(fileExtension)
+            }
         }
         return false
     }

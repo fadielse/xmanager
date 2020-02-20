@@ -33,28 +33,39 @@ class NewFormViewController: BaseViewController {
         createGroupIfNotExixts()
     }
     
-    func createGroupIfNotExixts() {
+    private func createGroupIfNotExixts() {
         let fileManager = FileManager.default
-        var newGroupPathUrl = pathUrl
+        var newPathUrl = pathUrl
         
         switch fileType {
         case .group:
-            newGroupPathUrl = newGroupPathUrl.appendingPathComponent(textFieldName.stringValue)
+            newPathUrl = newPathUrl.appendingPathComponent(textFieldName.stringValue)
         case .xctemplate:
-            newGroupPathUrl = newGroupPathUrl.appendingPathComponent("\(textFieldName.stringValue).xctemplate")
+            newPathUrl = newPathUrl.appendingPathComponent("\(textFieldName.stringValue).xctemplate")
         }
         
         let fileList = contentsOf(folder: pathUrl)
-        if fileList.contains(newGroupPathUrl) {
+        if fileList.contains(newPathUrl) {
             showAlert(withMessage: "Group name already exists")
         } else {
             do {
-                try fileManager.createDirectory(at: newGroupPathUrl, withIntermediateDirectories: true, attributes: nil)
+                try fileManager.createDirectory(at: newPathUrl, withIntermediateDirectories: true, attributes: nil)
+                guard generateTemplateInfo(withPathUrl: newPathUrl) else {
+                    try fileManager.removeItem(at: newPathUrl)
+                    showAlert(withMessage: "Failed to generate Template Configuration")
+                    return
+                }
                 self.delegate?.newFormViewController(successCreateGroupWithViewController: self)
                 self.dismiss(self)
             } catch {
                 showAlert(withMessage: error.localizedDescription)
             }
         }
+    }
+    
+    private func generateTemplateInfo(withPathUrl pathUrl: URL) -> Bool {
+        guard let stringText = TextParser.read(withFileName: FileNameConstant.localFile.templateInfo) else { return false }
+        guard TextParser.write(withName: FileNameConstant.generate.templateInfo, andText: stringText, toPathUrl: pathUrl) else { return false }
+        return true
     }
 }
