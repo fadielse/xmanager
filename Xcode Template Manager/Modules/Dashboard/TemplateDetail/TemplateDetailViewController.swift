@@ -118,6 +118,7 @@ class TemplateDetailViewController: BaseViewController {
         sourceTableView.delegate = self
         sourceTableView.dataSource = self
         sourceTableView.dragDelegate = self
+        sourceTableView.doubleAction = #selector(doubleClickOnSourceFileRow)
         
         sourceTableView.register(NSNib(nibNamed: "SourceFileTableCell", bundle: nil), forIdentifier: NSUserInterfaceItemIdentifier(rawValue: "SourceFileTableCell"))
         
@@ -246,9 +247,17 @@ class TemplateDetailViewController: BaseViewController {
         collectionView.reloadData()
     }
     
+    @objc private func doubleClickOnSourceFileRow() {
+        if let editorViewController = self.goToScreen(withStoryboardId: "Editor", andViewControllerId: "EditorViewController") as? EditorViewController {
+            print(editorViewController)
+        }
+    }
+    
+    // MARK: - Method
+    
     func updateSourceFiles() {
         sourceFiles = fileList.filter { (file) -> Bool in
-            if file.isTemplateImage1() || file.isTemplateImage2() { return false }
+            if file.isTemplateImage1() || file.isTemplateImage2() || file.isTemplateConfiguration() { return false }
             return true
         }
     }
@@ -256,8 +265,6 @@ class TemplateDetailViewController: BaseViewController {
     func toggleDragAndDropSourceView() {
         dragAndDropSourceView.isHidden = !sourceFiles.isEmpty
     }
-    
-    // MARK: - Method
     
     func getListTemplate(withUrl url: URL) {
         let urlListDao = UrlListDAO(urls: contentsOf(folder: url))

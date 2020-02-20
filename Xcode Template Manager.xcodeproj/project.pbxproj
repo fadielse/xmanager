@@ -34,6 +34,31 @@
 		FF6A673923FD8F520007C877 /* TableDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6A673823FD8F520007C877 /* TableDragView.swift */; };
 		FF6A673F23FD9B510007C877 /* SourceFileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6A673E23FD9B510007C877 /* SourceFileTableCell.swift */; };
 		FF6A674123FD9B6A0007C877 /* SourceFileTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF6A674023FD9B6A0007C877 /* SourceFileTableCell.xib */; };
+		FF7CEF8623FEE2FD00A64524 /* SourceCodeRegexLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF6A23FEE2FD00A64524 /* SourceCodeRegexLexer.swift */; };
+		FF7CEF8723FEE2FD00A64524 /* String+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF6C23FEE2FD00A64524 /* String+Range.swift */; };
+		FF7CEF8823FEE2FD00A64524 /* NSTextView+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF6D23FEE2FD00A64524 /* NSTextView+UIKit.swift */; };
+		FF7CEF8923FEE2FD00A64524 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF6E23FEE2FD00A64524 /* Types.swift */; };
+		FF7CEF8A23FEE2FD00A64524 /* NSMutableAttributedString+Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF6F23FEE2FD00A64524 /* NSMutableAttributedString+Tokens.swift */; };
+		FF7CEF8B23FEE2FD00A64524 /* Python3Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7123FEE2FD00A64524 /* Python3Lexer.swift */; };
+		FF7CEF8C23FEE2FD00A64524 /* SwiftLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7223FEE2FD00A64524 /* SwiftLexer.swift */; };
+		FF7CEF8D23FEE2FD00A64524 /* ASTVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7323FEE2FD00A64524 /* ASTVisualizer.swift */; };
+		FF7CEF8E23FEE2FD00A64524 /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7523FEE2FD00A64524 /* Lexer.swift */; };
+		FF7CEF8F23FEE2FD00A64524 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7623FEE2FD00A64524 /* Paragraph.swift */; };
+		FF7CEF9023FEE2FD00A64524 /* SyntaxColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7723FEE2FD00A64524 /* SyntaxColorTheme.swift */; };
+		FF7CEF9123FEE2FD00A64524 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7823FEE2FD00A64524 /* Token.swift */; };
+		FF7CEF9223FEE2FD00A64524 /* RegexLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7923FEE2FD00A64524 /* RegexLexer.swift */; };
+		FF7CEF9323FEE2FD00A64524 /* SyntaxTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7B23FEE2FD00A64524 /* SyntaxTextView.swift */; };
+		FF7CEF9423FEE2FD00A64524 /* SyntaxTextView+TextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7C23FEE2FD00A64524 /* SyntaxTextView+TextViewDelegate.swift */; };
+		FF7CEF9523FEE2FD00A64524 /* InnerTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7D23FEE2FD00A64524 /* InnerTextView.swift */; };
+		FF7CEF9623FEE2FD00A64524 /* TextViewWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7E23FEE2FD00A64524 /* TextViewWrapperView.swift */; };
+		FF7CEF9723FEE2FD00A64524 /* LineNumberLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7F23FEE2FD00A64524 /* LineNumberLayoutManager.swift */; };
+		FF7CEF9823FEE2FD00A64524 /* SyntaxTextViewLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF8023FEE2FD00A64524 /* SyntaxTextViewLayoutManager.swift */; };
+		FF7CEF9923FEE2FD00A64524 /* Paragraphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF8123FEE2FD00A64524 /* Paragraphs.swift */; };
+		FF7CEF9A23FEE2FD00A64524 /* SourceCodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF8223FEE2FD00A64524 /* SourceCodeTheme.swift */; };
+		FF7CEF9B23FEE2FD00A64524 /* SourceCodeToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF8323FEE2FD00A64524 /* SourceCodeToken.swift */; };
+		FF7CEF9C23FEE2FD00A64524 /* DefaultSourceCodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF8523FEE2FD00A64524 /* DefaultSourceCodeTheme.swift */; };
+		FF7CEF9E23FEE3CE00A64524 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF9D23FEE3CE00A64524 /* EditorViewController.swift */; };
+		FF7CEFA123FEE3EE00A64524 /* Editor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7CEFA023FEE3EE00A64524 /* Editor.storyboard */; };
 		FFB3458223F8408E0060D8FE /* TemplateNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3458023F8408E0060D8FE /* TemplateNameCell.swift */; };
 		FFB3458323F8408E0060D8FE /* TemplateNameCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FFB3458123F8408E0060D8FE /* TemplateNameCell.xib */; };
 		FFB3458723F84D7F0060D8FE /* UrlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3458623F84D7F0060D8FE /* UrlList.swift */; };
@@ -77,6 +102,31 @@
 		FF6A673823FD8F520007C877 /* TableDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDragView.swift; sourceTree = "<group>"; };
 		FF6A673E23FD9B510007C877 /* SourceFileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceFileTableCell.swift; sourceTree = "<group>"; };
 		FF6A674023FD9B6A0007C877 /* SourceFileTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SourceFileTableCell.xib; sourceTree = "<group>"; };
+		FF7CEF6A23FEE2FD00A64524 /* SourceCodeRegexLexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceCodeRegexLexer.swift; sourceTree = "<group>"; };
+		FF7CEF6C23FEE2FD00A64524 /* String+Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Range.swift"; sourceTree = "<group>"; };
+		FF7CEF6D23FEE2FD00A64524 /* NSTextView+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextView+UIKit.swift"; sourceTree = "<group>"; };
+		FF7CEF6E23FEE2FD00A64524 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
+		FF7CEF6F23FEE2FD00A64524 /* NSMutableAttributedString+Tokens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Tokens.swift"; sourceTree = "<group>"; };
+		FF7CEF7123FEE2FD00A64524 /* Python3Lexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Python3Lexer.swift; sourceTree = "<group>"; };
+		FF7CEF7223FEE2FD00A64524 /* SwiftLexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLexer.swift; sourceTree = "<group>"; };
+		FF7CEF7323FEE2FD00A64524 /* ASTVisualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTVisualizer.swift; sourceTree = "<group>"; };
+		FF7CEF7523FEE2FD00A64524 /* Lexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
+		FF7CEF7623FEE2FD00A64524 /* Paragraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
+		FF7CEF7723FEE2FD00A64524 /* SyntaxColorTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntaxColorTheme.swift; sourceTree = "<group>"; };
+		FF7CEF7823FEE2FD00A64524 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
+		FF7CEF7923FEE2FD00A64524 /* RegexLexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexLexer.swift; sourceTree = "<group>"; };
+		FF7CEF7B23FEE2FD00A64524 /* SyntaxTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntaxTextView.swift; sourceTree = "<group>"; };
+		FF7CEF7C23FEE2FD00A64524 /* SyntaxTextView+TextViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SyntaxTextView+TextViewDelegate.swift"; sourceTree = "<group>"; };
+		FF7CEF7D23FEE2FD00A64524 /* InnerTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnerTextView.swift; sourceTree = "<group>"; };
+		FF7CEF7E23FEE2FD00A64524 /* TextViewWrapperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewWrapperView.swift; sourceTree = "<group>"; };
+		FF7CEF7F23FEE2FD00A64524 /* LineNumberLayoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNumberLayoutManager.swift; sourceTree = "<group>"; };
+		FF7CEF8023FEE2FD00A64524 /* SyntaxTextViewLayoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntaxTextViewLayoutManager.swift; sourceTree = "<group>"; };
+		FF7CEF8123FEE2FD00A64524 /* Paragraphs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paragraphs.swift; sourceTree = "<group>"; };
+		FF7CEF8223FEE2FD00A64524 /* SourceCodeTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceCodeTheme.swift; sourceTree = "<group>"; };
+		FF7CEF8323FEE2FD00A64524 /* SourceCodeToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceCodeToken.swift; sourceTree = "<group>"; };
+		FF7CEF8523FEE2FD00A64524 /* DefaultSourceCodeTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSourceCodeTheme.swift; sourceTree = "<group>"; };
+		FF7CEF9D23FEE3CE00A64524 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
+		FF7CEFA023FEE3EE00A64524 /* Editor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Editor.storyboard; sourceTree = "<group>"; };
 		FFB3458023F8408E0060D8FE /* TemplateNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateNameCell.swift; sourceTree = "<group>"; };
 		FFB3458123F8408E0060D8FE /* TemplateNameCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TemplateNameCell.xib; sourceTree = "<group>"; };
 		FFB3458623F84D7F0060D8FE /* UrlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlList.swift; sourceTree = "<group>"; };
@@ -184,8 +234,9 @@
 		1B65DCA123F5206100E267AB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				1B39EB3B23F6971300F50E0D /* NewForm */,
 				1B39EB3A23F6970700F50E0D /* Dashboard */,
+				FF7CEF9F23FEE3D400A64524 /* Editor */,
+				1B39EB3B23F6971300F50E0D /* NewForm */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -231,6 +282,7 @@
 		1BBC959F23FCF13E006E585D /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FF7CEF6923FEE2FD00A64524 /* Sourceful */,
 				1BBC95A023FCF157006E585D /* ButtonDragView.swift */,
 				FF6A673823FD8F520007C877 /* TableDragView.swift */,
 			);
@@ -253,6 +305,85 @@
 				FFB3458823F84D980060D8FE /* UrlListDAO.swift */,
 			);
 			path = DAO;
+			sourceTree = "<group>";
+		};
+		FF7CEF6923FEE2FD00A64524 /* Sourceful */ = {
+			isa = PBXGroup;
+			children = (
+				FF7CEF7323FEE2FD00A64524 /* ASTVisualizer.swift */,
+				FF7CEF6A23FEE2FD00A64524 /* SourceCodeRegexLexer.swift */,
+				FF7CEF8223FEE2FD00A64524 /* SourceCodeTheme.swift */,
+				FF7CEF8323FEE2FD00A64524 /* SourceCodeToken.swift */,
+				FF7CEF7023FEE2FD00A64524 /* Languages */,
+				FF7CEF7423FEE2FD00A64524 /* Model */,
+				FF7CEF8423FEE2FD00A64524 /* Themes */,
+				FF7CEF6B23FEE2FD00A64524 /* Util */,
+				FF7CEF7A23FEE2FD00A64524 /* View */,
+			);
+			path = Sourceful;
+			sourceTree = "<group>";
+		};
+		FF7CEF6B23FEE2FD00A64524 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FF7CEF6C23FEE2FD00A64524 /* String+Range.swift */,
+				FF7CEF6D23FEE2FD00A64524 /* NSTextView+UIKit.swift */,
+				FF7CEF6E23FEE2FD00A64524 /* Types.swift */,
+				FF7CEF6F23FEE2FD00A64524 /* NSMutableAttributedString+Tokens.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
+		FF7CEF7023FEE2FD00A64524 /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				FF7CEF7123FEE2FD00A64524 /* Python3Lexer.swift */,
+				FF7CEF7223FEE2FD00A64524 /* SwiftLexer.swift */,
+			);
+			path = Languages;
+			sourceTree = "<group>";
+		};
+		FF7CEF7423FEE2FD00A64524 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FF7CEF7523FEE2FD00A64524 /* Lexer.swift */,
+				FF7CEF7623FEE2FD00A64524 /* Paragraph.swift */,
+				FF7CEF7723FEE2FD00A64524 /* SyntaxColorTheme.swift */,
+				FF7CEF7823FEE2FD00A64524 /* Token.swift */,
+				FF7CEF7923FEE2FD00A64524 /* RegexLexer.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		FF7CEF7A23FEE2FD00A64524 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF7CEF7B23FEE2FD00A64524 /* SyntaxTextView.swift */,
+				FF7CEF7C23FEE2FD00A64524 /* SyntaxTextView+TextViewDelegate.swift */,
+				FF7CEF7D23FEE2FD00A64524 /* InnerTextView.swift */,
+				FF7CEF7E23FEE2FD00A64524 /* TextViewWrapperView.swift */,
+				FF7CEF7F23FEE2FD00A64524 /* LineNumberLayoutManager.swift */,
+				FF7CEF8023FEE2FD00A64524 /* SyntaxTextViewLayoutManager.swift */,
+				FF7CEF8123FEE2FD00A64524 /* Paragraphs.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF7CEF8423FEE2FD00A64524 /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				FF7CEF8523FEE2FD00A64524 /* DefaultSourceCodeTheme.swift */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		FF7CEF9F23FEE3D400A64524 /* Editor */ = {
+			isa = PBXGroup;
+			children = (
+				FF7CEF9D23FEE3CE00A64524 /* EditorViewController.swift */,
+				FF7CEFA023FEE3EE00A64524 /* Editor.storyboard */,
+			);
+			path = Editor;
 			sourceTree = "<group>";
 		};
 		FFB3457F23F83FEB0060D8FE /* Cells */ = {
@@ -373,6 +504,7 @@
 				1B23B1C823FE83BA00A17C74 /* TemplateInfo.txt in Resources */,
 				FF6A673523FD87280007C877 /* Welcome.storyboard in Resources */,
 				1B76374023FA955D00E4C612 /* Color.xcassets in Resources */,
+				FF7CEFA123FEE3EE00A64524 /* Editor.storyboard in Resources */,
 				1B39EB4123F6A55600F50E0D /* NewForm.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -384,17 +516,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF7CEF9B23FEE2FD00A64524 /* SourceCodeToken.swift in Sources */,
+				FF7CEF9623FEE2FD00A64524 /* TextViewWrapperView.swift in Sources */,
 				1BBC95A123FCF157006E585D /* ButtonDragView.swift in Sources */,
 				1B4F2A9E23F2A2E800A2A32E /* DashboardViewController.swift in Sources */,
 				FFB3458723F84D7F0060D8FE /* UrlList.swift in Sources */,
+				FF7CEF8F23FEE2FD00A64524 /* Paragraph.swift in Sources */,
+				FF7CEF9023FEE2FD00A64524 /* SyntaxColorTheme.swift in Sources */,
+				FF7CEF8923FEE2FD00A64524 /* Types.swift in Sources */,
 				1B23B1CC23FE885F00A17C74 /* FileNameConstant.swift in Sources */,
 				FFC9F0FE23F829F7009CDEAD /* Url+StringFormat.swift in Sources */,
+				FF7CEF9723FEE2FD00A64524 /* LineNumberLayoutManager.swift in Sources */,
 				FFB3458223F8408E0060D8FE /* TemplateNameCell.swift in Sources */,
 				FF6A673F23FD9B510007C877 /* SourceFileTableCell.swift in Sources */,
+				FF7CEF9823FEE2FD00A64524 /* SyntaxTextViewLayoutManager.swift in Sources */,
 				FFDD902023FAC07B00BD112D /* BaseWindow.swift in Sources */,
 				1B65DCA523F5383A00E267AB /* XcodeTemplateCell.swift in Sources */,
+				FF7CEF9E23FEE3CE00A64524 /* EditorViewController.swift in Sources */,
+				FF7CEF8B23FEE2FD00A64524 /* Python3Lexer.swift in Sources */,
+				FF7CEF9923FEE2FD00A64524 /* Paragraphs.swift in Sources */,
 				1BB4094C23FB9E1C00FDD8B9 /* EnumNewFileType.swift in Sources */,
 				FFDD902223FAE29F00BD112D /* BaseNSView.swift in Sources */,
+				FF7CEF9423FEE2FD00A64524 /* SyntaxTextView+TextViewDelegate.swift in Sources */,
+				FF7CEF8823FEE2FD00A64524 /* NSTextView+UIKit.swift in Sources */,
 				1B4F2A9C23F2A2E800A2A32E /* AppDelegate.swift in Sources */,
 				FF6A673923FD8F520007C877 /* TableDragView.swift in Sources */,
 				FFC9F0FC23F82961009CDEAD /* UrlConstant.swift in Sources */,
@@ -403,13 +547,25 @@
 				1B23B1C323FE6AD000A17C74 /* DragAndDropView.swift in Sources */,
 				1B65DCA023F5202900E267AB /* BaseViewController.swift in Sources */,
 				FFC9F10523F83864009CDEAD /* WelcomeViewController.swift in Sources */,
+				FF7CEF9123FEE2FD00A64524 /* Token.swift in Sources */,
+				FF7CEF8D23FEE2FD00A64524 /* ASTVisualizer.swift in Sources */,
+				FF7CEF9A23FEE2FD00A64524 /* SourceCodeTheme.swift in Sources */,
 				1BA08DE423F6AA4000C50619 /* NSViewController+Router.swift in Sources */,
 				FF6605D923F7BC8E0052BCD7 /* TemplateListDAO.swift in Sources */,
+				FF7CEF8723FEE2FD00A64524 /* String+Range.swift in Sources */,
 				FF097F7B23FB091D001AF186 /* BaseWindowController.swift in Sources */,
+				FF7CEF9C23FEE2FD00A64524 /* DefaultSourceCodeTheme.swift in Sources */,
+				FF7CEF9223FEE2FD00A64524 /* RegexLexer.swift in Sources */,
+				FF7CEF8C23FEE2FD00A64524 /* SwiftLexer.swift in Sources */,
+				FF7CEF9323FEE2FD00A64524 /* SyntaxTextView.swift in Sources */,
 				FF6605D623F7BC5E0052BCD7 /* TemplateList.swift in Sources */,
+				FF7CEF8A23FEE2FD00A64524 /* NSMutableAttributedString+Tokens.swift in Sources */,
 				1B39EB3E23F6977A00F50E0D /* NewFormViewController.swift in Sources */,
+				FF7CEF8623FEE2FD00A64524 /* SourceCodeRegexLexer.swift in Sources */,
+				FF7CEF9523FEE2FD00A64524 /* InnerTextView.swift in Sources */,
 				FFB3458923F84D980060D8FE /* UrlListDAO.swift in Sources */,
 				FFC9F10323F83846009CDEAD /* TemplateDetailViewController.swift in Sources */,
+				FF7CEF8E23FEE2FD00A64524 /* Lexer.swift in Sources */,
 				1B23B1CA23FE845000A17C74 /* TextParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -478,7 +634,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -532,7 +688,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -556,6 +712,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kodingkita.Xcode-Template-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -577,6 +734,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kodingkita.Xcode-Template-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
