@@ -11,6 +11,102 @@
 		1B23B1C823FE83BA00A17C74 /* TemplateInfo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1B23B1C723FE83BA00A17C74 /* TemplateInfo.txt */; };
 		1B23B1CA23FE845000A17C74 /* TextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B23B1C923FE845000A17C74 /* TextParser.swift */; };
 		1B23B1CC23FE885F00A17C74 /* FileNameConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B23B1CB23FE885F00A17C74 /* FileNameConstant.swift */; };
+		1B275C0E23FF6F6100A2514C /* vs.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BAA23FF6F6100A2514C /* vs.min.css */; };
+		1B275C0F23FF6F6100A2514C /* atelier-seaside-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BAB23FF6F6100A2514C /* atelier-seaside-dark.min.css */; };
+		1B275C1023FF6F6100A2514C /* isbl-editor-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BAC23FF6F6100A2514C /* isbl-editor-dark.min.css */; };
+		1B275C1123FF6F6100A2514C /* brown-paper.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BAD23FF6F6100A2514C /* brown-paper.min.css */; };
+		1B275C1223FF6F6100A2514C /* atelier-plateau-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BAE23FF6F6100A2514C /* atelier-plateau-light.min.css */; };
+		1B275C1323FF6F6100A2514C /* school-book.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BAF23FF6F6100A2514C /* school-book.min.css */; };
+		1B275C1423FF6F6100A2514C /* xcode.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BB023FF6F6100A2514C /* xcode.min.css */; };
+		1B275C1523FF6F6100A2514C /* atelier-sulphurpool-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BB123FF6F6100A2514C /* atelier-sulphurpool-dark.min.css */; };
+		1B275C1623FF6F6100A2514C /* tomorrow-night-blue.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BB223FF6F6100A2514C /* tomorrow-night-blue.min.css */; };
+		1B275C1723FF6F6100A2514C /* vs2015.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BB323FF6F6100A2514C /* vs2015.min.css */; };
+		1B275C1823FF6F6100A2514C /* atelier-heath-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BB423FF6F6100A2514C /* atelier-heath-dark.min.css */; };
+		1B275C1923FF6F6100A2514C /* paraiso-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BB523FF6F6100A2514C /* paraiso-light.min.css */; };
+		1B275C1A23FF6F6100A2514C /* rainbow.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BB623FF6F6100A2514C /* rainbow.min.css */; };
+		1B275C1B23FF6F6100A2514C /* qtcreator_light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BB723FF6F6100A2514C /* qtcreator_light.min.css */; };
+		1B275C1C23FF6F6100A2514C /* a11y-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BB823FF6F6100A2514C /* a11y-light.min.css */; };
+		1B275C1D23FF6F6100A2514C /* kimbie.dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BB923FF6F6100A2514C /* kimbie.dark.min.css */; };
+		1B275C1E23FF6F6100A2514C /* atelier-heath-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BBA23FF6F6100A2514C /* atelier-heath-light.min.css */; };
+		1B275C1F23FF6F6100A2514C /* far.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BBB23FF6F6100A2514C /* far.min.css */; };
+		1B275C2023FF6F6100A2514C /* atelier-dune-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BBC23FF6F6100A2514C /* atelier-dune-dark.min.css */; };
+		1B275C2123FF6F6100A2514C /* shades-of-purple.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BBD23FF6F6100A2514C /* shades-of-purple.min.css */; };
+		1B275C2223FF6F6100A2514C /* kimbie.light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BBE23FF6F6100A2514C /* kimbie.light.min.css */; };
+		1B275C2323FF6F6100A2514C /* railscasts.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BBF23FF6F6100A2514C /* railscasts.min.css */; };
+		1B275C2423FF6F6100A2514C /* solarized-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BC023FF6F6100A2514C /* solarized-dark.min.css */; };
+		1B275C2523FF6F6100A2514C /* atelier-estuary-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BC123FF6F6100A2514C /* atelier-estuary-light.min.css */; };
+		1B275C2623FF6F6100A2514C /* xt256.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BC223FF6F6100A2514C /* xt256.min.css */; };
+		1B275C2723FF6F6100A2514C /* mono-blue.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BC323FF6F6100A2514C /* mono-blue.min.css */; };
+		1B275C2823FF6F6100A2514C /* ocean.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BC423FF6F6100A2514C /* ocean.min.css */; };
+		1B275C2923FF6F6100A2514C /* github-gist.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BC523FF6F6100A2514C /* github-gist.min.css */; };
+		1B275C2A23FF6F6100A2514C /* atelier-seaside-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BC623FF6F6100A2514C /* atelier-seaside-light.min.css */; };
+		1B275C2B23FF6F6100A2514C /* tomorrow-night-eighties.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BC723FF6F6100A2514C /* tomorrow-night-eighties.min.css */; };
+		1B275C2C23FF6F6100A2514C /* atom-one-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BC823FF6F6100A2514C /* atom-one-dark.min.css */; };
+		1B275C2D23FF6F6100A2514C /* qtcreator_dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BC923FF6F6100A2514C /* qtcreator_dark.min.css */; };
+		1B275C2E23FF6F6100A2514C /* atelier-savanna-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BCA23FF6F6100A2514C /* atelier-savanna-dark.min.css */; };
+		1B275C2F23FF6F6100A2514C /* color-brewer.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BCB23FF6F6100A2514C /* color-brewer.min.css */; };
+		1B275C3023FF6F6100A2514C /* pojoaque.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BCC23FF6F6100A2514C /* pojoaque.min.css */; };
+		1B275C3123FF6F6100A2514C /* routeros.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BCD23FF6F6100A2514C /* routeros.min.css */; };
+		1B275C3223FF6F6100A2514C /* atelier-forest-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BCE23FF6F6100A2514C /* atelier-forest-dark.min.css */; };
+		1B275C3323FF6F6100A2514C /* gml.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BCF23FF6F6100A2514C /* gml.min.css */; };
+		1B275C3423FF6F6100A2514C /* tomorrow-night.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BD023FF6F6100A2514C /* tomorrow-night.min.css */; };
+		1B275C3523FF6F6100A2514C /* obsidian.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BD123FF6F6100A2514C /* obsidian.min.css */; };
+		1B275C3623FF6F6100A2514C /* lightfair.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BD223FF6F6100A2514C /* lightfair.min.css */; };
+		1B275C3723FF6F6100A2514C /* atelier-lakeside-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BD323FF6F6100A2514C /* atelier-lakeside-dark.min.css */; };
+		1B275C3823FF6F6100A2514C /* gruvbox-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BD423FF6F6100A2514C /* gruvbox-light.min.css */; };
+		1B275C3923FF6F6100A2514C /* idea.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BD523FF6F6100A2514C /* idea.min.css */; };
+		1B275C3A23FF6F6100A2514C /* tomorrow.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BD623FF6F6100A2514C /* tomorrow.min.css */; };
+		1B275C3B23FF6F6100A2514C /* atelier-forest-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BD723FF6F6100A2514C /* atelier-forest-light.min.css */; };
+		1B275C3C23FF6F6100A2514C /* arduino-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BD823FF6F6100A2514C /* arduino-light.min.css */; };
+		1B275C3D23FF6F6100A2514C /* gruvbox-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BD923FF6F6100A2514C /* gruvbox-dark.min.css */; };
+		1B275C3E23FF6F6100A2514C /* dracula.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BDA23FF6F6100A2514C /* dracula.min.css */; };
+		1B275C3F23FF6F6100A2514C /* magula.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BDB23FF6F6100A2514C /* magula.min.css */; };
+		1B275C4023FF6F6100A2514C /* arta.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BDC23FF6F6100A2514C /* arta.min.css */; };
+		1B275C4123FF6F6100A2514C /* purebasic.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BDD23FF6F6100A2514C /* purebasic.min.css */; };
+		1B275C4223FF6F6100A2514C /* hopscotch.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BDE23FF6F6100A2514C /* hopscotch.min.css */; };
+		1B275C4323FF6F6100A2514C /* github.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BDF23FF6F6100A2514C /* github.min.css */; };
+		1B275C4423FF6F6100A2514C /* nord.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BE023FF6F6100A2514C /* nord.min.css */; };
+		1B275C4523FF6F6100A2514C /* dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BE123FF6F6100A2514C /* dark.min.css */; };
+		1B275C4623FF6F6100A2514C /* atom-one-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BE223FF6F6100A2514C /* atom-one-light.min.css */; };
+		1B275C4723FF6F6100A2514C /* monokai.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BE323FF6F6100A2514C /* monokai.min.css */; };
+		1B275C4823FF6F6100A2514C /* docco.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BE423FF6F6100A2514C /* docco.min.css */; };
+		1B275C4923FF6F6100A2514C /* default.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BE523FF6F6100A2514C /* default.min.css */; };
+		1B275C4A23FF6F6100A2514C /* ascetic.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BE623FF6F6100A2514C /* ascetic.min.css */; };
+		1B275C4B23FF6F6100A2514C /* isbl-editor-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BE723FF6F6100A2514C /* isbl-editor-light.min.css */; };
+		1B275C4C23FF6F6100A2514C /* atelier-cave-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BE823FF6F6100A2514C /* atelier-cave-light.min.css */; };
+		1B275C4D23FF6F6100A2514C /* a11y-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BE923FF6F6100A2514C /* a11y-dark.min.css */; };
+		1B275C4E23FF6F6100A2514C /* atelier-sulphurpool-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BEA23FF6F6100A2514C /* atelier-sulphurpool-light.min.css */; };
+		1B275C4F23FF6F6100A2514C /* atelier-plateau-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BEB23FF6F6100A2514C /* atelier-plateau-dark.min.css */; };
+		1B275C5023FF6F6100A2514C /* darkula.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BEC23FF6F6100A2514C /* darkula.min.css */; };
+		1B275C5123FF6F6100A2514C /* atelier-cave-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BED23FF6F6100A2514C /* atelier-cave-dark.min.css */; };
+		1B275C5223FF6F6100A2514C /* ir-black.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BEE23FF6F6100A2514C /* ir-black.min.css */; };
+		1B275C5323FF6F6100A2514C /* solarized-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BEF23FF6F6100A2514C /* solarized-light.min.css */; };
+		1B275C5423FF6F6100A2514C /* tomorrow-night-bright.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BF023FF6F6100A2514C /* tomorrow-night-bright.min.css */; };
+		1B275C5523FF6F6100A2514C /* atelier-savanna-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BF123FF6F6100A2514C /* atelier-savanna-light.min.css */; };
+		1B275C5623FF6F6100A2514C /* foundation.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BF223FF6F6100A2514C /* foundation.min.css */; };
+		1B275C5723FF6F6100A2514C /* codepen-embed.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BF323FF6F6100A2514C /* codepen-embed.min.css */; };
+		1B275C5823FF6F6100A2514C /* atelier-estuary-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BF423FF6F6100A2514C /* atelier-estuary-dark.min.css */; };
+		1B275C5923FF6F6100A2514C /* googlecode.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BF523FF6F6100A2514C /* googlecode.min.css */; };
+		1B275C5A23FF6F6100A2514C /* atom-one-dark-reasonable.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BF623FF6F6100A2514C /* atom-one-dark-reasonable.min.css */; };
+		1B275C5B23FF6F6100A2514C /* atelier-dune-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BF723FF6F6100A2514C /* atelier-dune-light.min.css */; };
+		1B275C5C23FF6F6100A2514C /* paraiso-dark.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BF823FF6F6100A2514C /* paraiso-dark.min.css */; };
+		1B275C5D23FF6F6100A2514C /* zenburn.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BF923FF6F6100A2514C /* zenburn.min.css */; };
+		1B275C5E23FF6F6100A2514C /* androidstudio.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BFA23FF6F6100A2514C /* androidstudio.min.css */; };
+		1B275C5F23FF6F6100A2514C /* grayscale.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BFB23FF6F6100A2514C /* grayscale.min.css */; };
+		1B275C6023FF6F6100A2514C /* sunburst.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BFC23FF6F6100A2514C /* sunburst.min.css */; };
+		1B275C6123FF6F6100A2514C /* agate.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BFD23FF6F6100A2514C /* agate.min.css */; };
+		1B275C6223FF6F6100A2514C /* hybrid.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BFE23FF6F6100A2514C /* hybrid.min.css */; };
+		1B275C6323FF6F6100A2514C /* darcula.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275BFF23FF6F6100A2514C /* darcula.min.css */; };
+		1B275C6423FF6F6100A2514C /* atelier-lakeside-light.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275C0023FF6F6100A2514C /* atelier-lakeside-light.min.css */; };
+		1B275C6523FF6F6100A2514C /* monokai-sublime.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275C0123FF6F6100A2514C /* monokai-sublime.min.css */; };
+		1B275C6623FF6F6100A2514C /* an-old-hope.min.css in Resources */ = {isa = PBXBuildFile; fileRef = 1B275C0223FF6F6100A2514C /* an-old-hope.min.css */; };
+		1B275C6723FF6F6100A2514C /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 1B275C0423FF6F6100A2514C /* LICENSE */; };
+		1B275C6823FF6F6100A2514C /* highlight.min.js in Resources */ = {isa = PBXBuildFile; fileRef = 1B275C0523FF6F6100A2514C /* highlight.min.js */; };
+		1B275C6923FF6F6100A2514C /* CodeAttributedString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B275C0723FF6F6100A2514C /* CodeAttributedString.swift */; };
+		1B275C6A23FF6F6100A2514C /* Highlightr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B275C0823FF6F6100A2514C /* Highlightr.swift */; };
+		1B275C6C23FF6F6100A2514C /* HTMLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B275C0A23FF6F6100A2514C /* HTMLUtils.swift */; };
+		1B275C6D23FF6F6100A2514C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B275C0B23FF6F6100A2514C /* Theme.swift */; };
+		1B275C6E23FF6F6100A2514C /* Shims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B275C0C23FF6F6100A2514C /* Shims.swift */; };
 		1B39EB3E23F6977A00F50E0D /* NewFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B39EB3C23F6977A00F50E0D /* NewFormViewController.swift */; };
 		1B39EB4123F6A55600F50E0D /* NewForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B39EB4023F6A55600F50E0D /* NewForm.storyboard */; };
 		1B4F2A9C23F2A2E800A2A32E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F2A9B23F2A2E800A2A32E /* AppDelegate.swift */; };
@@ -25,6 +121,7 @@
 		1BA08DE423F6AA4000C50619 /* NSViewController+Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BA08DE323F6AA4000C50619 /* NSViewController+Router.swift */; };
 		1BB4094C23FB9E1C00FDD8B9 /* EnumNewFileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BB4094B23FB9E1C00FDD8B9 /* EnumNewFileType.swift */; };
 		1BBC95A123FCF157006E585D /* ButtonDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC95A023FCF157006E585D /* ButtonDragView.swift */; };
+		1BDDDD7F23FFC75200F8F302 /* EditorTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDDD7E23FFC75200F8F302 /* EditorTextView.swift */; };
 		1BEB7C1A23FB9624006DFEA9 /* NotificationCenterConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEB7C1923FB9624006DFEA9 /* NotificationCenterConstant.swift */; };
 		FF097F7B23FB091D001AF186 /* BaseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF097F7A23FB091D001AF186 /* BaseWindowController.swift */; };
 		FF6605D623F7BC5E0052BCD7 /* TemplateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6605D523F7BC5E0052BCD7 /* TemplateList.swift */; };
@@ -34,29 +131,6 @@
 		FF6A673923FD8F520007C877 /* TableDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6A673823FD8F520007C877 /* TableDragView.swift */; };
 		FF6A673F23FD9B510007C877 /* SourceFileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6A673E23FD9B510007C877 /* SourceFileTableCell.swift */; };
 		FF6A674123FD9B6A0007C877 /* SourceFileTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF6A674023FD9B6A0007C877 /* SourceFileTableCell.xib */; };
-		FF7CEF8623FEE2FD00A64524 /* SourceCodeRegexLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF6A23FEE2FD00A64524 /* SourceCodeRegexLexer.swift */; };
-		FF7CEF8723FEE2FD00A64524 /* String+Range.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF6C23FEE2FD00A64524 /* String+Range.swift */; };
-		FF7CEF8823FEE2FD00A64524 /* NSTextView+UIKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF6D23FEE2FD00A64524 /* NSTextView+UIKit.swift */; };
-		FF7CEF8923FEE2FD00A64524 /* Types.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF6E23FEE2FD00A64524 /* Types.swift */; };
-		FF7CEF8A23FEE2FD00A64524 /* NSMutableAttributedString+Tokens.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF6F23FEE2FD00A64524 /* NSMutableAttributedString+Tokens.swift */; };
-		FF7CEF8B23FEE2FD00A64524 /* Python3Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7123FEE2FD00A64524 /* Python3Lexer.swift */; };
-		FF7CEF8C23FEE2FD00A64524 /* SwiftLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7223FEE2FD00A64524 /* SwiftLexer.swift */; };
-		FF7CEF8D23FEE2FD00A64524 /* ASTVisualizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7323FEE2FD00A64524 /* ASTVisualizer.swift */; };
-		FF7CEF8E23FEE2FD00A64524 /* Lexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7523FEE2FD00A64524 /* Lexer.swift */; };
-		FF7CEF8F23FEE2FD00A64524 /* Paragraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7623FEE2FD00A64524 /* Paragraph.swift */; };
-		FF7CEF9023FEE2FD00A64524 /* SyntaxColorTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7723FEE2FD00A64524 /* SyntaxColorTheme.swift */; };
-		FF7CEF9123FEE2FD00A64524 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7823FEE2FD00A64524 /* Token.swift */; };
-		FF7CEF9223FEE2FD00A64524 /* RegexLexer.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7923FEE2FD00A64524 /* RegexLexer.swift */; };
-		FF7CEF9323FEE2FD00A64524 /* SyntaxTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7B23FEE2FD00A64524 /* SyntaxTextView.swift */; };
-		FF7CEF9423FEE2FD00A64524 /* SyntaxTextView+TextViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7C23FEE2FD00A64524 /* SyntaxTextView+TextViewDelegate.swift */; };
-		FF7CEF9523FEE2FD00A64524 /* InnerTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7D23FEE2FD00A64524 /* InnerTextView.swift */; };
-		FF7CEF9623FEE2FD00A64524 /* TextViewWrapperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7E23FEE2FD00A64524 /* TextViewWrapperView.swift */; };
-		FF7CEF9723FEE2FD00A64524 /* LineNumberLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF7F23FEE2FD00A64524 /* LineNumberLayoutManager.swift */; };
-		FF7CEF9823FEE2FD00A64524 /* SyntaxTextViewLayoutManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF8023FEE2FD00A64524 /* SyntaxTextViewLayoutManager.swift */; };
-		FF7CEF9923FEE2FD00A64524 /* Paragraphs.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF8123FEE2FD00A64524 /* Paragraphs.swift */; };
-		FF7CEF9A23FEE2FD00A64524 /* SourceCodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF8223FEE2FD00A64524 /* SourceCodeTheme.swift */; };
-		FF7CEF9B23FEE2FD00A64524 /* SourceCodeToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF8323FEE2FD00A64524 /* SourceCodeToken.swift */; };
-		FF7CEF9C23FEE2FD00A64524 /* DefaultSourceCodeTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF8523FEE2FD00A64524 /* DefaultSourceCodeTheme.swift */; };
 		FF7CEF9E23FEE3CE00A64524 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF9D23FEE3CE00A64524 /* EditorViewController.swift */; };
 		FF7CEFA123FEE3EE00A64524 /* Editor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7CEFA023FEE3EE00A64524 /* Editor.storyboard */; };
 		FFB3458223F8408E0060D8FE /* TemplateNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3458023F8408E0060D8FE /* TemplateNameCell.swift */; };
@@ -76,6 +150,102 @@
 		1B23B1C723FE83BA00A17C74 /* TemplateInfo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateInfo.txt; sourceTree = "<group>"; };
 		1B23B1C923FE845000A17C74 /* TextParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextParser.swift; sourceTree = "<group>"; };
 		1B23B1CB23FE885F00A17C74 /* FileNameConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileNameConstant.swift; sourceTree = "<group>"; };
+		1B275BAA23FF6F6100A2514C /* vs.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = vs.min.css; sourceTree = "<group>"; };
+		1B275BAB23FF6F6100A2514C /* atelier-seaside-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-seaside-dark.min.css"; sourceTree = "<group>"; };
+		1B275BAC23FF6F6100A2514C /* isbl-editor-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "isbl-editor-dark.min.css"; sourceTree = "<group>"; };
+		1B275BAD23FF6F6100A2514C /* brown-paper.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "brown-paper.min.css"; sourceTree = "<group>"; };
+		1B275BAE23FF6F6100A2514C /* atelier-plateau-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-plateau-light.min.css"; sourceTree = "<group>"; };
+		1B275BAF23FF6F6100A2514C /* school-book.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "school-book.min.css"; sourceTree = "<group>"; };
+		1B275BB023FF6F6100A2514C /* xcode.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = xcode.min.css; sourceTree = "<group>"; };
+		1B275BB123FF6F6100A2514C /* atelier-sulphurpool-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-sulphurpool-dark.min.css"; sourceTree = "<group>"; };
+		1B275BB223FF6F6100A2514C /* tomorrow-night-blue.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "tomorrow-night-blue.min.css"; sourceTree = "<group>"; };
+		1B275BB323FF6F6100A2514C /* vs2015.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = vs2015.min.css; sourceTree = "<group>"; };
+		1B275BB423FF6F6100A2514C /* atelier-heath-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-heath-dark.min.css"; sourceTree = "<group>"; };
+		1B275BB523FF6F6100A2514C /* paraiso-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "paraiso-light.min.css"; sourceTree = "<group>"; };
+		1B275BB623FF6F6100A2514C /* rainbow.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = rainbow.min.css; sourceTree = "<group>"; };
+		1B275BB723FF6F6100A2514C /* qtcreator_light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = qtcreator_light.min.css; sourceTree = "<group>"; };
+		1B275BB823FF6F6100A2514C /* a11y-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "a11y-light.min.css"; sourceTree = "<group>"; };
+		1B275BB923FF6F6100A2514C /* kimbie.dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = kimbie.dark.min.css; sourceTree = "<group>"; };
+		1B275BBA23FF6F6100A2514C /* atelier-heath-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-heath-light.min.css"; sourceTree = "<group>"; };
+		1B275BBB23FF6F6100A2514C /* far.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = far.min.css; sourceTree = "<group>"; };
+		1B275BBC23FF6F6100A2514C /* atelier-dune-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-dune-dark.min.css"; sourceTree = "<group>"; };
+		1B275BBD23FF6F6100A2514C /* shades-of-purple.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "shades-of-purple.min.css"; sourceTree = "<group>"; };
+		1B275BBE23FF6F6100A2514C /* kimbie.light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = kimbie.light.min.css; sourceTree = "<group>"; };
+		1B275BBF23FF6F6100A2514C /* railscasts.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = railscasts.min.css; sourceTree = "<group>"; };
+		1B275BC023FF6F6100A2514C /* solarized-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "solarized-dark.min.css"; sourceTree = "<group>"; };
+		1B275BC123FF6F6100A2514C /* atelier-estuary-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-estuary-light.min.css"; sourceTree = "<group>"; };
+		1B275BC223FF6F6100A2514C /* xt256.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = xt256.min.css; sourceTree = "<group>"; };
+		1B275BC323FF6F6100A2514C /* mono-blue.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "mono-blue.min.css"; sourceTree = "<group>"; };
+		1B275BC423FF6F6100A2514C /* ocean.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ocean.min.css; sourceTree = "<group>"; };
+		1B275BC523FF6F6100A2514C /* github-gist.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "github-gist.min.css"; sourceTree = "<group>"; };
+		1B275BC623FF6F6100A2514C /* atelier-seaside-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-seaside-light.min.css"; sourceTree = "<group>"; };
+		1B275BC723FF6F6100A2514C /* tomorrow-night-eighties.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "tomorrow-night-eighties.min.css"; sourceTree = "<group>"; };
+		1B275BC823FF6F6100A2514C /* atom-one-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atom-one-dark.min.css"; sourceTree = "<group>"; };
+		1B275BC923FF6F6100A2514C /* qtcreator_dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = qtcreator_dark.min.css; sourceTree = "<group>"; };
+		1B275BCA23FF6F6100A2514C /* atelier-savanna-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-savanna-dark.min.css"; sourceTree = "<group>"; };
+		1B275BCB23FF6F6100A2514C /* color-brewer.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "color-brewer.min.css"; sourceTree = "<group>"; };
+		1B275BCC23FF6F6100A2514C /* pojoaque.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = pojoaque.min.css; sourceTree = "<group>"; };
+		1B275BCD23FF6F6100A2514C /* routeros.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = routeros.min.css; sourceTree = "<group>"; };
+		1B275BCE23FF6F6100A2514C /* atelier-forest-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-forest-dark.min.css"; sourceTree = "<group>"; };
+		1B275BCF23FF6F6100A2514C /* gml.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = gml.min.css; sourceTree = "<group>"; };
+		1B275BD023FF6F6100A2514C /* tomorrow-night.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "tomorrow-night.min.css"; sourceTree = "<group>"; };
+		1B275BD123FF6F6100A2514C /* obsidian.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = obsidian.min.css; sourceTree = "<group>"; };
+		1B275BD223FF6F6100A2514C /* lightfair.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = lightfair.min.css; sourceTree = "<group>"; };
+		1B275BD323FF6F6100A2514C /* atelier-lakeside-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-lakeside-dark.min.css"; sourceTree = "<group>"; };
+		1B275BD423FF6F6100A2514C /* gruvbox-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "gruvbox-light.min.css"; sourceTree = "<group>"; };
+		1B275BD523FF6F6100A2514C /* idea.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = idea.min.css; sourceTree = "<group>"; };
+		1B275BD623FF6F6100A2514C /* tomorrow.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = tomorrow.min.css; sourceTree = "<group>"; };
+		1B275BD723FF6F6100A2514C /* atelier-forest-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-forest-light.min.css"; sourceTree = "<group>"; };
+		1B275BD823FF6F6100A2514C /* arduino-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "arduino-light.min.css"; sourceTree = "<group>"; };
+		1B275BD923FF6F6100A2514C /* gruvbox-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "gruvbox-dark.min.css"; sourceTree = "<group>"; };
+		1B275BDA23FF6F6100A2514C /* dracula.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = dracula.min.css; sourceTree = "<group>"; };
+		1B275BDB23FF6F6100A2514C /* magula.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = magula.min.css; sourceTree = "<group>"; };
+		1B275BDC23FF6F6100A2514C /* arta.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = arta.min.css; sourceTree = "<group>"; };
+		1B275BDD23FF6F6100A2514C /* purebasic.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = purebasic.min.css; sourceTree = "<group>"; };
+		1B275BDE23FF6F6100A2514C /* hopscotch.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = hopscotch.min.css; sourceTree = "<group>"; };
+		1B275BDF23FF6F6100A2514C /* github.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = github.min.css; sourceTree = "<group>"; };
+		1B275BE023FF6F6100A2514C /* nord.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = nord.min.css; sourceTree = "<group>"; };
+		1B275BE123FF6F6100A2514C /* dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = dark.min.css; sourceTree = "<group>"; };
+		1B275BE223FF6F6100A2514C /* atom-one-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atom-one-light.min.css"; sourceTree = "<group>"; };
+		1B275BE323FF6F6100A2514C /* monokai.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = monokai.min.css; sourceTree = "<group>"; };
+		1B275BE423FF6F6100A2514C /* docco.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = docco.min.css; sourceTree = "<group>"; };
+		1B275BE523FF6F6100A2514C /* default.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = default.min.css; sourceTree = "<group>"; };
+		1B275BE623FF6F6100A2514C /* ascetic.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = ascetic.min.css; sourceTree = "<group>"; };
+		1B275BE723FF6F6100A2514C /* isbl-editor-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "isbl-editor-light.min.css"; sourceTree = "<group>"; };
+		1B275BE823FF6F6100A2514C /* atelier-cave-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-cave-light.min.css"; sourceTree = "<group>"; };
+		1B275BE923FF6F6100A2514C /* a11y-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "a11y-dark.min.css"; sourceTree = "<group>"; };
+		1B275BEA23FF6F6100A2514C /* atelier-sulphurpool-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-sulphurpool-light.min.css"; sourceTree = "<group>"; };
+		1B275BEB23FF6F6100A2514C /* atelier-plateau-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-plateau-dark.min.css"; sourceTree = "<group>"; };
+		1B275BEC23FF6F6100A2514C /* darkula.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = darkula.min.css; sourceTree = "<group>"; };
+		1B275BED23FF6F6100A2514C /* atelier-cave-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-cave-dark.min.css"; sourceTree = "<group>"; };
+		1B275BEE23FF6F6100A2514C /* ir-black.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "ir-black.min.css"; sourceTree = "<group>"; };
+		1B275BEF23FF6F6100A2514C /* solarized-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "solarized-light.min.css"; sourceTree = "<group>"; };
+		1B275BF023FF6F6100A2514C /* tomorrow-night-bright.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "tomorrow-night-bright.min.css"; sourceTree = "<group>"; };
+		1B275BF123FF6F6100A2514C /* atelier-savanna-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-savanna-light.min.css"; sourceTree = "<group>"; };
+		1B275BF223FF6F6100A2514C /* foundation.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = foundation.min.css; sourceTree = "<group>"; };
+		1B275BF323FF6F6100A2514C /* codepen-embed.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "codepen-embed.min.css"; sourceTree = "<group>"; };
+		1B275BF423FF6F6100A2514C /* atelier-estuary-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-estuary-dark.min.css"; sourceTree = "<group>"; };
+		1B275BF523FF6F6100A2514C /* googlecode.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = googlecode.min.css; sourceTree = "<group>"; };
+		1B275BF623FF6F6100A2514C /* atom-one-dark-reasonable.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atom-one-dark-reasonable.min.css"; sourceTree = "<group>"; };
+		1B275BF723FF6F6100A2514C /* atelier-dune-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-dune-light.min.css"; sourceTree = "<group>"; };
+		1B275BF823FF6F6100A2514C /* paraiso-dark.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "paraiso-dark.min.css"; sourceTree = "<group>"; };
+		1B275BF923FF6F6100A2514C /* zenburn.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = zenburn.min.css; sourceTree = "<group>"; };
+		1B275BFA23FF6F6100A2514C /* androidstudio.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = androidstudio.min.css; sourceTree = "<group>"; };
+		1B275BFB23FF6F6100A2514C /* grayscale.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = grayscale.min.css; sourceTree = "<group>"; };
+		1B275BFC23FF6F6100A2514C /* sunburst.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = sunburst.min.css; sourceTree = "<group>"; };
+		1B275BFD23FF6F6100A2514C /* agate.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = agate.min.css; sourceTree = "<group>"; };
+		1B275BFE23FF6F6100A2514C /* hybrid.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = hybrid.min.css; sourceTree = "<group>"; };
+		1B275BFF23FF6F6100A2514C /* darcula.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = darcula.min.css; sourceTree = "<group>"; };
+		1B275C0023FF6F6100A2514C /* atelier-lakeside-light.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "atelier-lakeside-light.min.css"; sourceTree = "<group>"; };
+		1B275C0123FF6F6100A2514C /* monokai-sublime.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "monokai-sublime.min.css"; sourceTree = "<group>"; };
+		1B275C0223FF6F6100A2514C /* an-old-hope.min.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = "an-old-hope.min.css"; sourceTree = "<group>"; };
+		1B275C0423FF6F6100A2514C /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		1B275C0523FF6F6100A2514C /* highlight.min.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = highlight.min.js; sourceTree = "<group>"; };
+		1B275C0723FF6F6100A2514C /* CodeAttributedString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CodeAttributedString.swift; sourceTree = "<group>"; };
+		1B275C0823FF6F6100A2514C /* Highlightr.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Highlightr.swift; sourceTree = "<group>"; };
+		1B275C0A23FF6F6100A2514C /* HTMLUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLUtils.swift; sourceTree = "<group>"; };
+		1B275C0B23FF6F6100A2514C /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		1B275C0C23FF6F6100A2514C /* Shims.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shims.swift; sourceTree = "<group>"; };
 		1B39EB3C23F6977A00F50E0D /* NewFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFormViewController.swift; sourceTree = "<group>"; };
 		1B39EB4023F6A55600F50E0D /* NewForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewForm.storyboard; sourceTree = "<group>"; };
 		1B4F2A9823F2A2E800A2A32E /* Xcode Template Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Xcode Template Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -93,6 +263,7 @@
 		1BA08DE323F6AA4000C50619 /* NSViewController+Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSViewController+Router.swift"; sourceTree = "<group>"; };
 		1BB4094B23FB9E1C00FDD8B9 /* EnumNewFileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnumNewFileType.swift; sourceTree = "<group>"; };
 		1BBC95A023FCF157006E585D /* ButtonDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDragView.swift; sourceTree = "<group>"; };
+		1BDDDD7E23FFC75200F8F302 /* EditorTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTextView.swift; sourceTree = "<group>"; };
 		1BEB7C1923FB9624006DFEA9 /* NotificationCenterConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterConstant.swift; sourceTree = "<group>"; };
 		FF097F7A23FB091D001AF186 /* BaseWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWindowController.swift; sourceTree = "<group>"; };
 		FF6605D523F7BC5E0052BCD7 /* TemplateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateList.swift; sourceTree = "<group>"; };
@@ -102,29 +273,6 @@
 		FF6A673823FD8F520007C877 /* TableDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDragView.swift; sourceTree = "<group>"; };
 		FF6A673E23FD9B510007C877 /* SourceFileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceFileTableCell.swift; sourceTree = "<group>"; };
 		FF6A674023FD9B6A0007C877 /* SourceFileTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SourceFileTableCell.xib; sourceTree = "<group>"; };
-		FF7CEF6A23FEE2FD00A64524 /* SourceCodeRegexLexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceCodeRegexLexer.swift; sourceTree = "<group>"; };
-		FF7CEF6C23FEE2FD00A64524 /* String+Range.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Range.swift"; sourceTree = "<group>"; };
-		FF7CEF6D23FEE2FD00A64524 /* NSTextView+UIKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSTextView+UIKit.swift"; sourceTree = "<group>"; };
-		FF7CEF6E23FEE2FD00A64524 /* Types.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Types.swift; sourceTree = "<group>"; };
-		FF7CEF6F23FEE2FD00A64524 /* NSMutableAttributedString+Tokens.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSMutableAttributedString+Tokens.swift"; sourceTree = "<group>"; };
-		FF7CEF7123FEE2FD00A64524 /* Python3Lexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Python3Lexer.swift; sourceTree = "<group>"; };
-		FF7CEF7223FEE2FD00A64524 /* SwiftLexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftLexer.swift; sourceTree = "<group>"; };
-		FF7CEF7323FEE2FD00A64524 /* ASTVisualizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ASTVisualizer.swift; sourceTree = "<group>"; };
-		FF7CEF7523FEE2FD00A64524 /* Lexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lexer.swift; sourceTree = "<group>"; };
-		FF7CEF7623FEE2FD00A64524 /* Paragraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paragraph.swift; sourceTree = "<group>"; };
-		FF7CEF7723FEE2FD00A64524 /* SyntaxColorTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntaxColorTheme.swift; sourceTree = "<group>"; };
-		FF7CEF7823FEE2FD00A64524 /* Token.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		FF7CEF7923FEE2FD00A64524 /* RegexLexer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegexLexer.swift; sourceTree = "<group>"; };
-		FF7CEF7B23FEE2FD00A64524 /* SyntaxTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntaxTextView.swift; sourceTree = "<group>"; };
-		FF7CEF7C23FEE2FD00A64524 /* SyntaxTextView+TextViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SyntaxTextView+TextViewDelegate.swift"; sourceTree = "<group>"; };
-		FF7CEF7D23FEE2FD00A64524 /* InnerTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InnerTextView.swift; sourceTree = "<group>"; };
-		FF7CEF7E23FEE2FD00A64524 /* TextViewWrapperView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewWrapperView.swift; sourceTree = "<group>"; };
-		FF7CEF7F23FEE2FD00A64524 /* LineNumberLayoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LineNumberLayoutManager.swift; sourceTree = "<group>"; };
-		FF7CEF8023FEE2FD00A64524 /* SyntaxTextViewLayoutManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntaxTextViewLayoutManager.swift; sourceTree = "<group>"; };
-		FF7CEF8123FEE2FD00A64524 /* Paragraphs.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Paragraphs.swift; sourceTree = "<group>"; };
-		FF7CEF8223FEE2FD00A64524 /* SourceCodeTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceCodeTheme.swift; sourceTree = "<group>"; };
-		FF7CEF8323FEE2FD00A64524 /* SourceCodeToken.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SourceCodeToken.swift; sourceTree = "<group>"; };
-		FF7CEF8523FEE2FD00A64524 /* DefaultSourceCodeTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultSourceCodeTheme.swift; sourceTree = "<group>"; };
 		FF7CEF9D23FEE3CE00A64524 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		FF7CEFA023FEE3EE00A64524 /* Editor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Editor.storyboard; sourceTree = "<group>"; };
 		FFB3458023F8408E0060D8FE /* TemplateNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateNameCell.swift; sourceTree = "<group>"; };
@@ -165,6 +313,141 @@
 				1B23B1C723FE83BA00A17C74 /* TemplateInfo.txt */,
 			);
 			path = MockTemplates;
+			sourceTree = "<group>";
+		};
+		1B275BA623FF6F3E00A2514C /* Highlightr */ = {
+			isa = PBXGroup;
+			children = (
+				1B275BA723FF6F6100A2514C /* Assets */,
+				1B275C0623FF6F6100A2514C /* Classes */,
+			);
+			path = Highlightr;
+			sourceTree = "<group>";
+		};
+		1B275BA723FF6F6100A2514C /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1B275BA923FF6F6100A2514C /* styles */,
+				1B275C0323FF6F6100A2514C /* Highlighter */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		1B275BA923FF6F6100A2514C /* styles */ = {
+			isa = PBXGroup;
+			children = (
+				1B275BE923FF6F6100A2514C /* a11y-dark.min.css */,
+				1B275BB823FF6F6100A2514C /* a11y-light.min.css */,
+				1B275BFD23FF6F6100A2514C /* agate.min.css */,
+				1B275C0223FF6F6100A2514C /* an-old-hope.min.css */,
+				1B275BFA23FF6F6100A2514C /* androidstudio.min.css */,
+				1B275BD823FF6F6100A2514C /* arduino-light.min.css */,
+				1B275BDC23FF6F6100A2514C /* arta.min.css */,
+				1B275BE623FF6F6100A2514C /* ascetic.min.css */,
+				1B275BED23FF6F6100A2514C /* atelier-cave-dark.min.css */,
+				1B275BE823FF6F6100A2514C /* atelier-cave-light.min.css */,
+				1B275BBC23FF6F6100A2514C /* atelier-dune-dark.min.css */,
+				1B275BF723FF6F6100A2514C /* atelier-dune-light.min.css */,
+				1B275BF423FF6F6100A2514C /* atelier-estuary-dark.min.css */,
+				1B275BC123FF6F6100A2514C /* atelier-estuary-light.min.css */,
+				1B275BCE23FF6F6100A2514C /* atelier-forest-dark.min.css */,
+				1B275BD723FF6F6100A2514C /* atelier-forest-light.min.css */,
+				1B275BB423FF6F6100A2514C /* atelier-heath-dark.min.css */,
+				1B275BBA23FF6F6100A2514C /* atelier-heath-light.min.css */,
+				1B275BD323FF6F6100A2514C /* atelier-lakeside-dark.min.css */,
+				1B275C0023FF6F6100A2514C /* atelier-lakeside-light.min.css */,
+				1B275BEB23FF6F6100A2514C /* atelier-plateau-dark.min.css */,
+				1B275BAE23FF6F6100A2514C /* atelier-plateau-light.min.css */,
+				1B275BCA23FF6F6100A2514C /* atelier-savanna-dark.min.css */,
+				1B275BF123FF6F6100A2514C /* atelier-savanna-light.min.css */,
+				1B275BAB23FF6F6100A2514C /* atelier-seaside-dark.min.css */,
+				1B275BC623FF6F6100A2514C /* atelier-seaside-light.min.css */,
+				1B275BB123FF6F6100A2514C /* atelier-sulphurpool-dark.min.css */,
+				1B275BEA23FF6F6100A2514C /* atelier-sulphurpool-light.min.css */,
+				1B275BF623FF6F6100A2514C /* atom-one-dark-reasonable.min.css */,
+				1B275BC823FF6F6100A2514C /* atom-one-dark.min.css */,
+				1B275BE223FF6F6100A2514C /* atom-one-light.min.css */,
+				1B275BAD23FF6F6100A2514C /* brown-paper.min.css */,
+				1B275BF323FF6F6100A2514C /* codepen-embed.min.css */,
+				1B275BCB23FF6F6100A2514C /* color-brewer.min.css */,
+				1B275BFF23FF6F6100A2514C /* darcula.min.css */,
+				1B275BE123FF6F6100A2514C /* dark.min.css */,
+				1B275BEC23FF6F6100A2514C /* darkula.min.css */,
+				1B275BE523FF6F6100A2514C /* default.min.css */,
+				1B275BE423FF6F6100A2514C /* docco.min.css */,
+				1B275BDA23FF6F6100A2514C /* dracula.min.css */,
+				1B275BBB23FF6F6100A2514C /* far.min.css */,
+				1B275BF223FF6F6100A2514C /* foundation.min.css */,
+				1B275BC523FF6F6100A2514C /* github-gist.min.css */,
+				1B275BDF23FF6F6100A2514C /* github.min.css */,
+				1B275BCF23FF6F6100A2514C /* gml.min.css */,
+				1B275BF523FF6F6100A2514C /* googlecode.min.css */,
+				1B275BFB23FF6F6100A2514C /* grayscale.min.css */,
+				1B275BD923FF6F6100A2514C /* gruvbox-dark.min.css */,
+				1B275BD423FF6F6100A2514C /* gruvbox-light.min.css */,
+				1B275BDE23FF6F6100A2514C /* hopscotch.min.css */,
+				1B275BFE23FF6F6100A2514C /* hybrid.min.css */,
+				1B275BD523FF6F6100A2514C /* idea.min.css */,
+				1B275BEE23FF6F6100A2514C /* ir-black.min.css */,
+				1B275BAC23FF6F6100A2514C /* isbl-editor-dark.min.css */,
+				1B275BE723FF6F6100A2514C /* isbl-editor-light.min.css */,
+				1B275BB923FF6F6100A2514C /* kimbie.dark.min.css */,
+				1B275BBE23FF6F6100A2514C /* kimbie.light.min.css */,
+				1B275BD223FF6F6100A2514C /* lightfair.min.css */,
+				1B275BDB23FF6F6100A2514C /* magula.min.css */,
+				1B275BC323FF6F6100A2514C /* mono-blue.min.css */,
+				1B275C0123FF6F6100A2514C /* monokai-sublime.min.css */,
+				1B275BE323FF6F6100A2514C /* monokai.min.css */,
+				1B275BE023FF6F6100A2514C /* nord.min.css */,
+				1B275BD123FF6F6100A2514C /* obsidian.min.css */,
+				1B275BC423FF6F6100A2514C /* ocean.min.css */,
+				1B275BF823FF6F6100A2514C /* paraiso-dark.min.css */,
+				1B275BB523FF6F6100A2514C /* paraiso-light.min.css */,
+				1B275BCC23FF6F6100A2514C /* pojoaque.min.css */,
+				1B275BDD23FF6F6100A2514C /* purebasic.min.css */,
+				1B275BC923FF6F6100A2514C /* qtcreator_dark.min.css */,
+				1B275BB723FF6F6100A2514C /* qtcreator_light.min.css */,
+				1B275BBF23FF6F6100A2514C /* railscasts.min.css */,
+				1B275BB623FF6F6100A2514C /* rainbow.min.css */,
+				1B275BCD23FF6F6100A2514C /* routeros.min.css */,
+				1B275BAF23FF6F6100A2514C /* school-book.min.css */,
+				1B275BBD23FF6F6100A2514C /* shades-of-purple.min.css */,
+				1B275BC023FF6F6100A2514C /* solarized-dark.min.css */,
+				1B275BEF23FF6F6100A2514C /* solarized-light.min.css */,
+				1B275BFC23FF6F6100A2514C /* sunburst.min.css */,
+				1B275BB223FF6F6100A2514C /* tomorrow-night-blue.min.css */,
+				1B275BF023FF6F6100A2514C /* tomorrow-night-bright.min.css */,
+				1B275BC723FF6F6100A2514C /* tomorrow-night-eighties.min.css */,
+				1B275BD023FF6F6100A2514C /* tomorrow-night.min.css */,
+				1B275BD623FF6F6100A2514C /* tomorrow.min.css */,
+				1B275BAA23FF6F6100A2514C /* vs.min.css */,
+				1B275BB323FF6F6100A2514C /* vs2015.min.css */,
+				1B275BB023FF6F6100A2514C /* xcode.min.css */,
+				1B275BC223FF6F6100A2514C /* xt256.min.css */,
+				1B275BF923FF6F6100A2514C /* zenburn.min.css */,
+			);
+			path = styles;
+			sourceTree = "<group>";
+		};
+		1B275C0323FF6F6100A2514C /* Highlighter */ = {
+			isa = PBXGroup;
+			children = (
+				1B275C0423FF6F6100A2514C /* LICENSE */,
+				1B275C0523FF6F6100A2514C /* highlight.min.js */,
+			);
+			path = Highlighter;
+			sourceTree = "<group>";
+		};
+		1B275C0623FF6F6100A2514C /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				1B275C0723FF6F6100A2514C /* CodeAttributedString.swift */,
+				1B275C0823FF6F6100A2514C /* Highlightr.swift */,
+				1B275C0A23FF6F6100A2514C /* HTMLUtils.swift */,
+				1B275C0B23FF6F6100A2514C /* Theme.swift */,
+				1B275C0C23FF6F6100A2514C /* Shims.swift */,
+			);
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		1B39EB3A23F6970700F50E0D /* Dashboard */ = {
@@ -282,9 +565,10 @@
 		1BBC959F23FCF13E006E585D /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				FF7CEF6923FEE2FD00A64524 /* Sourceful */,
+				1B275BA623FF6F3E00A2514C /* Highlightr */,
 				1BBC95A023FCF157006E585D /* ButtonDragView.swift */,
 				FF6A673823FD8F520007C877 /* TableDragView.swift */,
+				1BDDDD7E23FFC75200F8F302 /* EditorTextView.swift */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -305,76 +589,6 @@
 				FFB3458823F84D980060D8FE /* UrlListDAO.swift */,
 			);
 			path = DAO;
-			sourceTree = "<group>";
-		};
-		FF7CEF6923FEE2FD00A64524 /* Sourceful */ = {
-			isa = PBXGroup;
-			children = (
-				FF7CEF7323FEE2FD00A64524 /* ASTVisualizer.swift */,
-				FF7CEF6A23FEE2FD00A64524 /* SourceCodeRegexLexer.swift */,
-				FF7CEF8223FEE2FD00A64524 /* SourceCodeTheme.swift */,
-				FF7CEF8323FEE2FD00A64524 /* SourceCodeToken.swift */,
-				FF7CEF7023FEE2FD00A64524 /* Languages */,
-				FF7CEF7423FEE2FD00A64524 /* Model */,
-				FF7CEF8423FEE2FD00A64524 /* Themes */,
-				FF7CEF6B23FEE2FD00A64524 /* Util */,
-				FF7CEF7A23FEE2FD00A64524 /* View */,
-			);
-			path = Sourceful;
-			sourceTree = "<group>";
-		};
-		FF7CEF6B23FEE2FD00A64524 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				FF7CEF6C23FEE2FD00A64524 /* String+Range.swift */,
-				FF7CEF6D23FEE2FD00A64524 /* NSTextView+UIKit.swift */,
-				FF7CEF6E23FEE2FD00A64524 /* Types.swift */,
-				FF7CEF6F23FEE2FD00A64524 /* NSMutableAttributedString+Tokens.swift */,
-			);
-			path = Util;
-			sourceTree = "<group>";
-		};
-		FF7CEF7023FEE2FD00A64524 /* Languages */ = {
-			isa = PBXGroup;
-			children = (
-				FF7CEF7123FEE2FD00A64524 /* Python3Lexer.swift */,
-				FF7CEF7223FEE2FD00A64524 /* SwiftLexer.swift */,
-			);
-			path = Languages;
-			sourceTree = "<group>";
-		};
-		FF7CEF7423FEE2FD00A64524 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				FF7CEF7523FEE2FD00A64524 /* Lexer.swift */,
-				FF7CEF7623FEE2FD00A64524 /* Paragraph.swift */,
-				FF7CEF7723FEE2FD00A64524 /* SyntaxColorTheme.swift */,
-				FF7CEF7823FEE2FD00A64524 /* Token.swift */,
-				FF7CEF7923FEE2FD00A64524 /* RegexLexer.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		FF7CEF7A23FEE2FD00A64524 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				FF7CEF7B23FEE2FD00A64524 /* SyntaxTextView.swift */,
-				FF7CEF7C23FEE2FD00A64524 /* SyntaxTextView+TextViewDelegate.swift */,
-				FF7CEF7D23FEE2FD00A64524 /* InnerTextView.swift */,
-				FF7CEF7E23FEE2FD00A64524 /* TextViewWrapperView.swift */,
-				FF7CEF7F23FEE2FD00A64524 /* LineNumberLayoutManager.swift */,
-				FF7CEF8023FEE2FD00A64524 /* SyntaxTextViewLayoutManager.swift */,
-				FF7CEF8123FEE2FD00A64524 /* Paragraphs.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		FF7CEF8423FEE2FD00A64524 /* Themes */ = {
-			isa = PBXGroup;
-			children = (
-				FF7CEF8523FEE2FD00A64524 /* DefaultSourceCodeTheme.swift */,
-			);
-			path = Themes;
 			sourceTree = "<group>";
 		};
 		FF7CEF9F23FEE3D400A64524 /* Editor */ = {
@@ -495,17 +709,108 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1B275C2723FF6F6100A2514C /* mono-blue.min.css in Resources */,
+				1B275C2123FF6F6100A2514C /* shades-of-purple.min.css in Resources */,
+				1B275C3523FF6F6100A2514C /* obsidian.min.css in Resources */,
+				1B275C5923FF6F6100A2514C /* googlecode.min.css in Resources */,
 				FF6A673323FD869C0007C877 /* TemplateDetail.storyboard in Resources */,
+				1B275C4E23FF6F6100A2514C /* atelier-sulphurpool-light.min.css in Resources */,
+				1B275C6323FF6F6100A2514C /* darcula.min.css in Resources */,
+				1B275C2E23FF6F6100A2514C /* atelier-savanna-dark.min.css in Resources */,
+				1B275C2323FF6F6100A2514C /* railscasts.min.css in Resources */,
+				1B275C1623FF6F6100A2514C /* tomorrow-night-blue.min.css in Resources */,
+				1B275C1B23FF6F6100A2514C /* qtcreator_light.min.css in Resources */,
+				1B275C5823FF6F6100A2514C /* atelier-estuary-dark.min.css in Resources */,
+				1B275C1F23FF6F6100A2514C /* far.min.css in Resources */,
+				1B275C1723FF6F6100A2514C /* vs2015.min.css in Resources */,
+				1B275C6223FF6F6100A2514C /* hybrid.min.css in Resources */,
 				FF6A674123FD9B6A0007C877 /* SourceFileTableCell.xib in Resources */,
 				FFB3458323F8408E0060D8FE /* TemplateNameCell.xib in Resources */,
+				1B275C2823FF6F6100A2514C /* ocean.min.css in Resources */,
+				1B275C4C23FF6F6100A2514C /* atelier-cave-light.min.css in Resources */,
+				1B275C2B23FF6F6100A2514C /* tomorrow-night-eighties.min.css in Resources */,
+				1B275C3023FF6F6100A2514C /* pojoaque.min.css in Resources */,
+				1B275C4523FF6F6100A2514C /* dark.min.css in Resources */,
+				1B275C4D23FF6F6100A2514C /* a11y-dark.min.css in Resources */,
+				1B275C5A23FF6F6100A2514C /* atom-one-dark-reasonable.min.css in Resources */,
+				1B275C5623FF6F6100A2514C /* foundation.min.css in Resources */,
+				1B275C1023FF6F6100A2514C /* isbl-editor-dark.min.css in Resources */,
+				1B275C5F23FF6F6100A2514C /* grayscale.min.css in Resources */,
+				1B275C3D23FF6F6100A2514C /* gruvbox-dark.min.css in Resources */,
+				1B275C4823FF6F6100A2514C /* docco.min.css in Resources */,
+				1B275C2523FF6F6100A2514C /* atelier-estuary-light.min.css in Resources */,
+				1B275C4B23FF6F6100A2514C /* isbl-editor-light.min.css in Resources */,
+				1B275C2A23FF6F6100A2514C /* atelier-seaside-light.min.css in Resources */,
 				1B4F2AA023F2A2EA00A2A32E /* Assets.xcassets in Resources */,
+				1B275C5723FF6F6100A2514C /* codepen-embed.min.css in Resources */,
+				1B275C1423FF6F6100A2514C /* xcode.min.css in Resources */,
 				1B4F2AA323F2A2EA00A2A32E /* Dashboard.storyboard in Resources */,
+				1B275C4423FF6F6100A2514C /* nord.min.css in Resources */,
+				1B275C1923FF6F6100A2514C /* paraiso-light.min.css in Resources */,
+				1B275C2223FF6F6100A2514C /* kimbie.light.min.css in Resources */,
+				1B275C5B23FF6F6100A2514C /* atelier-dune-light.min.css in Resources */,
+				1B275C2623FF6F6100A2514C /* xt256.min.css in Resources */,
+				1B275C6723FF6F6100A2514C /* LICENSE in Resources */,
+				1B275C1523FF6F6100A2514C /* atelier-sulphurpool-dark.min.css in Resources */,
+				1B275C3423FF6F6100A2514C /* tomorrow-night.min.css in Resources */,
+				1B275C2423FF6F6100A2514C /* solarized-dark.min.css in Resources */,
+				1B275C3723FF6F6100A2514C /* atelier-lakeside-dark.min.css in Resources */,
+				1B275C1D23FF6F6100A2514C /* kimbie.dark.min.css in Resources */,
+				1B275C5D23FF6F6100A2514C /* zenburn.min.css in Resources */,
+				1B275C2023FF6F6100A2514C /* atelier-dune-dark.min.css in Resources */,
+				1B275C3F23FF6F6100A2514C /* magula.min.css in Resources */,
+				1B275C4A23FF6F6100A2514C /* ascetic.min.css in Resources */,
+				1B275C3E23FF6F6100A2514C /* dracula.min.css in Resources */,
+				1B275C5523FF6F6100A2514C /* atelier-savanna-light.min.css in Resources */,
+				1B275C5023FF6F6100A2514C /* darkula.min.css in Resources */,
+				1B275C6423FF6F6100A2514C /* atelier-lakeside-light.min.css in Resources */,
+				1B275C0E23FF6F6100A2514C /* vs.min.css in Resources */,
+				1B275C3C23FF6F6100A2514C /* arduino-light.min.css in Resources */,
+				1B275C4323FF6F6100A2514C /* github.min.css in Resources */,
 				1B65DCA723F538BF00E267AB /* XcodeTemplateCell.xib in Resources */,
+				1B275C6123FF6F6100A2514C /* agate.min.css in Resources */,
+				1B275C1123FF6F6100A2514C /* brown-paper.min.css in Resources */,
+				1B275C6823FF6F6100A2514C /* highlight.min.js in Resources */,
+				1B275C5E23FF6F6100A2514C /* androidstudio.min.css in Resources */,
 				1B23B1C823FE83BA00A17C74 /* TemplateInfo.txt in Resources */,
+				1B275C1823FF6F6100A2514C /* atelier-heath-dark.min.css in Resources */,
+				1B275C6523FF6F6100A2514C /* monokai-sublime.min.css in Resources */,
+				1B275C3823FF6F6100A2514C /* gruvbox-light.min.css in Resources */,
+				1B275C4923FF6F6100A2514C /* default.min.css in Resources */,
+				1B275C0F23FF6F6100A2514C /* atelier-seaside-dark.min.css in Resources */,
+				1B275C2C23FF6F6100A2514C /* atom-one-dark.min.css in Resources */,
+				1B275C3223FF6F6100A2514C /* atelier-forest-dark.min.css in Resources */,
+				1B275C2D23FF6F6100A2514C /* qtcreator_dark.min.css in Resources */,
+				1B275C1323FF6F6100A2514C /* school-book.min.css in Resources */,
+				1B275C1C23FF6F6100A2514C /* a11y-light.min.css in Resources */,
+				1B275C3623FF6F6100A2514C /* lightfair.min.css in Resources */,
+				1B275C4623FF6F6100A2514C /* atom-one-light.min.css in Resources */,
+				1B275C1A23FF6F6100A2514C /* rainbow.min.css in Resources */,
 				FF6A673523FD87280007C877 /* Welcome.storyboard in Resources */,
+				1B275C6023FF6F6100A2514C /* sunburst.min.css in Resources */,
+				1B275C4223FF6F6100A2514C /* hopscotch.min.css in Resources */,
 				1B76374023FA955D00E4C612 /* Color.xcassets in Resources */,
+				1B275C2923FF6F6100A2514C /* github-gist.min.css in Resources */,
+				1B275C5223FF6F6100A2514C /* ir-black.min.css in Resources */,
+				1B275C3923FF6F6100A2514C /* idea.min.css in Resources */,
+				1B275C4723FF6F6100A2514C /* monokai.min.css in Resources */,
+				1B275C5123FF6F6100A2514C /* atelier-cave-dark.min.css in Resources */,
+				1B275C1223FF6F6100A2514C /* atelier-plateau-light.min.css in Resources */,
+				1B275C5323FF6F6100A2514C /* solarized-light.min.css in Resources */,
+				1B275C4F23FF6F6100A2514C /* atelier-plateau-dark.min.css in Resources */,
+				1B275C3323FF6F6100A2514C /* gml.min.css in Resources */,
 				FF7CEFA123FEE3EE00A64524 /* Editor.storyboard in Resources */,
+				1B275C4123FF6F6100A2514C /* purebasic.min.css in Resources */,
+				1B275C3123FF6F6100A2514C /* routeros.min.css in Resources */,
+				1B275C6623FF6F6100A2514C /* an-old-hope.min.css in Resources */,
+				1B275C4023FF6F6100A2514C /* arta.min.css in Resources */,
+				1B275C5C23FF6F6100A2514C /* paraiso-dark.min.css in Resources */,
 				1B39EB4123F6A55600F50E0D /* NewForm.storyboard in Resources */,
+				1B275C2F23FF6F6100A2514C /* color-brewer.min.css in Resources */,
+				1B275C1E23FF6F6100A2514C /* atelier-heath-light.min.css in Resources */,
+				1B275C3B23FF6F6100A2514C /* atelier-forest-light.min.css in Resources */,
+				1B275C5423FF6F6100A2514C /* tomorrow-night-bright.min.css in Resources */,
+				1B275C3A23FF6F6100A2514C /* tomorrow.min.css in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,56 +821,39 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FF7CEF9B23FEE2FD00A64524 /* SourceCodeToken.swift in Sources */,
-				FF7CEF9623FEE2FD00A64524 /* TextViewWrapperView.swift in Sources */,
 				1BBC95A123FCF157006E585D /* ButtonDragView.swift in Sources */,
 				1B4F2A9E23F2A2E800A2A32E /* DashboardViewController.swift in Sources */,
+				1B275C6C23FF6F6100A2514C /* HTMLUtils.swift in Sources */,
 				FFB3458723F84D7F0060D8FE /* UrlList.swift in Sources */,
-				FF7CEF8F23FEE2FD00A64524 /* Paragraph.swift in Sources */,
-				FF7CEF9023FEE2FD00A64524 /* SyntaxColorTheme.swift in Sources */,
-				FF7CEF8923FEE2FD00A64524 /* Types.swift in Sources */,
+				1B275C6A23FF6F6100A2514C /* Highlightr.swift in Sources */,
 				1B23B1CC23FE885F00A17C74 /* FileNameConstant.swift in Sources */,
 				FFC9F0FE23F829F7009CDEAD /* Url+StringFormat.swift in Sources */,
-				FF7CEF9723FEE2FD00A64524 /* LineNumberLayoutManager.swift in Sources */,
+				1B275C6923FF6F6100A2514C /* CodeAttributedString.swift in Sources */,
 				FFB3458223F8408E0060D8FE /* TemplateNameCell.swift in Sources */,
 				FF6A673F23FD9B510007C877 /* SourceFileTableCell.swift in Sources */,
-				FF7CEF9823FEE2FD00A64524 /* SyntaxTextViewLayoutManager.swift in Sources */,
 				FFDD902023FAC07B00BD112D /* BaseWindow.swift in Sources */,
 				1B65DCA523F5383A00E267AB /* XcodeTemplateCell.swift in Sources */,
 				FF7CEF9E23FEE3CE00A64524 /* EditorViewController.swift in Sources */,
-				FF7CEF8B23FEE2FD00A64524 /* Python3Lexer.swift in Sources */,
-				FF7CEF9923FEE2FD00A64524 /* Paragraphs.swift in Sources */,
 				1BB4094C23FB9E1C00FDD8B9 /* EnumNewFileType.swift in Sources */,
 				FFDD902223FAE29F00BD112D /* BaseNSView.swift in Sources */,
-				FF7CEF9423FEE2FD00A64524 /* SyntaxTextView+TextViewDelegate.swift in Sources */,
-				FF7CEF8823FEE2FD00A64524 /* NSTextView+UIKit.swift in Sources */,
+				1B275C6E23FF6F6100A2514C /* Shims.swift in Sources */,
 				1B4F2A9C23F2A2E800A2A32E /* AppDelegate.swift in Sources */,
 				FF6A673923FD8F520007C877 /* TableDragView.swift in Sources */,
 				FFC9F0FC23F82961009CDEAD /* UrlConstant.swift in Sources */,
+				1BDDDD7F23FFC75200F8F302 /* EditorTextView.swift in Sources */,
 				1B76374223FA971600E4C612 /* ColorConstant.swift in Sources */,
 				1BEB7C1A23FB9624006DFEA9 /* NotificationCenterConstant.swift in Sources */,
 				1B23B1C323FE6AD000A17C74 /* DragAndDropView.swift in Sources */,
 				1B65DCA023F5202900E267AB /* BaseViewController.swift in Sources */,
 				FFC9F10523F83864009CDEAD /* WelcomeViewController.swift in Sources */,
-				FF7CEF9123FEE2FD00A64524 /* Token.swift in Sources */,
-				FF7CEF8D23FEE2FD00A64524 /* ASTVisualizer.swift in Sources */,
-				FF7CEF9A23FEE2FD00A64524 /* SourceCodeTheme.swift in Sources */,
+				1B275C6D23FF6F6100A2514C /* Theme.swift in Sources */,
 				1BA08DE423F6AA4000C50619 /* NSViewController+Router.swift in Sources */,
 				FF6605D923F7BC8E0052BCD7 /* TemplateListDAO.swift in Sources */,
-				FF7CEF8723FEE2FD00A64524 /* String+Range.swift in Sources */,
 				FF097F7B23FB091D001AF186 /* BaseWindowController.swift in Sources */,
-				FF7CEF9C23FEE2FD00A64524 /* DefaultSourceCodeTheme.swift in Sources */,
-				FF7CEF9223FEE2FD00A64524 /* RegexLexer.swift in Sources */,
-				FF7CEF8C23FEE2FD00A64524 /* SwiftLexer.swift in Sources */,
-				FF7CEF9323FEE2FD00A64524 /* SyntaxTextView.swift in Sources */,
 				FF6605D623F7BC5E0052BCD7 /* TemplateList.swift in Sources */,
-				FF7CEF8A23FEE2FD00A64524 /* NSMutableAttributedString+Tokens.swift in Sources */,
 				1B39EB3E23F6977A00F50E0D /* NewFormViewController.swift in Sources */,
-				FF7CEF8623FEE2FD00A64524 /* SourceCodeRegexLexer.swift in Sources */,
-				FF7CEF9523FEE2FD00A64524 /* InnerTextView.swift in Sources */,
 				FFB3458923F84D980060D8FE /* UrlListDAO.swift in Sources */,
 				FFC9F10323F83846009CDEAD /* TemplateDetailViewController.swift in Sources */,
-				FF7CEF8E23FEE2FD00A64524 /* Lexer.swift in Sources */,
 				1B23B1CA23FE845000A17C74 /* TextParser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -634,7 +922,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -688,7 +976,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -712,7 +1000,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kodingkita.Xcode-Template-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -734,7 +1022,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.13;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kodingkita.Xcode-Template-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

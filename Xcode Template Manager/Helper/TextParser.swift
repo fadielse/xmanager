@@ -23,6 +23,17 @@ struct TextParser {
         return nil
     }
     
+    static func read(withFileUrl fileUrl: URL) -> String? {
+        do {
+            let contents = try String(contentsOfFile: fileUrl.path)
+            return contents
+        } catch let error {
+            print(error.localizedDescription)
+            return nil
+        }
+        return nil
+    }
+    
     static func write(withName name: String, andText text: String, toPathUrl pathUrl: URL) -> Bool {
         let fileURL = pathUrl.appendingPathComponent(name)
 

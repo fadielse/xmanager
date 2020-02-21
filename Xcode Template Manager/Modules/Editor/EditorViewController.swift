@@ -9,18 +9,31 @@
 import Cocoa
 
 class EditorViewController: BaseViewController {
-
-    @IBOutlet weak var viewEditor: SyntaxTextView!
+    
+    @IBOutlet weak var viewMenu: NSView!
+    @IBOutlet weak var viewEditor: NSView!
+    @IBOutlet var textView: EditorTextView!
+    
+    let textStorage = CodeAttributedString()
+    
+    var fileUrl: URL? {
+        didSet {
+            loadCodeFromFileIfExists()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewEditor.delegate = self
     }
-}
-
-extension EditorViewController: SyntaxTextViewDelegate {
-    func lexerForSource(_ source: String) -> Lexer {
-        return Lexer(lexerForSource(source))
+    @IBAction func onSelectedThemeStyleMenu(_ sender: Any) {
+        
+    }
+    
+    func loadCodeFromFileIfExists() {
+        guard let fileUrl = fileUrl, let text = TextParser.read(withFileUrl: fileUrl) else {
+            return
+        }
+        
+        textView.string = text
     }
 }

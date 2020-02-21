@@ -10,11 +10,14 @@ import Cocoa
 
 extension NSViewController {
     
-    @discardableResult
     func goToScreen(withStoryboardId storyboardId: String, andViewControllerId viewControllerId: String) -> NSViewController {
         let storyBoard: NSStoryboard = NSStoryboard(name: storyboardId, bundle: nil)
         let newViewController = storyBoard.instantiateController(withIdentifier: viewControllerId)
         self.presentAsModalWindow(newViewController as! NSViewController)
         return newViewController as! NSViewController
+    }
+    
+    func showAsModal() {
+        self.presentAsModalWindow(self)
     }
 }

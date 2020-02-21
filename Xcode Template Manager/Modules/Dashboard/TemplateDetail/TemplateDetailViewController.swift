@@ -249,7 +249,7 @@ class TemplateDetailViewController: BaseViewController {
     
     @objc private func doubleClickOnSourceFileRow() {
         if let editorViewController = self.goToScreen(withStoryboardId: "Editor", andViewControllerId: "EditorViewController") as? EditorViewController {
-            print(editorViewController)
+            editorViewController.fileUrl = sourceFiles[sourceTableView.clickedRow].url
         }
     }
     
