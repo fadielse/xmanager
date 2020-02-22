@@ -37,9 +37,7 @@ class BaseViewController: NSViewController {
                      .DisableHideApplication    |   /
                      .AutoHideToolbar */
                 
-        let optionsDictionary = [NSView.FullScreenModeOptionKey.fullScreenModeApplicationPresentationOptions :
-             NSNumber(value: presOptions.rawValue)]
-        
+        let optionsDictionary = [NSView.FullScreenModeOptionKey.fullScreenModeApplicationPresentationOptions : NSNumber(value: presOptions.rawValue)]
         self.view.enterFullScreenMode(NSScreen.main!, withOptions:optionsDictionary)
         self.view.wantsLayer = true
     }

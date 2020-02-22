@@ -209,7 +209,6 @@ open class CodeAttributedString : NSTextStorage
         highlightr.themeChanged =
             { _ in
                     self.highlight(NSMakeRange(0, self.stringStorage.length))
-                print(self.stringStorage.length)
             }
     }
     

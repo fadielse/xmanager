@@ -13,20 +13,29 @@ enum EditorThemeStyle: String {
     case light = "xcode"
 }
 
+protocol EditorTextViewDelegate {
+    
+    func EditorTextView(didLayoutThemeWithEditor editor: EditorTextView)
+}
+
 class EditorTextView: NSTextView {
     
+    var editorDelegate: EditorTextViewDelegate?
     var currentThemeStyle: EditorThemeStyle = .dark
+    var txtStorage = CodeAttributedString()
     
     override func draw(_ dirtyRect: NSRect) {
         super.draw(dirtyRect)
     }
     
     override func layout() {
-        let textStorage = CodeAttributedString()
-        textStorage.language = "Swift"
-        textStorage.highlightr.setTheme(to: currentThemeStyle.rawValue)
-        textStorage.highlightr.theme.codeFont = NSFont(name: "Courier", size: 12)
-        textStorage.addLayoutManager(layoutManager!)
+        print("Layout")
+
+        txtStorage.delegate = self
+        txtStorage.language = "Swift"
+        txtStorage.highlightr.setTheme(to: currentThemeStyle.rawValue)
+        txtStorage.highlightr.theme.codeFont = NSFont(name: "Courier", size: 12)
+        txtStorage.addLayoutManager(layoutManager!)
         
         autoresizingMask = .width
         backgroundColor = NSColor.textBackgroundColor
@@ -37,13 +46,18 @@ class EditorTextView: NSTextView {
         isHorizontallyResizable = false
         isVerticallyResizable = true
         maxSize = NSSize(width: CGFloat.greatestFiniteMagnitude, height: CGFloat.greatestFiniteMagnitude)
-        minSize = NSSize(width: 0, height: 9000)
-        textColor = NSColor.labelColor
+        minSize = NSSize(width: 0, height: 3000)
+        textColor = currentThemeStyle == .dark ? .white : .black
+        backgroundColor = txtStorage.highlightr.theme.themeBackgroundColor
+        
+        editorDelegate?.EditorTextView(didLayoutThemeWithEditor: self)
     }
     
     override func didChangeText() {
         print("didChangeText")
         print(bounds)
+        print(contentSize)
+        print(txtStorage.editedRange)
     }
     
     var contentSize: CGSize {
@@ -62,4 +76,8 @@ class EditorTextView: NSTextView {
         currentThemeStyle = style
         layout()
     }
+}
+
+extension EditorTextView: NSTextStorageDelegate {
+    
 }

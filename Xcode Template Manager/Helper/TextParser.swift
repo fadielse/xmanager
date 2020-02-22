@@ -31,7 +31,6 @@ struct TextParser {
             print(error.localizedDescription)
             return nil
         }
-        return nil
     }
     
     static func write(withName name: String, andText text: String, toPathUrl pathUrl: URL) -> Bool {

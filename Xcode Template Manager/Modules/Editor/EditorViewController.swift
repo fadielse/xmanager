@@ -21,12 +21,23 @@ class EditorViewController: BaseViewController {
             loadCodeFromFileIfExists()
         }
     }
+    var syntaxText: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        textView.editorDelegate = self
     }
-    @IBAction func onSelectedThemeStyleMenu(_ sender: Any) {
+    
+    override func viewDidAppear() {
+        super.viewDidAppear()
         
+        view.wantsLayer = true
+        viewMenu.wantsLayer = true
+        view.window?.delegate = self
+    }
+    
+    @IBAction func onSelectedThemeStyleMenu(_ sender: Any) {
+        textView.changeThemeStyle(withStyle: .light)
     }
     
     func loadCodeFromFileIfExists() {
@@ -34,6 +45,23 @@ class EditorViewController: BaseViewController {
             return
         }
         
+        syntaxText = text
         textView.string = text
+        viewMenu.layer?.backgroundColor = textView.txtStorage.highlightr.theme.themeBackgroundColor.cgColor
+    }
+}
+
+extension EditorViewController: NSWindowDelegate {
+    func windowWillResize(_ sender: NSWindow, to frameSize: NSSize) -> NSSize {
+        textView.string = syntaxText
+        textView.layout()
+        return frameSize
+    }
+}
+
+extension EditorViewController: EditorTextViewDelegate {
+    
+    func EditorTextView(didLayoutThemeWithEditor editor: EditorTextView) {
+        view.layer?.backgroundColor = editor.txtStorage.highlightr.theme.themeBackgroundColor.cgColor
     }
 }

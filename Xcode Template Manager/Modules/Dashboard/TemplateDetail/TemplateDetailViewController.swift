@@ -23,6 +23,9 @@ class TemplateDetailViewController: BaseViewController {
     @IBOutlet weak var sourceTableView: TableDragView!
     @IBOutlet weak var viewFooterSourceTable: NSView!
     @IBOutlet weak var dragAndDropSourceView: DragAndDropView!
+    @IBOutlet weak var textFieldPropertyTitle: NSTextField!
+    @IBOutlet weak var textFieldPropertyDescription: NSTextField!
+    @IBOutlet weak var textFieldPreviewName: NSTextField!
     
     let fileManager = FileManager.default
     
@@ -67,6 +70,8 @@ class TemplateDetailViewController: BaseViewController {
         setupCollectionView()
         setupSourceTableView()
         prepareTrackingArea()
+        setProperties()
+        setPreview()
     }
     
     @IBAction func onButtonAddClicked(_ sender: Any) {
@@ -314,6 +319,15 @@ class TemplateDetailViewController: BaseViewController {
         }
     }
     
+    func setProperties() {
+        textFieldPropertyTitle.delegate = self
+        textFieldPropertyDescription.delegate = self
+    }
+    
+    func setPreview() {
+        textFieldPreviewName.delegate = self
+    }
+    
     func setTemplateImage() {
         templateImageView1.image = NSImage(named: "img-square-placeholder")
         templateImageView2.image = NSImage(named: "img-square-placeholder")
@@ -399,23 +413,59 @@ extension TemplateDetailViewController: NSTextFieldDelegate {
     
     func control(_ control: NSControl, textView: NSTextView, doCommandBy commandSelector: Selector) -> Bool {
         if (commandSelector == #selector(NSResponder.insertNewline(_:))) {
-            guard !textFieldName.stringValue.isEmpty else {
+            switch control {
+            case textFieldName:
+                guard !textFieldName.stringValue.isEmpty else {
+                    textFieldName.resignFirstResponder()
+                    textFieldName.isEditable = false
+                    textFieldName.isEnabled = false
+                    textFieldName.stringValue = templateList[selectedTemplateIndex].url?.getName() ?? ""
+                    return false
+                }
+                
                 textFieldName.resignFirstResponder()
                 textFieldName.isEditable = false
                 textFieldName.isEnabled = false
-                textFieldName.stringValue = templateList[selectedTemplateIndex].url?.getName() ?? ""
-                return false
+                updateTemplateName(withName: textFieldName.stringValue)
+            case textFieldPropertyTitle:
+                textFieldPropertyTitle.resignFirstResponder()
+                textFieldPropertyTitle.isEnabled = false
+                textFieldPropertyTitle.isEnabled = true
+            case textFieldPropertyDescription:
+                textFieldPropertyDescription.resignFirstResponder()
+                textFieldPropertyDescription.isEnabled = false
+                textFieldPropertyDescription.isEnabled = true
+            case textFieldPreviewName:
+                textFieldPreviewName.resignFirstResponder()
+                textFieldPreviewName.isEnabled = false
+                textFieldPreviewName.isEnabled = true
+            default:
+                view.resignFirstResponder()
             }
             
-            textFieldName.resignFirstResponder()
-            textFieldName.isEditable = false
-            textFieldName.isEnabled = false
-            updateTemplateName(withName: textFieldName.stringValue)
             return true
         } else if (commandSelector == #selector(NSResponder.cancelOperation(_:))) {
-            textFieldName.resignFirstResponder()
-            textFieldName.isEditable = false
-            textFieldName.isEnabled = false
+            
+            switch control {
+            case textFieldName:
+                textFieldName.resignFirstResponder()
+                textFieldName.isEditable = false
+                textFieldName.isEnabled = false
+            case textFieldPropertyTitle:
+                textFieldPropertyTitle.resignFirstResponder()
+                textFieldPropertyTitle.isEnabled = false
+                textFieldPropertyTitle.isEnabled = true
+            case textFieldPropertyDescription:
+                textFieldPropertyDescription.resignFirstResponder()
+                textFieldPropertyDescription.isEnabled = false
+                textFieldPropertyDescription.isEnabled = true
+            case textFieldPreviewName:
+                textFieldPreviewName.resignFirstResponder()
+                textFieldPreviewName.isEnabled = false
+                textFieldPreviewName.isEnabled = true
+            default:
+                view.resignFirstResponder()
+            }
         }
         return false
     }
