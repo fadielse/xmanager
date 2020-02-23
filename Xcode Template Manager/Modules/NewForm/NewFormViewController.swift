@@ -51,11 +51,12 @@ class NewFormViewController: BaseViewController {
             do {
                 try fileManager.createDirectory(at: newPathUrl, withIntermediateDirectories: true, attributes: nil)
                 
-                // Generate Template Config only if file type is .xctemplate
-                guard fileType == .xctemplate, generateTemplateInfo(withPathUrl: newPathUrl) else {
-                    try fileManager.removeItem(at: newPathUrl)
-                    showAlert(withMessage: "Failed to generate Template Configuration")
-                    return
+                if fileType == .xctemplate { // Generate Template Config only if file type is .xctemplate
+                    guard fileType == .xctemplate, generateTemplateInfo(withPathUrl: newPathUrl) else {
+                        try fileManager.removeItem(at: newPathUrl)
+                        showAlert(withMessage: "Failed to generate Template Configuration")
+                        return
+                    }
                 }
                 
                 self.delegate?.newFormViewController(successCreateGroupWithViewController: self)

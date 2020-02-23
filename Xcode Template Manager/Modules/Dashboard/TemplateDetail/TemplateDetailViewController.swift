@@ -14,23 +14,39 @@ class TemplateDetailViewController: BaseViewController {
     @IBOutlet weak var viewName: NSView!
     @IBOutlet weak var viewHeaderIcon: NSView!
     @IBOutlet weak var viewTemplateIcon: NSView!
-    @IBOutlet weak var viewMockup: NSView!
     @IBOutlet weak var textFieldName: NSTextField!
     @IBOutlet weak var templateImageView1: NSImageView!
     @IBOutlet weak var templateImageView2: NSImageView!
     @IBOutlet weak var viewAddTemplateButton: NSView!
     @IBOutlet weak var buttonTemplateIcon: ButtonDragView!
+    
+    // Source Files Area
+    @IBOutlet weak var viewMockup: NSView!
     @IBOutlet weak var sourceTableView: TableDragView!
     @IBOutlet weak var viewFooterSourceTable: NSView!
     @IBOutlet weak var dragAndDropSourceView: DragAndDropView!
+    
+    // Properties Area
+    @IBOutlet weak var viewProperties: NSView!
+    @IBOutlet weak var textFieldPropertyIdentifier: NSTextField!
     @IBOutlet weak var textFieldPropertyTitle: NSTextField!
     @IBOutlet weak var textFieldPropertyDescription: NSTextField!
+    
+    // Preview Area
+    @IBOutlet weak var viewPreview: NSView!
+    @IBOutlet weak var labelPreviewName: NSTextField!
     @IBOutlet weak var textFieldPreviewName: NSTextField!
+    @IBOutlet weak var labelGeneratedFile1: NSTextField!
+    @IBOutlet weak var labelGeneratedFile2: NSTextField!
+    @IBOutlet weak var labelGeneratedFile3: NSTextField!
+    @IBOutlet weak var labelGeneratedFile4: NSTextField!
+    @IBOutlet weak var labelGeneratedFile5: NSTextField!
     
     let fileManager = FileManager.default
     
     var directoryUrl: URL?
     var directoryTemplateName: String?
+    var templateInfo: TemplateInfo?
     var templateList: [UrlList] = [] {
         didSet {
             if templateList.indices.contains(selectedTemplateIndex), let url = templateList[selectedTemplateIndex].url {
@@ -57,6 +73,7 @@ class TemplateDetailViewController: BaseViewController {
             if templateList.indices.contains(selectedTemplateIndex), let url = templateList[selectedTemplateIndex].url {
                 getListTemplate(withUrl: url)
                 directoryTemplateName = "\(url.getName()).xctemplate"
+                beginParsingTemplateXml()
             }
             collectionView.reloadData()
         }
@@ -258,6 +275,20 @@ class TemplateDetailViewController: BaseViewController {
         }
     }
     
+    // MARK: - Load Template Configuration
+    
+    func beginParsingTemplateXml() {
+        guard templateList.count > 0 else {
+            return
+        }
+        
+        var nsDictionary: NSDictionary?
+        if let path = templateList[selectedTemplateIndex].url?.appendingPathComponent("TemplateInfo.plist").path {
+            nsDictionary = NSDictionary(contentsOfFile: path)
+            templateInfo = TemplateInfo(withDictionary: nsDictionary)
+        }
+    }
+    
     // MARK: - Method
     
     func updateSourceFiles() {
@@ -346,6 +377,8 @@ class TemplateDetailViewController: BaseViewController {
         viewHeaderIcon.isHidden = true
         viewTemplateIcon.isHidden = true
         viewMockup.isHidden = true
+        viewProperties.isHidden = true
+        viewPreview.isHidden = true
     }
     
     func updateViewForTemplate() {
@@ -353,6 +386,8 @@ class TemplateDetailViewController: BaseViewController {
         viewHeaderIcon.isHidden = false
         viewTemplateIcon.isHidden = false
         viewMockup.isHidden = false
+        viewProperties.isHidden = false
+        viewPreview.isHidden = false
     }
 }
 
@@ -469,6 +504,35 @@ extension TemplateDetailViewController: NSTextFieldDelegate {
         }
         return false
     }
+    
+    func controlTextDidChange(_ obj: Notification) {
+        guard let textField = obj.object as? NSTextField else {
+            return
+        }
+        
+        if textField == textFieldPropertyTitle {
+            let characterSet: NSCharacterSet = NSCharacterSet(charactersIn: " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ ").inverted as NSCharacterSet
+            textFieldPropertyTitle.stringValue =  (self.textFieldPropertyTitle.stringValue.components(separatedBy: characterSet as CharacterSet) as NSArray).componentsJoined(by: "")
+            textFieldPropertyIdentifier.stringValue = textFieldPropertyTitle.stringValue.replacingOccurrences(of: " ", with: "")
+            labelPreviewName.stringValue = "\(textFieldPropertyTitle.stringValue):"
+            labelGeneratedFile1.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
+            labelGeneratedFile2.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
+            labelGeneratedFile3.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
+            labelGeneratedFile4.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
+            labelGeneratedFile5.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
+        } else if textField == textFieldPropertyDescription {
+            labelPreviewName.toolTip = textFieldPropertyDescription.stringValue
+        }
+    }
+    
+    func controlTextDidEndEditing(_ obj: Notification) {
+        guard let textField = obj.object as? NSTextField else {
+            return
+        }
+        
+        if textField == textFieldPropertyTitle {
+        }
+    }
 }
 
 // MARK: - ButtonDragViewDelegate
@@ -509,5 +573,15 @@ extension TemplateDetailViewController: NSTableViewDelegate, NSTableViewDataSour
     
     func tableDragView(didDragFileWithUrls urls: [URL]) {
         processingDropSourceFiles(withUrls: urls)
+    }
+}
+
+
+// MARK: - XMLParser Delegate
+
+extension TemplateDetailViewController: XMLParserDelegate {
+    
+    func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
+        print(attributeDict)
     }
 }

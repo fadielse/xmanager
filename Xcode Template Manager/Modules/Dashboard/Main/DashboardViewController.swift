@@ -169,7 +169,7 @@ extension DashboardViewController: NSTableViewDelegate, NSTableViewDataSource {
             cell.delegate = self
             cell.isSelected = selectedRow == row
             cell.labelName.stringValue = groupName
-            cell.draw(cell.visibleRect)
+            cell.setNeedsDisplay(cell.bounds)
             return cell
         }
         return nil
@@ -180,7 +180,7 @@ extension DashboardViewController: NSTableViewDelegate, NSTableViewDataSource {
         if let cell = tableView.view(atColumn: 0, row: tableView.selectedRow, makeIfNecessary: true) as? XcodeTemplateCell {
             selectedRow = tableView.selectedRow
             cell.isSelected = true
-            cell.draw(cell.visibleRect)
+            cell.setNeedsDisplay(cell.bounds)
             showTemplateDetail()
         }
     }

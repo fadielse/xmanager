@@ -102,13 +102,13 @@
                                         <rect key="frame" x="16" y="16" width="1144" height="806"/>
                                         <subviews>
                                             <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ty8-SZ-YTU">
-                                                <rect key="frame" x="0.0" y="6" width="350" height="800"/>
+                                                <rect key="frame" x="0.0" y="1" width="350" height="805"/>
                                                 <subviews>
                                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="6d4-KH-Qsd">
-                                                        <rect key="frame" x="0.0" y="775" width="294" height="25"/>
+                                                        <rect key="frame" x="0.0" y="775" width="294" height="30"/>
                                                         <subviews>
                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="55i-Jx-Ryw">
-                                                                <rect key="frame" x="18" y="5" width="48" height="15"/>
+                                                                <rect key="frame" x="18" y="8" width="48" height="15"/>
                                                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Name : " id="vMF-Ko-DNq">
                                                                     <font key="font" metaFont="label" size="12"/>
                                                                     <color key="textColor" red="0.73333333329999995" green="0.88235294119999996" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -116,7 +116,7 @@
                                                                 </textFieldCell>
                                                             </textField>
                                                             <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="qYi-ol-Dcp">
-                                                                <rect key="frame" x="72" y="2" width="180" height="22"/>
+                                                                <rect key="frame" x="72" y="4" width="180" height="22"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="180" id="TAd-2I-cSi"/>
                                                                 </constraints>
@@ -127,12 +127,12 @@
                                                                 </textFieldCell>
                                                             </textField>
                                                             <button translatesAutoresizingMaskIntoConstraints="NO" id="idN-O3-ztx">
-                                                                <rect key="frame" x="260" y="3" width="20" height="20"/>
+                                                                <rect key="frame" x="260" y="5" width="20" height="20"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="width" constant="20" id="9OI-Ok-oeT"/>
                                                                     <constraint firstAttribute="height" constant="20" id="yIa-Ou-8K7"/>
                                                                 </constraints>
-                                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSTouchBarComposeTemplate" imagePosition="only" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="zHg-NO-7Np">
+                                                                <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSTouchBarComposeTemplate" imagePosition="below" alignment="center" imageScaling="proportionallyUpOrDown" inset="2" id="zHg-NO-7Np">
                                                                     <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                     <font key="font" metaFont="system"/>
                                                                 </buttonCell>
@@ -146,7 +146,7 @@
                                                             <constraint firstItem="55i-Jx-Ryw" firstAttribute="centerY" secondItem="6d4-KH-Qsd" secondAttribute="centerY" id="EkX-mD-14r"/>
                                                             <constraint firstItem="idN-O3-ztx" firstAttribute="leading" secondItem="qYi-ol-Dcp" secondAttribute="trailing" constant="8" id="F6g-he-cGk"/>
                                                             <constraint firstItem="qYi-ol-Dcp" firstAttribute="leading" secondItem="55i-Jx-Ryw" secondAttribute="trailing" constant="8" id="SQ2-QR-PCI"/>
-                                                            <constraint firstAttribute="height" constant="25" id="T9G-yV-CPZ"/>
+                                                            <constraint firstAttribute="height" constant="30" id="T9G-yV-CPZ"/>
                                                             <constraint firstItem="qYi-ol-Dcp" firstAttribute="centerY" secondItem="55i-Jx-Ryw" secondAttribute="centerY" id="YEy-Vo-KgR"/>
                                                             <constraint firstItem="idN-O3-ztx" firstAttribute="centerY" secondItem="qYi-ol-Dcp" secondAttribute="centerY" id="u9x-0D-bvk"/>
                                                         </constraints>
@@ -372,7 +372,7 @@
                                                                                             <constraint firstAttribute="width" constant="10" id="2ZH-8w-rTr"/>
                                                                                             <constraint firstAttribute="height" constant="10" id="zJK-ab-sKw"/>
                                                                                         </constraints>
-                                                                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRemoveTemplate" imagePosition="overlaps" alignment="center" state="on" imageScaling="proportionallyUpOrDown" inset="2" id="1L7-Yo-3EL">
+                                                                                        <buttonCell key="cell" type="square" bezelStyle="shadowlessSquare" image="NSRemoveTemplate" imagePosition="below" alignment="center" imageScaling="axesIndependently" inset="2" id="1L7-Yo-3EL">
                                                                                             <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                                                                             <font key="font" metaFont="system"/>
                                                                                         </buttonCell>
@@ -577,7 +577,7 @@
                                                                                                     </constraints>
                                                                                                 </customView>
                                                                                                 <customView translatesAutoresizingMaskIntoConstraints="NO" id="cp0-xw-PfM">
-                                                                                                    <rect key="frame" x="0.0" y="0.0" width="163" height="96"/>
+                                                                                                    <rect key="frame" x="0.0" y="0.0" width="778" height="96"/>
                                                                                                 </customView>
                                                                                             </subviews>
                                                                                             <visibilityPriorities>
@@ -865,7 +865,7 @@
                                                                                                     <subviews>
                                                                                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="eOl-6T-Mdj">
                                                                                                             <rect key="frame" x="-2" y="9" width="366" height="21"/>
-                                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" title="___VARIABLE_ModuleName___" id="NpE-p1-O0c">
+                                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" title="___VARIABLE_ModuleName:identifier___" id="NpE-p1-O0c">
                                                                                                                 <font key="font" usesAppearanceFont="YES"/>
                                                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -929,7 +929,7 @@
                                                                                                     <subviews>
                                                                                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="tJ6-P3-PFB">
                                                                                                             <rect key="frame" x="-2" y="9" width="366" height="21"/>
-                                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" title="___VARIABLE_ModuleName___" id="jRp-2x-vZ5">
+                                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" title="___VARIABLE_ModuleName:identifier___" id="jRp-2x-vZ5">
                                                                                                                 <font key="font" usesAppearanceFont="YES"/>
                                                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -993,7 +993,7 @@
                                                                                                     <subviews>
                                                                                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TJU-Ql-c4B">
                                                                                                             <rect key="frame" x="-2" y="9" width="366" height="21"/>
-                                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" title="___VARIABLE_ModuleName___" id="jIm-J5-2iK">
+                                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" title="___VARIABLE_ModuleName:identifier___" id="jIm-J5-2iK">
                                                                                                                 <font key="font" usesAppearanceFont="YES"/>
                                                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1057,7 +1057,7 @@
                                                                                                     <subviews>
                                                                                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="ppL-Ho-60K">
                                                                                                             <rect key="frame" x="-2" y="9" width="366" height="21"/>
-                                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" title="___VARIABLE_ModuleName___" id="8X7-Lq-gaw">
+                                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" title="___VARIABLE_ModuleName:identifier___" id="8X7-Lq-gaw">
                                                                                                                 <font key="font" usesAppearanceFont="YES"/>
                                                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1121,7 +1121,7 @@
                                                                                                     <subviews>
                                                                                                         <textField verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Tww-ye-h7Q">
                                                                                                             <rect key="frame" x="-2" y="9" width="366" height="21"/>
-                                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" title="___VARIABLE_ModuleName___" id="zy2-SK-yDp">
+                                                                                                            <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" enabled="NO" sendsActionOnEndEditing="YES" title="___VARIABLE_ModuleName:identifier___" id="zy2-SK-yDp">
                                                                                                                 <font key="font" usesAppearanceFont="YES"/>
                                                                                                                 <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                                                                                                 <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -1238,18 +1238,27 @@
                         <outlet property="buttonTemplateIcon" destination="vJr-oO-Svi" id="tdq-uf-zaT"/>
                         <outlet property="collectionView" destination="ofn-6L-J81" id="1mz-zP-6dK"/>
                         <outlet property="dragAndDropSourceView" destination="B6q-eK-VKf" id="nap-i1-aP4"/>
+                        <outlet property="labelGeneratedFile1" destination="eOl-6T-Mdj" id="AOV-Ba-J4k"/>
+                        <outlet property="labelGeneratedFile2" destination="tJ6-P3-PFB" id="cUM-xc-4Qd"/>
+                        <outlet property="labelGeneratedFile3" destination="TJU-Ql-c4B" id="QtP-Be-1M2"/>
+                        <outlet property="labelGeneratedFile4" destination="ppL-Ho-60K" id="8uS-AZ-FOR"/>
+                        <outlet property="labelGeneratedFile5" destination="Tww-ye-h7Q" id="2HJ-gh-6SV"/>
+                        <outlet property="labelPreviewName" destination="B1R-V9-ZBg" id="zod-sf-K2B"/>
                         <outlet property="sourceTableView" destination="ji4-Av-yzb" id="sEk-SE-vtV"/>
                         <outlet property="templateImageView1" destination="RKG-Ab-l55" id="c7E-xI-S7P"/>
                         <outlet property="templateImageView2" destination="Yzo-zr-Vou" id="VbZ-wH-1xB"/>
                         <outlet property="textFieldName" destination="qYi-ol-Dcp" id="hZ0-2B-nuk"/>
-                        <outlet property="textFieldPreviewName" destination="9OF-dN-MhR" id="5Zm-P2-EwO"/>
+                        <outlet property="textFieldPreviewName" destination="9OF-dN-MhR" id="aYT-7p-ebn"/>
                         <outlet property="textFieldPropertyDescription" destination="RfO-F2-R6F" id="H6i-gd-JcB"/>
+                        <outlet property="textFieldPropertyIdentifier" destination="f6L-KG-ThE" id="DzE-Xe-6f9"/>
                         <outlet property="textFieldPropertyTitle" destination="XsK-SG-6fA" id="ZRm-DJ-7zm"/>
                         <outlet property="viewAddTemplateButton" destination="Uxa-Ul-ypq" id="L4p-kF-mym"/>
                         <outlet property="viewFooterSourceTable" destination="qXW-QQ-vNy" id="XXt-Lf-isI"/>
                         <outlet property="viewHeaderIcon" destination="52V-l8-9bJ" id="XDB-il-BSb"/>
                         <outlet property="viewMockup" destination="PR6-IK-DJp" id="ipM-dq-6VT"/>
                         <outlet property="viewName" destination="6d4-KH-Qsd" id="nYw-eU-ykO"/>
+                        <outlet property="viewPreview" destination="2pW-Gg-2Bx" id="ZQn-Di-Bts"/>
+                        <outlet property="viewProperties" destination="MBj-kq-w3Q" id="yLQ-Jg-oG4"/>
                         <outlet property="viewTemplateIcon" destination="9x7-cq-XWl" id="qic-UK-Nfs"/>
                     </connections>
                 </viewController>
