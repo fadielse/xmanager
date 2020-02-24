@@ -98,7 +98,8 @@ class DashboardViewController: BaseViewController {
     }
     
     func showTemplateDetail() {
-        guard let selectedRow = selectedRow else {
+        guard let selectedRow = selectedRow, templateList.count > 0 else {
+            self.containerView.replaceSubview(templateDetailViewController.view, with: welcomeViewController.view)
             return
         }
         

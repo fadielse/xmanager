@@ -10,6 +10,7 @@ import Cocoa
 
 class TemplateDetailViewController: BaseViewController {
     
+    @IBOutlet weak var viewTemplateList: NSView!
     @IBOutlet weak var collectionView: NSCollectionView!
     @IBOutlet weak var viewName: NSView!
     @IBOutlet weak var viewHeaderIcon: NSView!
@@ -36,17 +37,27 @@ class TemplateDetailViewController: BaseViewController {
     @IBOutlet weak var viewPreview: NSView!
     @IBOutlet weak var labelPreviewName: NSTextField!
     @IBOutlet weak var textFieldPreviewName: NSTextField!
+    @IBOutlet weak var viewGeneratedFile1: NSView!
     @IBOutlet weak var labelGeneratedFile1: NSTextField!
+    @IBOutlet weak var viewGeneratedFile2: NSView!
     @IBOutlet weak var labelGeneratedFile2: NSTextField!
+    @IBOutlet weak var viewGeneratedFile3: NSView!
     @IBOutlet weak var labelGeneratedFile3: NSTextField!
+    @IBOutlet weak var viewGeneratedFile4: NSView!
     @IBOutlet weak var labelGeneratedFile4: NSTextField!
+    @IBOutlet weak var viewGeneratedFile5: NSView!
     @IBOutlet weak var labelGeneratedFile5: NSTextField!
     
     let fileManager = FileManager.default
     
     var directoryUrl: URL?
     var directoryTemplateName: String?
-    var templateInfo: TemplateInfo?
+    var templateInfo: TemplateInfo? {
+        didSet {
+            loadTemplateProperties()
+            updatePreview()
+        }
+    }
     var templateList: [UrlList] = [] {
         didSet {
             if templateList.indices.contains(selectedTemplateIndex), let url = templateList[selectedTemplateIndex].url {
@@ -73,7 +84,7 @@ class TemplateDetailViewController: BaseViewController {
             if templateList.indices.contains(selectedTemplateIndex), let url = templateList[selectedTemplateIndex].url {
                 getListTemplate(withUrl: url)
                 directoryTemplateName = "\(url.getName()).xctemplate"
-                beginParsingTemplateXml()
+                loadTemplateConfiguration()
             }
             collectionView.reloadData()
         }
@@ -257,16 +268,86 @@ class TemplateDetailViewController: BaseViewController {
                     }
                     try fileManager.copyItem(at: sourceUrl, to: copyUrl)
                 } catch let error {
-                    print("Failed to set image : \(error.localizedDescription)")
+                    print("Failed to copy File : \(error.localizedDescription)")
                 }
             } else {
-                print("Failed to set image")
+                print("Failed to copy File")
                 break
             }
         }
         
         getListFile()
+        updateTemplateConfiguration()
+        loadTemplateConfiguration()
+        updateTemplateProperties()
+        updatePreview()
         collectionView.reloadData()
+    }
+    
+    private func loadTemplateProperties() {
+        guard let templateInfo = templateInfo else { return }
+        textFieldPropertyIdentifier.stringValue = templateInfo.getPropertyIdentifier()
+        textFieldPropertyTitle.stringValue = templateInfo.getPropertyTitle()
+        textFieldPropertyDescription.stringValue = templateInfo.getPropertyDescription()
+    }
+    
+    private func updateTemplateProperties() {
+        let characterSet: NSCharacterSet = NSCharacterSet(charactersIn: " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ ").inverted as NSCharacterSet
+        textFieldPropertyTitle.stringValue =  (self.textFieldPropertyTitle.stringValue.components(separatedBy: characterSet as CharacterSet) as NSArray).componentsJoined(by: "")
+        textFieldPropertyIdentifier.stringValue = textFieldPropertyTitle.stringValue.replacingOccurrences(of: " ", with: "")
+    }
+    
+    private func updatePreview() {
+        labelPreviewName.stringValue = textFieldPropertyTitle.stringValue
+        labelPreviewName.toolTip = textFieldPropertyDescription.stringValue
+        labelPreviewName.stringValue = "\(textFieldPropertyTitle.stringValue):"
+        
+        if let templateInfo = templateInfo {
+            viewGeneratedFile1.isHidden = templateInfo.isGenerateFileHidden(withIndex: TemplateInfoOptionRows.generateFile1)
+            viewGeneratedFile2.isHidden = templateInfo.isGenerateFileHidden(withIndex: TemplateInfoOptionRows.generateFile2)
+            viewGeneratedFile3.isHidden = templateInfo.isGenerateFileHidden(withIndex: TemplateInfoOptionRows.generateFile3)
+            viewGeneratedFile4.isHidden = templateInfo.isGenerateFileHidden(withIndex: TemplateInfoOptionRows.generateFile4)
+            viewGeneratedFile5.isHidden = templateInfo.isGenerateFileHidden(withIndex: TemplateInfoOptionRows.generateFile5)
+        } else {
+            viewGeneratedFile1.isHidden = true
+            viewGeneratedFile2.isHidden = true
+            viewGeneratedFile3.isHidden = true
+            viewGeneratedFile4.isHidden = true
+            viewGeneratedFile5.isHidden = true
+        }
+        
+        labelGeneratedFile1.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
+        labelGeneratedFile2.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
+        labelGeneratedFile3.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
+        labelGeneratedFile4.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
+        labelGeneratedFile5.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
+    }
+    
+    private func updateTemplateConfiguration() {
+        guard let templateInfo = templateInfo else { return }
+        var plist = ""
+        plist.append(templateInfo.getMainPlistFormat(withName: textFieldPropertyTitle.stringValue, andDescription: textFieldPropertyDescription.stringValue))
+        var index = 1
+        for file in sourceFiles {
+            if index > 5 { break }
+            if file.hasTemplateCode() {
+                plist.append(file.getGenerateFilePlistFormat(withIndex: index, andIdentifier: textFieldPropertyIdentifier.stringValue))
+            }
+            index = index + 1
+        }
+        plist.append(templateInfo.getClosurePlistFormat())
+        
+        if let url = templateList[selectedTemplateIndex].url, fileManager.fileExists(atPath: url.appendingPathComponent(FileNameConstant.generate.templateInfo).path) {
+            do {
+                try fileManager.removeItem(atPath: url.appendingPathComponent(FileNameConstant.generate.templateInfo).path)
+                
+                if !TextParser.write(withName: FileNameConstant.generate.templateInfo, andText: plist, toPathUrl: url) {
+                     print("Error write template configuration")
+                }
+            } catch let error {
+                print("Error write template configuration: \(error.localizedDescription)")
+            }
+        }
     }
     
     @objc private func doubleClickOnSourceFileRow() {
@@ -277,15 +358,13 @@ class TemplateDetailViewController: BaseViewController {
     
     // MARK: - Load Template Configuration
     
-    func beginParsingTemplateXml() {
+    func loadTemplateConfiguration() {
         guard templateList.count > 0 else {
             return
         }
         
-        var nsDictionary: NSDictionary?
         if let path = templateList[selectedTemplateIndex].url?.appendingPathComponent("TemplateInfo.plist").path {
-            nsDictionary = NSDictionary(contentsOfFile: path)
-            templateInfo = TemplateInfo(withDictionary: nsDictionary)
+            templateInfo = TemplateInfo(withDictionary: NSDictionary(contentsOfFile: path))
         }
     }
     
@@ -511,17 +590,10 @@ extension TemplateDetailViewController: NSTextFieldDelegate {
         }
         
         if textField == textFieldPropertyTitle {
-            let characterSet: NSCharacterSet = NSCharacterSet(charactersIn: " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ ").inverted as NSCharacterSet
-            textFieldPropertyTitle.stringValue =  (self.textFieldPropertyTitle.stringValue.components(separatedBy: characterSet as CharacterSet) as NSArray).componentsJoined(by: "")
-            textFieldPropertyIdentifier.stringValue = textFieldPropertyTitle.stringValue.replacingOccurrences(of: " ", with: "")
-            labelPreviewName.stringValue = "\(textFieldPropertyTitle.stringValue):"
-            labelGeneratedFile1.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
-            labelGeneratedFile2.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
-            labelGeneratedFile3.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
-            labelGeneratedFile4.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
-            labelGeneratedFile5.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
+            updateTemplateProperties()
+            updatePreview()
         } else if textField == textFieldPropertyDescription {
-            labelPreviewName.toolTip = textFieldPropertyDescription.stringValue
+            updatePreview()
         }
     }
     

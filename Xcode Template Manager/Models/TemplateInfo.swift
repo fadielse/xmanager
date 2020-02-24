@@ -8,6 +8,16 @@
 
 import Foundation
 
+struct TemplateInfoOptionRows {
+    
+    static let properties = 0
+    static let generateFile1 = 1
+    static let generateFile2 = 2
+    static let generateFile3 = 3
+    static let generateFile4 = 4
+    static let generateFile5 = 5
+}
+
 struct TemplateInfo {
     
     var kind: String?
@@ -54,5 +64,67 @@ struct TemplateInfo {
             self.required = dict["Required"] as? Int ?? 0
             self.type = dict["Type"] as? String
         }
+    }
+    
+    func getPropertyIdentifier() -> String {
+        guard options.indices.contains(TemplateInfoOptionRows.properties) else { return "" }
+        let property = options[TemplateInfoOptionRows.properties]
+        return property.identifier ?? ""
+    }
+    
+    func getPropertyTitle() -> String {
+        guard options.indices.contains(TemplateInfoOptionRows.properties) else { return "" }
+        let property = options[TemplateInfoOptionRows.properties]
+        return property.name?.replacingOccurrences(of: ":", with: "") ?? ""
+    }
+    
+    func getPropertyDescription() -> String {
+        guard options.indices.contains(0) else { return "" }
+        let property = options[TemplateInfoOptionRows.properties]
+        return property.description ?? ""
+    }
+    
+    func isGenerateFileHidden(withIndex index: Int) -> Bool {
+        guard options.indices.contains(index) else { return true }
+        return false
+    }
+    
+    func getMainPlistFormat(withName name: String, andDescription description: String) -> String {
+        var text = ""
+        text.append("<?xml version=\"1.0\" encoding=\"UTF-8\"?>")
+        text.append("<!DOCTYPE plist PUBLIC \"-//Apple//DTD PLIST 1.0//EN\" \"http://www.apple.com/DTDs/PropertyList-1.0.dtd\">")
+        text.append("<plist version=\"1.0\">")
+        text.append("<dict>")
+        text.append("<key>Kind</key>")
+        text.append("<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>")
+        text.append("<key>Platforms</key>")
+        text.append("<array>")
+        text.append("<string>com.apple.platform.iphoneos</string>")
+        text.append("</array>")
+        text.append("<key>Options</key>")
+        text.append("<array>")
+        text.append("<dict>")
+        text.append("<key>Description</key>")
+        text.append("<string>\(description)</string>")
+        text.append("<key>Identifier</key>")
+        text.append("<string>\(name.replacingOccurrences(of: " ", with: ""))</string>")
+        text.append("<key>Name</key>")
+        text.append("<string>\(name):</string>")
+        text.append("<key>NotPersisted</key>")
+        text.append("<true/>")
+        text.append("<key>Required</key>")
+        text.append("<true/>")
+        text.append("<key>Type</key>")
+        text.append("<string>text</string>")
+        text.append("</dict>")
+        return text
+    }
+    
+    func getClosurePlistFormat() -> String {
+        var text = ""
+        text.append("</array>")
+        text.append("</dict>")
+        text.append("</plist>")
+        return text
     }
 }

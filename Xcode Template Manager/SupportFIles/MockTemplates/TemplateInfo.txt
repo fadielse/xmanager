@@ -12,9 +12,9 @@
         <array>
             <dict>
                 <key>Description</key>
-                <string>The name of Moudule to create.</string>
+                <string>The name of Module to create.</string>
                 <key>Identifier</key>
-                <string>MouduleName</string>
+                <string>ModuleName</string>
                 <key>Name</key>
                 <string>Module Name:</string>
                 <key>NotPersisted</key>
@@ -23,48 +23,6 @@
                 <true/>
                 <key>Type</key>
                 <string>text</string>
-            </dict>
-            <dict>
-                <key>Default</key>
-                <string>___VARIABLE_ModuleName:identifier___</string>
-                <key>Description</key>
-                <string>The storyboard name</string>
-                <key>Identifier</key>
-                <string>storyBoardName</string>
-                <key>Name</key>
-                <string>View StoryBoard Name:</string>
-                <key>Required</key>
-                <true/>
-                <key>Type</key>
-                <string>static</string>
-            </dict>
-            <dict>
-                <key>Default</key>
-                <string>___VARIABLE_ModuleName:identifier___Presenter</string>
-                <key>Description</key>
-                <string>The presenter name</string>
-                <key>Identifier</key>
-                <string>presenterName</string>
-                <key>Name</key>
-                <string>Presenter Name:</string>
-                <key>Required</key>
-                <true/>
-                <key>Type</key>
-                <string>static</string>
-            </dict>
-            <dict>
-                <key>Default</key>
-                <string>___VARIABLE_ModuleName:identifier___ViewController</string>
-                <key>Description</key>
-                <string>The view controller name</string>
-                <key>Identifier</key>
-                <string>viewControllerName</string>
-                <key>Name</key>
-                <string>View Controller Name:</string>
-                <key>Required</key>
-                <true/>
-                <key>Type</key>
-                <string>static</string>
             </dict>
         </array>
     </dict>

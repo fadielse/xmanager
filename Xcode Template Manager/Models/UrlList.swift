@@ -30,4 +30,27 @@ struct UrlList {
         guard let url = url else { return false }
         return url.absoluteString.contains("TemplateInfo.plist")
     }
+    
+    func hasTemplateCode() -> Bool {
+        return url?.absoluteString.contains("___FILEBASENAME___") ?? false
+    }
+    
+    func getGenerateFilePlistFormat(withIndex index: Int, andIdentifier identifier: String) -> String {
+        var text = ""
+        text.append("<dict>")
+        text.append("<key>Default</key>")
+        text.append("<string>___VARIABLE_\(identifier):identifier___</string>")
+        text.append("<key>Description</key>")
+        text.append("<string>Generate File \(index)</string>")
+        text.append("<key>Identifier</key>")
+        text.append("<string>GeneratedFile\(index)</string>")
+        text.append("<key>Name</key>")
+        text.append("<string>Generate File \(index)</string>")
+        text.append("<key>Required</key>")
+        text.append("<true/>")
+        text.append("<key>Type</key>")
+        text.append("<string>static</string>")
+        text.append("</dict>")
+        return text
+    }
 }
