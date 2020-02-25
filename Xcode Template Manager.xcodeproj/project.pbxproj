@@ -128,6 +128,8 @@
 		FF6605D923F7BC8E0052BCD7 /* TemplateListDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6605D823F7BC8E0052BCD7 /* TemplateListDAO.swift */; };
 		FF67272A2402228E00820B6A /* TemplateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6727292402228E00820B6A /* TemplateInfo.swift */; };
 		FF67272C2404D4A500820B6A /* String+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF67272B2404D4A500820B6A /* String+Format.swift */; };
+		FF6727342405068F00820B6A /* BaseTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6727322405068F00820B6A /* BaseTextStorage.swift */; };
+		FF6727352405068F00820B6A /* SyntaxTextStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6727332405068F00820B6A /* SyntaxTextStorage.swift */; };
 		FF6A673323FD869C0007C877 /* TemplateDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6A673223FD869C0007C877 /* TemplateDetail.storyboard */; };
 		FF6A673523FD87280007C877 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6A673423FD87280007C877 /* Welcome.storyboard */; };
 		FF6A673923FD8F520007C877 /* TableDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6A673823FD8F520007C877 /* TableDragView.swift */; };
@@ -272,6 +274,8 @@
 		FF6605D823F7BC8E0052BCD7 /* TemplateListDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateListDAO.swift; sourceTree = "<group>"; };
 		FF6727292402228E00820B6A /* TemplateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateInfo.swift; sourceTree = "<group>"; };
 		FF67272B2404D4A500820B6A /* String+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Format.swift"; sourceTree = "<group>"; };
+		FF6727322405068F00820B6A /* BaseTextStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseTextStorage.swift; sourceTree = "<group>"; };
+		FF6727332405068F00820B6A /* SyntaxTextStorage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SyntaxTextStorage.swift; sourceTree = "<group>"; };
 		FF6A673223FD869C0007C877 /* TemplateDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TemplateDetail.storyboard; sourceTree = "<group>"; };
 		FF6A673423FD87280007C877 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		FF6A673823FD8F520007C877 /* TableDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDragView.swift; sourceTree = "<group>"; };
@@ -570,6 +574,7 @@
 		1BBC959F23FCF13E006E585D /* Library */ = {
 			isa = PBXGroup;
 			children = (
+				FF6727312405067700820B6A /* TextHighlighter */,
 				1B275BA623FF6F3E00A2514C /* Highlightr */,
 				1BBC95A023FCF157006E585D /* ButtonDragView.swift */,
 				FF6A673823FD8F520007C877 /* TableDragView.swift */,
@@ -595,6 +600,15 @@
 				FFB3458823F84D980060D8FE /* UrlListDAO.swift */,
 			);
 			path = DAO;
+			sourceTree = "<group>";
+		};
+		FF6727312405067700820B6A /* TextHighlighter */ = {
+			isa = PBXGroup;
+			children = (
+				FF6727322405068F00820B6A /* BaseTextStorage.swift */,
+				FF6727332405068F00820B6A /* SyntaxTextStorage.swift */,
+			);
+			path = TextHighlighter;
 			sourceTree = "<group>";
 		};
 		FF7CEF9F23FEE3D400A64524 /* Editor */ = {
@@ -830,6 +844,7 @@
 				1BBC95A123FCF157006E585D /* ButtonDragView.swift in Sources */,
 				1B4F2A9E23F2A2E800A2A32E /* DashboardViewController.swift in Sources */,
 				1B275C6C23FF6F6100A2514C /* HTMLUtils.swift in Sources */,
+				FF6727352405068F00820B6A /* SyntaxTextStorage.swift in Sources */,
 				FFB3458723F84D7F0060D8FE /* UrlList.swift in Sources */,
 				1B275C6A23FF6F6100A2514C /* Highlightr.swift in Sources */,
 				1B23B1CC23FE885F00A17C74 /* FileNameConstant.swift in Sources */,
@@ -858,6 +873,7 @@
 				FF6605D923F7BC8E0052BCD7 /* TemplateListDAO.swift in Sources */,
 				FF097F7B23FB091D001AF186 /* BaseWindowController.swift in Sources */,
 				FF6605D623F7BC5E0052BCD7 /* TemplateList.swift in Sources */,
+				FF6727342405068F00820B6A /* BaseTextStorage.swift in Sources */,
 				1B39EB3E23F6977A00F50E0D /* NewFormViewController.swift in Sources */,
 				FFB3458923F84D980060D8FE /* UrlListDAO.swift in Sources */,
 				FF67272C2404D4A500820B6A /* String+Format.swift in Sources */,

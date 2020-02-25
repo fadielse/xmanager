@@ -10,5 +10,6 @@ import Foundation
 
 struct UrlConstant {
     
-    static let basePath = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(".XcodeTemplateManager")
+    static let basePath = URL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent(".XcodeTemplateManager")
+    static let xcodeTemplatePath = URL(fileURLWithPath: NSHomeDirectory()).appendingPathComponent("Library/Developer/Xcode/Templates")
 }

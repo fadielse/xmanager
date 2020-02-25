@@ -127,6 +127,21 @@ class TemplateDetailViewController: BaseViewController {
     }
     
     @IBAction func onButtonTemplateIconClicked(_ sender: Any) {
+        let dialog = NSOpenPanel()
+        
+        dialog.title                   = "Choose your icon's"
+        dialog.showsResizeIndicator    = true
+        dialog.showsHiddenFiles        = false
+        dialog.canChooseDirectories    = false
+        dialog.canCreateDirectories    = false
+        dialog.allowsMultipleSelection = true
+        dialog.allowedFileTypes        = ["png"]
+
+        dialog.begin { (result) -> Void in
+            if result.rawValue == NSApplication.ModalResponse.OK.rawValue {
+                print(dialog.urls)
+            }
+        }
     }
     
     @IBAction func onButtonDeleteTemplateClicked(_ sender: Any) {
@@ -178,12 +193,31 @@ class TemplateDetailViewController: BaseViewController {
         sourceTableView.dragDelegate = self
         sourceTableView.doubleAction = #selector(doubleClickOnSourceFileRow)
         
+        let menu = NSMenu()
+        let menuItemOpen = NSMenuItem(title: "Open", action: #selector(selectedMenuTableRow), keyEquivalent: "")
+        let menuItemOpenWith = NSMenuItem(title: "Open With", action: #selector(selectedMenuTableRow), keyEquivalent: "")
+        menuItemOpenWith.isSeparatorItem = true
+        menu.addItem(menuItemOpen)
+        menu.addItem(menuItemOpenWith)
+        menu.addItem(NSMenuItem(title: "Delete", action: #selector(selectedMenuTableRow), keyEquivalent: ""))
+        
+        let submenu = NSMenu()
+        submenu.addItem(NSMenuItem(title: "Xcode", action: #selector(selectedMenuTableRow), keyEquivalent: ""))
+        submenu.addItem(NSMenuItem(title: "Text Edit", action: #selector(selectedMenuTableRow), keyEquivalent: ""))
+        
+        menu.setSubmenu(submenu, for: menu.item(at: 1)!)
+        sourceTableView.menu = menu
+        
         sourceTableView.register(NSNib(nibNamed: "SourceFileTableCell", bundle: nil), forIdentifier: NSUserInterfaceItemIdentifier(rawValue: "SourceFileTableCell"))
         
         viewFooterSourceTable.wantsLayer = true
         viewFooterSourceTable.layer?.backgroundColor = ColorConstant.darkBackground.cgColor
         viewFooterSourceTable.layer?.borderWidth = 1.0
         viewFooterSourceTable.layer?.borderColor = NSColor.init(white: 0.7, alpha: 0.5).cgColor
+    }
+    
+    @objc func selectedMenuTableRow() {
+        print(sourceTableView.clickedRow)
     }
     
     private func updateTemplateName(withName name: String) {
@@ -420,9 +454,16 @@ class TemplateDetailViewController: BaseViewController {
     }
     
     @objc private func doubleClickOnSourceFileRow() {
-        if let editorViewController = self.goToScreen(withStoryboardId: "Editor", andViewControllerId: "EditorViewController") as? EditorViewController {
-            editorViewController.fileUrl = sourceFiles[sourceTableView.clickedRow].url
+//        if let editorViewController = self.goToScreen(withStoryboardId: "Editor", andViewControllerId: "EditorViewController") as? EditorViewController {
+//            editorViewController.fileUrl = sourceFiles[sourceTableView.clickedRow].url
+//        }
+        if let filePath = sourceFiles[sourceTableView.clickedRow].url?.path {
+            openFileWithDefaultApp(path: filePath)
         }
+    }
+    
+    func openFileWithDefaultApp(path: String) {
+        NSWorkspace.shared.openFile(path)
     }
     
     // MARK: - Load Template Configuration

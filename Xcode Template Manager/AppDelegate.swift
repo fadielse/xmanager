@@ -22,9 +22,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     func createBaseFolderIfNotExists() {
-        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0].appendingPathComponent(".XcodeTemplateManager")
         do {
-            try FileManager.default.createDirectory(at: paths, withIntermediateDirectories: true, attributes: nil)
+            try FileManager.default.createDirectory(at: UrlConstant.basePath, withIntermediateDirectories: true, attributes: nil)
         } catch {
             print(error.localizedDescription)
         }
