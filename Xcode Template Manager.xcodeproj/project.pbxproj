@@ -127,6 +127,7 @@
 		FF6605D623F7BC5E0052BCD7 /* TemplateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6605D523F7BC5E0052BCD7 /* TemplateList.swift */; };
 		FF6605D923F7BC8E0052BCD7 /* TemplateListDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6605D823F7BC8E0052BCD7 /* TemplateListDAO.swift */; };
 		FF67272A2402228E00820B6A /* TemplateInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6727292402228E00820B6A /* TemplateInfo.swift */; };
+		FF67272C2404D4A500820B6A /* String+Format.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF67272B2404D4A500820B6A /* String+Format.swift */; };
 		FF6A673323FD869C0007C877 /* TemplateDetail.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6A673223FD869C0007C877 /* TemplateDetail.storyboard */; };
 		FF6A673523FD87280007C877 /* Welcome.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF6A673423FD87280007C877 /* Welcome.storyboard */; };
 		FF6A673923FD8F520007C877 /* TableDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6A673823FD8F520007C877 /* TableDragView.swift */; };
@@ -270,6 +271,7 @@
 		FF6605D523F7BC5E0052BCD7 /* TemplateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateList.swift; sourceTree = "<group>"; };
 		FF6605D823F7BC8E0052BCD7 /* TemplateListDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateListDAO.swift; sourceTree = "<group>"; };
 		FF6727292402228E00820B6A /* TemplateInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateInfo.swift; sourceTree = "<group>"; };
+		FF67272B2404D4A500820B6A /* String+Format.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Format.swift"; sourceTree = "<group>"; };
 		FF6A673223FD869C0007C877 /* TemplateDetail.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TemplateDetail.storyboard; sourceTree = "<group>"; };
 		FF6A673423FD87280007C877 /* Welcome.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Welcome.storyboard; sourceTree = "<group>"; };
 		FF6A673823FD8F520007C877 /* TableDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDragView.swift; sourceTree = "<group>"; };
@@ -551,6 +553,7 @@
 			isa = PBXGroup;
 			children = (
 				1BA08DE323F6AA4000C50619 /* NSViewController+Router.swift */,
+				FF67272B2404D4A500820B6A /* String+Format.swift */,
 				FFC9F0FD23F829F7009CDEAD /* Url+StringFormat.swift */,
 			);
 			path = Extensions;
@@ -857,6 +860,7 @@
 				FF6605D623F7BC5E0052BCD7 /* TemplateList.swift in Sources */,
 				1B39EB3E23F6977A00F50E0D /* NewFormViewController.swift in Sources */,
 				FFB3458923F84D980060D8FE /* UrlListDAO.swift in Sources */,
+				FF67272C2404D4A500820B6A /* String+Format.swift in Sources */,
 				FFC9F10323F83846009CDEAD /* TemplateDetailViewController.swift in Sources */,
 				1B23B1CA23FE845000A17C74 /* TextParser.swift in Sources */,
 			);
@@ -926,7 +930,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -980,7 +984,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -1004,7 +1008,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kodingkita.Xcode-Template-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1026,7 +1030,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.kodingkita.Xcode-Template-Manager";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;

@@ -55,9 +55,6 @@ class EditorTextView: NSTextView {
     
     override func didChangeText() {
         print("didChangeText")
-        print(bounds)
-        print(contentSize)
-        print(txtStorage.editedRange)
     }
     
     var contentSize: CGSize {

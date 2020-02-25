@@ -107,14 +107,13 @@ class DashboardViewController: BaseViewController {
             sView.removeFromSuperview()
         }
 
-        templateDetailViewController.directoryUrl = templateList[selectedRow].url
         templateDetailViewController.view.frame = self.containerView.bounds
         self.containerView.addSubview(templateDetailViewController.view)
-        templateDetailViewController.reloadContent()
+        templateDetailViewController.directoryUrl = templateList[selectedRow].url
         if let loaded = templateList[selectedRow].url?.getName() {
-            updateLog(withMessage: "Success load template : \(loaded)")
+            updateLog(withMessage: "Success load templates : \(loaded)")
         } else {
-            updateLog(withMessage: "Error load template : Source not found")
+            updateLog(withMessage: "Error load templates : Source not found")
         }
     }
     
@@ -206,7 +205,7 @@ extension DashboardViewController: XcodeTemplateCellDelegate {
     }
     
     func XcodeTemplateCell(deleteGroupWithCell cell: XcodeTemplateCell) {
-        let alert = showAlertConfirm(withTitle: "Warning!", andMessage: "Are you sure you would like to delete this template?")
+        let alert = showAlertConfirm(withTitle: "Warning!", andMessage: "Are you sure you want to delete this Group?")
         alert.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
             if modalResponse == NSApplication.ModalResponse.alertFirstButtonReturn {
                 self.deleteTemplate()

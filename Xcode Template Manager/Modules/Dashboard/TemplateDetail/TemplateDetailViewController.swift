@@ -46,12 +46,20 @@ class TemplateDetailViewController: BaseViewController {
     @IBOutlet weak var viewGeneratedFile4: NSView!
     @IBOutlet weak var labelGeneratedFile4: NSTextField!
     @IBOutlet weak var viewGeneratedFile5: NSView!
+    
+    // Danger Area
+    @IBOutlet weak var viewDeleteTemplate: NSView!
     @IBOutlet weak var labelGeneratedFile5: NSTextField!
     
     let fileManager = FileManager.default
     
-    var directoryUrl: URL?
     var directoryTemplateName: String?
+    var directoryUrl: URL? {
+        didSet {
+            getListFile()
+            reloadContent()
+        }
+    }
     var templateInfo: TemplateInfo? {
         didSet {
             loadTemplateProperties()
@@ -119,6 +127,23 @@ class TemplateDetailViewController: BaseViewController {
     }
     
     @IBAction func onButtonTemplateIconClicked(_ sender: Any) {
+    }
+    
+    @IBAction func onButtonDeleteTemplateClicked(_ sender: Any) {
+        let alert = showAlertConfirm(withTitle: "Warning!", andMessage: "Are you sure you want to delete this template?")
+        alert.beginSheetModal(for: self.view.window!, completionHandler: { (modalResponse) -> Void in
+            if modalResponse == NSApplication.ModalResponse.alertFirstButtonReturn {
+                self.deleteTemplate()
+                self.selectedTemplateIndex = 0
+                self.reloadContent()
+            }
+        })
+    }
+    
+    @IBAction func onButtonDeleteSourceClicked(_ sender: Any) {
+        deleteSourceFiles()
+        updateTemplateConfiguration()
+        reloadContent()
     }
     
     // Mark: - Some Event
@@ -294,33 +319,48 @@ class TemplateDetailViewController: BaseViewController {
     private func updateTemplateProperties() {
         let characterSet: NSCharacterSet = NSCharacterSet(charactersIn: " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ ").inverted as NSCharacterSet
         textFieldPropertyTitle.stringValue =  (self.textFieldPropertyTitle.stringValue.components(separatedBy: characterSet as CharacterSet) as NSArray).componentsJoined(by: "")
-        textFieldPropertyIdentifier.stringValue = textFieldPropertyTitle.stringValue.replacingOccurrences(of: " ", with: "")
+        textFieldPropertyIdentifier.stringValue = textFieldPropertyTitle.stringValue.removeWhiteSpace()
     }
     
     private func updatePreview() {
-        labelPreviewName.stringValue = textFieldPropertyTitle.stringValue
-        labelPreviewName.toolTip = textFieldPropertyDescription.stringValue
-        labelPreviewName.stringValue = "\(textFieldPropertyTitle.stringValue):"
-        
-        if let templateInfo = templateInfo {
-            viewGeneratedFile1.isHidden = templateInfo.isGenerateFileHidden(withIndex: TemplateInfoOptionRows.generateFile1)
-            viewGeneratedFile2.isHidden = templateInfo.isGenerateFileHidden(withIndex: TemplateInfoOptionRows.generateFile2)
-            viewGeneratedFile3.isHidden = templateInfo.isGenerateFileHidden(withIndex: TemplateInfoOptionRows.generateFile3)
-            viewGeneratedFile4.isHidden = templateInfo.isGenerateFileHidden(withIndex: TemplateInfoOptionRows.generateFile4)
-            viewGeneratedFile5.isHidden = templateInfo.isGenerateFileHidden(withIndex: TemplateInfoOptionRows.generateFile5)
-        } else {
+        guard let templateInfo = templateInfo else {
             viewGeneratedFile1.isHidden = true
             viewGeneratedFile2.isHidden = true
             viewGeneratedFile3.isHidden = true
             viewGeneratedFile4.isHidden = true
             viewGeneratedFile5.isHidden = true
+            return
+        }
+        labelPreviewName.stringValue = textFieldPropertyTitle.stringValue
+        labelPreviewName.toolTip = textFieldPropertyDescription.stringValue
+        labelPreviewName.stringValue = "\(textFieldPropertyTitle.stringValue):"
+        
+        viewGeneratedFile1.isHidden = templateInfo.isGenerateFileHidden(withIndex: TemplateInfoOptionRows.generateFile1)
+        viewGeneratedFile2.isHidden = templateInfo.isGenerateFileHidden(withIndex: TemplateInfoOptionRows.generateFile2)
+        viewGeneratedFile3.isHidden = templateInfo.isGenerateFileHidden(withIndex: TemplateInfoOptionRows.generateFile3)
+        viewGeneratedFile4.isHidden = templateInfo.isGenerateFileHidden(withIndex: TemplateInfoOptionRows.generateFile4)
+        viewGeneratedFile5.isHidden = templateInfo.isGenerateFileHidden(withIndex: TemplateInfoOptionRows.generateFile5)
+        
+        labelGeneratedFile1.stringValue = viewGeneratedFile1.isHidden ? "" : getGenerateFileLabelString(withIndex: TemplateInfoOptionRows.generateFile1)
+        labelGeneratedFile2.stringValue = viewGeneratedFile2.isHidden ? "" : getGenerateFileLabelString(withIndex: TemplateInfoOptionRows.generateFile2)
+        labelGeneratedFile3.stringValue = viewGeneratedFile3.isHidden ? "" : getGenerateFileLabelString(withIndex: TemplateInfoOptionRows.generateFile3)
+        labelGeneratedFile4.stringValue = viewGeneratedFile4.isHidden ? "" : getGenerateFileLabelString(withIndex: TemplateInfoOptionRows.generateFile4)
+        labelGeneratedFile5.stringValue = viewGeneratedFile5.isHidden ? "" : getGenerateFileLabelString(withIndex: TemplateInfoOptionRows.generateFile5)
+    }
+    
+    private func getGenerateFileLabelString(withIndex index: Int) -> String {
+        guard let templateInfo = templateInfo else { return "" }
+        let stringToRaplace = templateInfo.options[index].getDefaultValue().between("___", "___") ?? ""
+        
+        var newValue = ""
+        
+        if textFieldPreviewName.stringValue.isEmpty {
+            newValue = templateInfo.options[index].getDefaultValue().replacingOccurrences(of: stringToRaplace, with: "VARIABLE_\(textFieldPropertyIdentifier.stringValue):identifier")
+        } else {
+            newValue = templateInfo.options[index].getDefaultValue().replacingOccurrences(of: "___\(stringToRaplace)___", with: textFieldPreviewName.stringValue)
         }
         
-        labelGeneratedFile1.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
-        labelGeneratedFile2.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
-        labelGeneratedFile3.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
-        labelGeneratedFile4.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
-        labelGeneratedFile5.stringValue = "___VARIABLE___\(textFieldPropertyIdentifier.stringValue):identifier___"
+        return newValue
     }
     
     private func updateTemplateConfiguration() {
@@ -331,7 +371,7 @@ class TemplateDetailViewController: BaseViewController {
         for file in sourceFiles {
             if index > 5 { break }
             if file.hasTemplateCode() {
-                plist.append(file.getGenerateFilePlistFormat(withIndex: index, andIdentifier: textFieldPropertyIdentifier.stringValue))
+                plist.append(file.getGenerateFilePlistFormat(withIndex: index, andIdentifier: textFieldPropertyTitle.stringValue.removeWhiteSpace()))
             }
             index = index + 1
         }
@@ -348,6 +388,35 @@ class TemplateDetailViewController: BaseViewController {
                 print("Error write template configuration: \(error.localizedDescription)")
             }
         }
+    }
+    
+    private func deleteTemplate() {
+        if let url = templateList[selectedTemplateIndex].url, fileManager.fileExists(atPath: url.path) {
+            do {
+                try fileManager.removeItem(atPath: url.path)
+            } catch let error {
+                print("Failed to delete template: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    private func deleteSourceFiles() {
+        var indexToRemove: [Int] = []
+        for (_, index) in sourceTableView.selectedRowIndexes.enumerated() {
+            if let url = sourceFiles[index].url, fileManager.fileExists(atPath: url.path) {
+                do {
+                    try fileManager.removeItem(atPath: url.path)
+                    indexToRemove.append(index)
+                } catch let error {
+                    print("Failed to delete template: \(error.localizedDescription)")
+                }
+            }
+        }
+        
+        let indexSet: Set = Set(indexToRemove)
+        sourceFiles = sourceFiles.enumerated()
+            .filter { !indexSet.contains($0.offset) }
+            .map { $0.element }
     }
     
     @objc private func doubleClickOnSourceFileRow() {
@@ -396,7 +465,7 @@ class TemplateDetailViewController: BaseViewController {
             if urlListDao.isEmptyList() {
                 updateViewForEmptyGroup()
             } else {
-                updateViewForTemplate()
+                updateViewForExistsTemplate()
             }
         }
     }
@@ -406,7 +475,7 @@ class TemplateDetailViewController: BaseViewController {
         collectionView.dataSource = self
         
         let flowLayout = NSCollectionViewFlowLayout()
-        flowLayout.itemSize = NSSize(width: 160.0, height: 35.0)
+        flowLayout.itemSize = NSSize(width: 170.0, height: 35.0)
         flowLayout.sectionInset = NSEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
         flowLayout.minimumInteritemSpacing = 0
         flowLayout.minimumLineSpacing = 0
@@ -458,15 +527,17 @@ class TemplateDetailViewController: BaseViewController {
         viewMockup.isHidden = true
         viewProperties.isHidden = true
         viewPreview.isHidden = true
+        viewDeleteTemplate.isHidden = true
     }
     
-    func updateViewForTemplate() {
+    func updateViewForExistsTemplate() {
         viewName.isHidden = false
         viewHeaderIcon.isHidden = false
         viewTemplateIcon.isHidden = false
         viewMockup.isHidden = false
         viewProperties.isHidden = false
         viewPreview.isHidden = false
+        viewDeleteTemplate.isHidden = false
     }
 }
 
@@ -590,9 +661,14 @@ extension TemplateDetailViewController: NSTextFieldDelegate {
         }
         
         if textField == textFieldPropertyTitle {
+            textFieldPreviewName.stringValue = ""
             updateTemplateProperties()
+            updateTemplateConfiguration()
+            loadTemplateConfiguration()
             updatePreview()
         } else if textField == textFieldPropertyDescription {
+            updatePreview()
+        } else if textField == textFieldPreviewName {
             updatePreview()
         }
     }

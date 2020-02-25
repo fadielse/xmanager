@@ -49,6 +49,7 @@ struct TemplateInfo {
     
     struct Options {
         
+        var defaultString: String?
         var description: String?
         var identifier: String?
         var name: String?
@@ -57,12 +58,17 @@ struct TemplateInfo {
         var type: String?
         
         init(withDictionary dict: NSDictionary) {
+            self.defaultString = dict["Default"] as? String
             self.description = dict["Description"] as? String
             self.identifier = dict["Identifier"] as? String
             self.name = dict["Name"] as? String
             self.notPersisted = dict["NotPersisted"] as? Int
             self.required = dict["Required"] as? Int ?? 0
             self.type = dict["Type"] as? String
+        }
+        
+        func getDefaultValue() -> String {
+            return defaultString ?? ""
         }
     }
     
@@ -107,7 +113,7 @@ struct TemplateInfo {
         text.append("<key>Description</key>")
         text.append("<string>\(description)</string>")
         text.append("<key>Identifier</key>")
-        text.append("<string>\(name.replacingOccurrences(of: " ", with: ""))</string>")
+        text.append("<string>\(name.removeWhiteSpace())</string>")
         text.append("<key>Name</key>")
         text.append("<string>\(name):</string>")
         text.append("<key>NotPersisted</key>")
