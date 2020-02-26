@@ -10,6 +10,14 @@ import Cocoa
 
 class TemplateDetailViewController: BaseViewController {
     
+    enum SourceOpenOptionMenu: String {
+        case open = "Open"
+        case openWith = "Open With"
+        case xcode = "Xcode"
+        case textEdit = "Text Edit"
+        case delete = "Delete"
+    }
+    
     @IBOutlet weak var viewTemplateList: NSView!
     @IBOutlet weak var collectionView: NSCollectionView!
     @IBOutlet weak var viewName: NSView!
@@ -139,7 +147,29 @@ class TemplateDetailViewController: BaseViewController {
 
         dialog.begin { (result) -> Void in
             if result.rawValue == NSApplication.ModalResponse.OK.rawValue {
-                print(dialog.urls)
+                self.processingDropTemplateIcon(withUrls: dialog.urls)
+            } else {
+                print("Failed to get file's")
+            }
+        }
+    }
+    
+    @IBAction func onButtonAddSourceClicked(_ sender: Any) {
+        let dialog = NSOpenPanel()
+        
+        dialog.title                   = "Choose your file's"
+        dialog.showsResizeIndicator    = true
+        dialog.showsHiddenFiles        = false
+        dialog.canChooseDirectories    = false
+        dialog.canCreateDirectories    = false
+        dialog.allowsMultipleSelection = true
+        dialog.allowedFileTypes        = ["swift", "h", "m", "storyboard", "xib"]
+
+        dialog.begin { (result) -> Void in
+            if result.rawValue == NSApplication.ModalResponse.OK.rawValue {
+                self.processingDropSourceFiles(withUrls: dialog.urls)
+            } else {
+                print("Failed to get file's")
             }
         }
     }
@@ -194,16 +224,15 @@ class TemplateDetailViewController: BaseViewController {
         sourceTableView.doubleAction = #selector(doubleClickOnSourceFileRow)
         
         let menu = NSMenu()
-        let menuItemOpen = NSMenuItem(title: "Open", action: #selector(selectedMenuTableRow), keyEquivalent: "")
-        let menuItemOpenWith = NSMenuItem(title: "Open With", action: #selector(selectedMenuTableRow), keyEquivalent: "")
-        menuItemOpenWith.isSeparatorItem = true
+        let menuItemOpen = NSMenuItem(title: SourceOpenOptionMenu.open.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: "")
+        let menuItemOpenWith = NSMenuItem(title: SourceOpenOptionMenu.openWith.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: "")
         menu.addItem(menuItemOpen)
         menu.addItem(menuItemOpenWith)
-        menu.addItem(NSMenuItem(title: "Delete", action: #selector(selectedMenuTableRow), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: SourceOpenOptionMenu.delete.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: ""))
         
         let submenu = NSMenu()
-        submenu.addItem(NSMenuItem(title: "Xcode", action: #selector(selectedMenuTableRow), keyEquivalent: ""))
-        submenu.addItem(NSMenuItem(title: "Text Edit", action: #selector(selectedMenuTableRow), keyEquivalent: ""))
+        submenu.addItem(NSMenuItem(title: SourceOpenOptionMenu.xcode.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: ""))
+        submenu.addItem(NSMenuItem(title: SourceOpenOptionMenu.textEdit.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: ""))
         
         menu.setSubmenu(submenu, for: menu.item(at: 1)!)
         sourceTableView.menu = menu
@@ -216,8 +245,26 @@ class TemplateDetailViewController: BaseViewController {
         viewFooterSourceTable.layer?.borderColor = NSColor.init(white: 0.7, alpha: 0.5).cgColor
     }
     
-    @objc func selectedMenuTableRow() {
-        print(sourceTableView.clickedRow)
+    @objc func selectedMenuTableRow(_ sender: NSMenuItem) {
+        guard sourceFiles.indices.contains(sourceTableView.clickedRow) else { return }
+        guard let path = sourceFiles[sourceTableView.clickedRow].url?.path else { return }
+        
+        switch SourceOpenOptionMenu(rawValue: sender.title) {
+        case .open:
+            NSWorkspace.shared.openFile(path)
+        case .openWith:
+            print("do nothing")
+        case .xcode:
+            NSWorkspace.shared.openFile(path, withApplication: "Xcode")
+        case .textEdit:
+            NSWorkspace.shared.openFile(path, withApplication: "TextEdit")
+        case .delete:
+            deleteSourceFile(withIndex: sourceTableView.clickedRow)
+            updateTemplateConfiguration()
+            reloadContent()
+        default:
+            NSWorkspace.shared.openFile(path)
+        }
     }
     
     private func updateTemplateName(withName name: String) {
@@ -442,7 +489,7 @@ class TemplateDetailViewController: BaseViewController {
                     try fileManager.removeItem(atPath: url.path)
                     indexToRemove.append(index)
                 } catch let error {
-                    print("Failed to delete template: \(error.localizedDescription)")
+                    print("Failed to delete file's: \(error.localizedDescription)")
                 }
             }
         }
@@ -453,10 +500,19 @@ class TemplateDetailViewController: BaseViewController {
             .map { $0.element }
     }
     
+    private func deleteSourceFile(withIndex index: Int) {
+        if let url = sourceFiles[index].url, fileManager.fileExists(atPath: url.path) {
+            do {
+                try fileManager.removeItem(atPath: url.path)
+                sourceFiles.remove(at: index)
+            } catch let error {
+                print("Failed to delete file: \(error.localizedDescription)")
+            }
+        }
+    }
+    
     @objc private func doubleClickOnSourceFileRow() {
-//        if let editorViewController = self.goToScreen(withStoryboardId: "Editor", andViewControllerId: "EditorViewController") as? EditorViewController {
-//            editorViewController.fileUrl = sourceFiles[sourceTableView.clickedRow].url
-//        }
+        guard sourceFiles.indices.contains(sourceTableView.clickedRow) else { return }
         if let filePath = sourceFiles[sourceTableView.clickedRow].url?.path {
             openFileWithDefaultApp(path: filePath)
         }
