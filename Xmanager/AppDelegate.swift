@@ -7,6 +7,7 @@
 //
 
 import Cocoa
+import Zip
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {

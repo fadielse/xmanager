@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -107,13 +107,14 @@
 		1B275C6C23FF6F6100A2514C /* HTMLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B275C0A23FF6F6100A2514C /* HTMLUtils.swift */; };
 		1B275C6D23FF6F6100A2514C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B275C0B23FF6F6100A2514C /* Theme.swift */; };
 		1B275C6E23FF6F6100A2514C /* Shims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B275C0C23FF6F6100A2514C /* Shims.swift */; };
-		1B319E062406560700680F40 /* ios-mvp-swift-master.zip in Resources */ = {isa = PBXBuildFile; fileRef = 1B319E052406560700680F40 /* ios-mvp-swift-master.zip */; };
 		1B39EB3E23F6977A00F50E0D /* NewFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B39EB3C23F6977A00F50E0D /* NewFormViewController.swift */; };
 		1B39EB4123F6A55600F50E0D /* NewForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B39EB4023F6A55600F50E0D /* NewForm.storyboard */; };
 		1B4F2A9C23F2A2E800A2A32E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F2A9B23F2A2E800A2A32E /* AppDelegate.swift */; };
 		1B4F2A9E23F2A2E800A2A32E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F2A9D23F2A2E800A2A32E /* DashboardViewController.swift */; };
 		1B4F2AA023F2A2EA00A2A32E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B4F2A9F23F2A2EA00A2A32E /* Assets.xcassets */; };
 		1B4F2AA323F2A2EA00A2A32E /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4F2AA123F2A2EA00A2A32E /* Dashboard.storyboard */; };
+		1B537FAB24066AC200A13DA9 /* sample-mvp.zip in Resources */ = {isa = PBXBuildFile; fileRef = 1B537FAA24066AC200A13DA9 /* sample-mvp.zip */; };
+		1B537FAD24066E4500A13DA9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B537FAC24066E4500A13DA9 /* Settings.swift */; };
 		1B65DCA023F5202900E267AB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B65DC9F23F5202900E267AB /* BaseViewController.swift */; };
 		1B65DCA523F5383A00E267AB /* XcodeTemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B65DCA423F5383A00E267AB /* XcodeTemplateCell.swift */; };
 		1B65DCA723F538BF00E267AB /* XcodeTemplateCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B65DCA623F538BF00E267AB /* XcodeTemplateCell.xib */; };
@@ -124,6 +125,7 @@
 		1BBC95A123FCF157006E585D /* ButtonDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BBC95A023FCF157006E585D /* ButtonDragView.swift */; };
 		1BDDDD7F23FFC75200F8F302 /* EditorTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BDDDD7E23FFC75200F8F302 /* EditorTextView.swift */; };
 		1BEB7C1A23FB9624006DFEA9 /* NotificationCenterConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEB7C1923FB9624006DFEA9 /* NotificationCenterConstant.swift */; };
+		934C745446ED70B9A0DA35D1 /* Pods_Xmanager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56CBC2F662F08E2EE6677310 /* Pods_Xmanager.framework */; };
 		FF097F7B23FB091D001AF186 /* BaseWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF097F7A23FB091D001AF186 /* BaseWindowController.swift */; };
 		FF6605D623F7BC5E0052BCD7 /* TemplateList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6605D523F7BC5E0052BCD7 /* TemplateList.swift */; };
 		FF6605D923F7BC8E0052BCD7 /* TemplateListDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6605D823F7BC8E0052BCD7 /* TemplateListDAO.swift */; };
@@ -251,7 +253,6 @@
 		1B275C0A23FF6F6100A2514C /* HTMLUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLUtils.swift; sourceTree = "<group>"; };
 		1B275C0B23FF6F6100A2514C /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		1B275C0C23FF6F6100A2514C /* Shims.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shims.swift; sourceTree = "<group>"; };
-		1B319E052406560700680F40 /* ios-mvp-swift-master.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "ios-mvp-swift-master.zip"; sourceTree = "<group>"; };
 		1B39EB3C23F6977A00F50E0D /* NewFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFormViewController.swift; sourceTree = "<group>"; };
 		1B39EB4023F6A55600F50E0D /* NewForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewForm.storyboard; sourceTree = "<group>"; };
 		1B4F2A9823F2A2E800A2A32E /* Xmanager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xmanager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -261,6 +262,8 @@
 		1B4F2AA223F2A2EA00A2A32E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Dashboard.storyboard; sourceTree = "<group>"; };
 		1B4F2AA423F2A2EA00A2A32E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B4F2AA523F2A2EA00A2A32E /* Xcode_Template_Manager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Xcode_Template_Manager.entitlements; sourceTree = "<group>"; };
+		1B537FAA24066AC200A13DA9 /* sample-mvp.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = "sample-mvp.zip"; path = "../../../../../../../Downloads/sample-mvp.zip"; sourceTree = "<group>"; };
+		1B537FAC24066E4500A13DA9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		1B65DC9F23F5202900E267AB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1B65DCA423F5383A00E267AB /* XcodeTemplateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeTemplateCell.swift; sourceTree = "<group>"; };
 		1B65DCA623F538BF00E267AB /* XcodeTemplateCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = XcodeTemplateCell.xib; sourceTree = "<group>"; };
@@ -271,6 +274,9 @@
 		1BBC95A023FCF157006E585D /* ButtonDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonDragView.swift; sourceTree = "<group>"; };
 		1BDDDD7E23FFC75200F8F302 /* EditorTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorTextView.swift; sourceTree = "<group>"; };
 		1BEB7C1923FB9624006DFEA9 /* NotificationCenterConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterConstant.swift; sourceTree = "<group>"; };
+		56CBC2F662F08E2EE6677310 /* Pods_Xmanager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Xmanager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D80B7ED69A7C8B43F269BC0F /* Pods-Xmanager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xmanager.debug.xcconfig"; path = "Target Support Files/Pods-Xmanager/Pods-Xmanager.debug.xcconfig"; sourceTree = "<group>"; };
+		E9EA1416F6B10F4010E740B7 /* Pods-Xmanager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Xmanager.release.xcconfig"; path = "Target Support Files/Pods-Xmanager/Pods-Xmanager.release.xcconfig"; sourceTree = "<group>"; };
 		FF097F7A23FB091D001AF186 /* BaseWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWindowController.swift; sourceTree = "<group>"; };
 		FF6605D523F7BC5E0052BCD7 /* TemplateList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateList.swift; sourceTree = "<group>"; };
 		FF6605D823F7BC8E0052BCD7 /* TemplateListDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateListDAO.swift; sourceTree = "<group>"; };
@@ -302,6 +308,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				934C745446ED70B9A0DA35D1 /* Pods_Xmanager.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,6 +319,7 @@
 			isa = PBXGroup;
 			children = (
 				1B23B1C223FE6AD000A17C74 /* DragAndDropView.swift */,
+				1B537FAC24066E4500A13DA9 /* Settings.swift */,
 				1B23B1C923FE845000A17C74 /* TextParser.swift */,
 			);
 			path = Helper;
@@ -320,7 +328,7 @@
 		1B23B1C423FE821700A17C74 /* MockTemplates */ = {
 			isa = PBXGroup;
 			children = (
-				1B319E052406560700680F40 /* ios-mvp-swift-master.zip */,
+				1B537FAA24066AC200A13DA9 /* sample-mvp.zip */,
 				1B23B1C723FE83BA00A17C74 /* TemplateInfo.txt */,
 			);
 			path = MockTemplates;
@@ -485,6 +493,8 @@
 			children = (
 				1B4F2A9A23F2A2E800A2A32E /* Xmanager */,
 				1B4F2A9923F2A2E800A2A32E /* Products */,
+				E4968192176A590D3D881091 /* Pods */,
+				522FDE5488D4D91B53829761 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -586,6 +596,23 @@
 			path = Library;
 			sourceTree = "<group>";
 		};
+		522FDE5488D4D91B53829761 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				56CBC2F662F08E2EE6677310 /* Pods_Xmanager.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4968192176A590D3D881091 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D80B7ED69A7C8B43F269BC0F /* Pods-Xmanager.debug.xcconfig */,
+				E9EA1416F6B10F4010E740B7 /* Pods-Xmanager.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FF6605D423F7BBFB0052BCD7 /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -681,9 +708,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1B4F2AA823F2A2EA00A2A32E /* Build configuration list for PBXNativeTarget "Xmanager" */;
 			buildPhases = (
+				E08B75D4891FEACD8EC4B549 /* [CP] Check Pods Manifest.lock */,
 				1B4F2A9423F2A2E800A2A32E /* Sources */,
 				1B4F2A9523F2A2E800A2A32E /* Frameworks */,
 				1B4F2A9623F2A2E800A2A32E /* Resources */,
+				5A9C11B366065CD450AA0832 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -789,6 +818,7 @@
 				1B275C6423FF6F6100A2514C /* atelier-lakeside-light.min.css in Resources */,
 				1B275C0E23FF6F6100A2514C /* vs.min.css in Resources */,
 				1B275C3C23FF6F6100A2514C /* arduino-light.min.css in Resources */,
+				1B537FAB24066AC200A13DA9 /* sample-mvp.zip in Resources */,
 				1B275C4323FF6F6100A2514C /* github.min.css in Resources */,
 				1B65DCA723F538BF00E267AB /* XcodeTemplateCell.xib in Resources */,
 				1B275C6123FF6F6100A2514C /* agate.min.css in Resources */,
@@ -828,7 +858,6 @@
 				1B275C6623FF6F6100A2514C /* an-old-hope.min.css in Resources */,
 				1B275C4023FF6F6100A2514C /* arta.min.css in Resources */,
 				1B275C5C23FF6F6100A2514C /* paraiso-dark.min.css in Resources */,
-				1B319E062406560700680F40 /* ios-mvp-swift-master.zip in Resources */,
 				1B39EB4123F6A55600F50E0D /* NewForm.storyboard in Resources */,
 				1B275C2F23FF6F6100A2514C /* color-brewer.min.css in Resources */,
 				1B275C1E23FF6F6100A2514C /* atelier-heath-light.min.css in Resources */,
@@ -839,6 +868,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A9C11B366065CD450AA0832 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Xmanager/Pods-Xmanager-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Xmanager/Pods-Xmanager-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Xmanager/Pods-Xmanager-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E08B75D4891FEACD8EC4B549 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Xmanager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1B4F2A9423F2A2E800A2A32E /* Sources */ = {
@@ -860,6 +931,7 @@
 				1B65DCA523F5383A00E267AB /* XcodeTemplateCell.swift in Sources */,
 				FF7CEF9E23FEE3CE00A64524 /* EditorViewController.swift in Sources */,
 				1BB4094C23FB9E1C00FDD8B9 /* EnumNewFileType.swift in Sources */,
+				1B537FAD24066E4500A13DA9 /* Settings.swift in Sources */,
 				FFDD902223FAE29F00BD112D /* BaseNSView.swift in Sources */,
 				1B275C6E23FF6F6100A2514C /* Shims.swift in Sources */,
 				1B4F2A9C23F2A2E800A2A32E /* AppDelegate.swift in Sources */,
@@ -1015,10 +1087,11 @@
 		};
 		1B4F2AA923F2A2EA00A2A32E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D80B7ED69A7C8B43F269BC0F /* Pods-Xmanager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Xmanager/SupportFiles/Xcode_Template_Manager.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = L4A72M4SRA;
@@ -1037,10 +1110,11 @@
 		};
 		1B4F2AAA23F2A2EA00A2A32E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E9EA1416F6B10F4010E740B7 /* Pods-Xmanager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = Xmanager/SupportFiles/Xcode_Template_Manager.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = L4A72M4SRA;

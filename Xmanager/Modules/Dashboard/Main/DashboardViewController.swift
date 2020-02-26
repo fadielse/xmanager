@@ -8,6 +8,7 @@
 
 import Cocoa
 import NotificationCenter
+import Zip
 
 extension NotificationCenterConstant {
     
@@ -45,6 +46,7 @@ class DashboardViewController: BaseViewController {
         getGroupList()
         setupTableView()
         setupContainerView()
+        generateSampleTemplate()
         updateLog(withMessage: "Finished running Xcode Template Manager")
     }
 
@@ -62,6 +64,23 @@ class DashboardViewController: BaseViewController {
     
     @IBAction func onButtonDeployClicked(_ sender: Any) {
         deployTemplateToXcode()
+    }
+    
+    fileprivate func generateSampleTemplate() {
+        guard !Settings.isSampleHasGenerated else { return }
+        do {
+            let filePath = Bundle.main.url(forResource: "sample-mvp", withExtension: "zip")!
+            try Zip.unzipFile(filePath, destination: UrlConstant.basePath, overwrite: true, password: nil, progress: { (progress) -> () in
+                self.updateLog(withMessage: "Generating Sample Template: \(Int(progress * 100))%")
+                if progress >= 1 {
+                    Settings.isSampleHasGenerated = true
+                    self.reloadData()
+                }
+            })
+        }
+        catch {
+            print("Something went wrong")
+        }
     }
     
     func setupObserver() {
