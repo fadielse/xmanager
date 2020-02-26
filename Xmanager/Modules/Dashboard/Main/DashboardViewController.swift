@@ -12,6 +12,7 @@ import NotificationCenter
 extension NotificationCenterConstant {
     
     static let reloadContainerView = NSNotification.Name("reloadContainerView")
+    static let updateLog = NSNotification.Name("updateLog")
 }
 
 class DashboardViewController: BaseViewController {
@@ -40,7 +41,6 @@ class DashboardViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.window?.delegate = self
         setupObserver()
         getGroupList()
         setupTableView()
@@ -60,9 +60,18 @@ class DashboardViewController: BaseViewController {
         }
     }
     
+    @IBAction func onButtonDeployClicked(_ sender: Any) {
+        deployTemplateToXcode()
+    }
+    
     func setupObserver() {
         NotificationCenter.default.addObserver(forName: NotificationCenterConstant.reloadContainerView, object: nil, queue: nil) { _ in
             self.showTemplateDetail()
+        }
+        NotificationCenter.default.addObserver(forName: NotificationCenterConstant.updateLog, object: nil, queue: nil) { notication in
+            if let message = notication.object as? String {
+                self.updateLog(withMessage: message)
+            }
         }
     }
     
@@ -156,6 +165,31 @@ class DashboardViewController: BaseViewController {
             showAlert(withMessage: error.localizedDescription)
         }
     }
+    
+    func deployTemplateToXcode() {
+        guard
+            let selectedRow = selectedRow,
+            templateList.indices.contains(selectedRow),
+            let path = templateList[selectedRow].url?.path,
+            let folderName = templateList[selectedRow].url?.lastPathComponent
+        else {
+            return
+        }
+        
+        let installedPath = UrlConstant.xcodeTemplatePath.appendingPathComponent(folderName).path
+        
+        do {
+            if fileManager.fileExists(atPath: installedPath) {
+                try fileManager.removeItem(atPath: installedPath)
+                try fileManager.copyItem(atPath: path, toPath: installedPath)
+            } else {
+                try fileManager.copyItem(atPath: path, toPath: installedPath)
+            }
+            updateLog(withMessage: "\(folderName) has been successfully installed to Xcode.")
+        } catch let error {
+            updateLog(withMessage: "Error install template: \(error.localizedDescription)")
+        }
+    }
 }
 
 extension DashboardViewController: NSTableViewDelegate, NSTableViewDataSource {
@@ -212,12 +246,5 @@ extension DashboardViewController: XcodeTemplateCellDelegate {
                 self.reloadData()
             }
         })
-    }
-}
-
-extension DashboardViewController: NSWindowDelegate {
-    
-    func windowDidResize(_ notification: Notification) {
-        print("window resized")
     }
 }

@@ -482,7 +482,7 @@
 		1B4F2A8F23F2A2E800A2A32E = {
 			isa = PBXGroup;
 			children = (
-				1B4F2A9A23F2A2E800A2A32E /* Xcode Template Manager */,
+				1B4F2A9A23F2A2E800A2A32E /* Xmanager */,
 				1B4F2A9923F2A2E800A2A32E /* Products */,
 			);
 			sourceTree = "<group>";
@@ -495,7 +495,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1B4F2A9A23F2A2E800A2A32E /* Xcode Template Manager */ = {
+		1B4F2A9A23F2A2E800A2A32E /* Xmanager */ = {
 			isa = PBXGroup;
 			children = (
 				1B4F2A9B23F2A2E800A2A32E /* AppDelegate.swift */,
@@ -510,7 +510,7 @@
 				1B65DCA123F5206100E267AB /* Modules */,
 				1B65DCA223F5207300E267AB /* SupportFIles */,
 			);
-			path = "Xcode Template Manager";
+			path = Xmanager;
 			sourceTree = "<group>";
 		};
 		1B65DC9E23F5200800E267AB /* Base */ = {
@@ -1017,13 +1017,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Xcode Template Manager/SupportFiles/Xcode_Template_Manager.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Xmanager/SupportFiles/Xcode_Template_Manager.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = L4A72M4SRA;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "Xcode Template Manager/SupportFiles/Info.plist";
+				INFOPLIST_FILE = Xmanager/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1039,13 +1039,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = "Xcode Template Manager/SupportFiles/Xcode_Template_Manager.entitlements";
+				CODE_SIGN_ENTITLEMENTS = Xmanager/SupportFiles/Xcode_Template_Manager.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = L4A72M4SRA;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "Xcode Template Manager/SupportFiles/Info.plist";
+				INFOPLIST_FILE = Xmanager/SupportFiles/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",

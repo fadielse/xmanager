@@ -24,6 +24,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func createBaseFolderIfNotExists() {
         do {
             try FileManager.default.createDirectory(at: UrlConstant.basePath, withIntermediateDirectories: true, attributes: nil)
+            try FileManager.default.createDirectory(at: UrlConstant.xcodeTemplatePath, withIntermediateDirectories: true, attributes: nil)
         } catch {
             print(error.localizedDescription)
         }

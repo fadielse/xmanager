@@ -149,7 +149,7 @@ class TemplateDetailViewController: BaseViewController {
             if result.rawValue == NSApplication.ModalResponse.OK.rawValue {
                 self.processingDropTemplateIcon(withUrls: dialog.urls)
             } else {
-                print("Failed to get file's")
+                self.postUpdateLog(withMessage: "Failed to get file's")
             }
         }
     }
@@ -169,7 +169,7 @@ class TemplateDetailViewController: BaseViewController {
             if result.rawValue == NSApplication.ModalResponse.OK.rawValue {
                 self.processingDropSourceFiles(withUrls: dialog.urls)
             } else {
-                print("Failed to get file's")
+                self.postUpdateLog(withMessage: "Failed to get file's")
             }
         }
     }
@@ -306,7 +306,7 @@ class TemplateDetailViewController: BaseViewController {
                 let mdattrs = MDItemCopyAttributes(mditem, mdnames) as? [String:Any] {
                 aWidth = mdattrs["kMDItemPixelWidth"] as? Int ?? 0
             } else {
-                print("Can't get attributes for \(aPath)")
+                self.postUpdateLog(withMessage: "Can't get attributes for \(aPath)")
                 return false
             }
             
@@ -316,7 +316,7 @@ class TemplateDetailViewController: BaseViewController {
                let mdattrs = MDItemCopyAttributes(mditem, mdnames) as? [String:Any] {
                 bWidth = mdattrs["kMDItemPixelWidth"] as? Int ?? 0
             } else {
-                print("Can't get attributes for \(aPath)")
+                self.postUpdateLog(withMessage: "Can't get attributes for \(bPath)")
                 return false
             }
             
@@ -324,7 +324,7 @@ class TemplateDetailViewController: BaseViewController {
         }
         
         guard let directoryTemplateName = directoryTemplateName else {
-            print("Template directory not found")
+            self.postUpdateLog(withMessage: "Template directory not found")
             return
         }
         
@@ -343,10 +343,10 @@ class TemplateDetailViewController: BaseViewController {
                     }
                     try fileManager.copyItem(at: imageUrl, to: copyUrl)
                 } catch let error {
-                    print("Failed to set image : \(error.localizedDescription)")
+                    self.postUpdateLog(withMessage: "Failed to set image : \(error.localizedDescription)")
                 }
             } else {
-                print("Failed to set image")
+                self.postUpdateLog(withMessage: "Failed to set image")
                 break
             }
             
@@ -360,7 +360,7 @@ class TemplateDetailViewController: BaseViewController {
     private func processingDropSourceFiles(withUrls urls: [URL]) {
         
         guard let directoryTemplateName = directoryTemplateName else {
-            print("Template directory not found")
+            self.postUpdateLog(withMessage: "Template directory not found")
             return
         }
         
@@ -374,10 +374,10 @@ class TemplateDetailViewController: BaseViewController {
                     }
                     try fileManager.copyItem(at: sourceUrl, to: copyUrl)
                 } catch let error {
-                    print("Failed to copy File : \(error.localizedDescription)")
+                    self.postUpdateLog(withMessage: "Failed to copy File : \(error.localizedDescription)")
                 }
             } else {
-                print("Failed to copy File")
+                self.postUpdateLog(withMessage: "Failed to copy File")
                 break
             }
         }
@@ -463,10 +463,10 @@ class TemplateDetailViewController: BaseViewController {
                 try fileManager.removeItem(atPath: url.appendingPathComponent(FileNameConstant.generate.templateInfo).path)
                 
                 if !TextParser.write(withName: FileNameConstant.generate.templateInfo, andText: plist, toPathUrl: url) {
-                     print("Error write template configuration")
+                    self.postUpdateLog(withMessage: "Error write template configuration")
                 }
             } catch let error {
-                print("Error write template configuration: \(error.localizedDescription)")
+                self.postUpdateLog(withMessage: "Error write template configuration: \(error.localizedDescription)")
             }
         }
     }
@@ -476,7 +476,7 @@ class TemplateDetailViewController: BaseViewController {
             do {
                 try fileManager.removeItem(atPath: url.path)
             } catch let error {
-                print("Failed to delete template: \(error.localizedDescription)")
+                self.postUpdateLog(withMessage: "Failed to delete template: \(error.localizedDescription)")
             }
         }
     }
@@ -489,8 +489,11 @@ class TemplateDetailViewController: BaseViewController {
                     try fileManager.removeItem(atPath: url.path)
                     indexToRemove.append(index)
                 } catch let error {
-                    print("Failed to delete file's: \(error.localizedDescription)")
+                    self.postUpdateLog(withMessage: "Failed to delete file's: \(error.localizedDescription)")
                 }
+            } else {
+                self.postUpdateLog(withMessage: "File already deleted")
+                indexToRemove.append(index)
             }
         }
         
@@ -506,9 +509,16 @@ class TemplateDetailViewController: BaseViewController {
                 try fileManager.removeItem(atPath: url.path)
                 sourceFiles.remove(at: index)
             } catch let error {
-                print("Failed to delete file: \(error.localizedDescription)")
+                self.postUpdateLog(withMessage: "Failed to delete file: \(error.localizedDescription)")
             }
+        } else {
+            self.postUpdateLog(withMessage: "File already deleted")
+            sourceFiles.remove(at: index)
         }
+    }
+    
+    private func postUpdateLog(withMessage message: String) {
+        NotificationCenter.default.post(name: NotificationCenterConstant.updateLog, object: message)
     }
     
     @objc private func doubleClickOnSourceFileRow() {
