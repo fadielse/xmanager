@@ -12,7 +12,7 @@ protocol TableDragViewDelegate {
     func tableDragView(didDragFileWithUrls urls: [URL])
 }
 
-class TableDragView: BaseTableView {
+class TableDragView: NSTableView {
     
     let NSFilenamesPboardType = NSPasteboard.PasteboardType("NSFilenamesPboardType")
     var dragDelegate: TableDragViewDelegate?

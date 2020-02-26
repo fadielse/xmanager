@@ -228,6 +228,7 @@ extension DashboardViewController: NewFormViewControllerDelegate {
             return urlList.url == UrlConstant.basePath.appendingPathComponent(viewController.textFieldName.stringValue)
         })
         reloadData()
+        updateLog(withMessage: "Template successfully created")
     }
 }
 

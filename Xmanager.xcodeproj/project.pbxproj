@@ -107,7 +107,7 @@
 		1B275C6C23FF6F6100A2514C /* HTMLUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B275C0A23FF6F6100A2514C /* HTMLUtils.swift */; };
 		1B275C6D23FF6F6100A2514C /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B275C0B23FF6F6100A2514C /* Theme.swift */; };
 		1B275C6E23FF6F6100A2514C /* Shims.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B275C0C23FF6F6100A2514C /* Shims.swift */; };
-		1B33A59024060C930018325A /* BaseTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B33A58F24060C930018325A /* BaseTableView.swift */; };
+		1B319E062406560700680F40 /* ios-mvp-swift-master.zip in Resources */ = {isa = PBXBuildFile; fileRef = 1B319E052406560700680F40 /* ios-mvp-swift-master.zip */; };
 		1B39EB3E23F6977A00F50E0D /* NewFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B39EB3C23F6977A00F50E0D /* NewFormViewController.swift */; };
 		1B39EB4123F6A55600F50E0D /* NewForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B39EB4023F6A55600F50E0D /* NewForm.storyboard */; };
 		1B4F2A9C23F2A2E800A2A32E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F2A9B23F2A2E800A2A32E /* AppDelegate.swift */; };
@@ -251,7 +251,7 @@
 		1B275C0A23FF6F6100A2514C /* HTMLUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTMLUtils.swift; sourceTree = "<group>"; };
 		1B275C0B23FF6F6100A2514C /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		1B275C0C23FF6F6100A2514C /* Shims.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Shims.swift; sourceTree = "<group>"; };
-		1B33A58F24060C930018325A /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
+		1B319E052406560700680F40 /* ios-mvp-swift-master.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "ios-mvp-swift-master.zip"; sourceTree = "<group>"; };
 		1B39EB3C23F6977A00F50E0D /* NewFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFormViewController.swift; sourceTree = "<group>"; };
 		1B39EB4023F6A55600F50E0D /* NewForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewForm.storyboard; sourceTree = "<group>"; };
 		1B4F2A9823F2A2E800A2A32E /* Xmanager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xmanager.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -320,6 +320,7 @@
 		1B23B1C423FE821700A17C74 /* MockTemplates */ = {
 			isa = PBXGroup;
 			children = (
+				1B319E052406560700680F40 /* ios-mvp-swift-master.zip */,
 				1B23B1C723FE83BA00A17C74 /* TemplateInfo.txt */,
 			);
 			path = MockTemplates;
@@ -520,7 +521,6 @@
 				1B65DC9F23F5202900E267AB /* BaseViewController.swift */,
 				FFDD901F23FAC07B00BD112D /* BaseWindow.swift */,
 				FF097F7A23FB091D001AF186 /* BaseWindowController.swift */,
-				1B33A58F24060C930018325A /* BaseTableView.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -828,6 +828,7 @@
 				1B275C6623FF6F6100A2514C /* an-old-hope.min.css in Resources */,
 				1B275C4023FF6F6100A2514C /* arta.min.css in Resources */,
 				1B275C5C23FF6F6100A2514C /* paraiso-dark.min.css in Resources */,
+				1B319E062406560700680F40 /* ios-mvp-swift-master.zip in Resources */,
 				1B39EB4123F6A55600F50E0D /* NewForm.storyboard in Resources */,
 				1B275C2F23FF6F6100A2514C /* color-brewer.min.css in Resources */,
 				1B275C1E23FF6F6100A2514C /* atelier-heath-light.min.css in Resources */,
@@ -875,7 +876,6 @@
 				1BA08DE423F6AA4000C50619 /* NSViewController+Router.swift in Sources */,
 				FF6605D923F7BC8E0052BCD7 /* TemplateListDAO.swift in Sources */,
 				FF097F7B23FB091D001AF186 /* BaseWindowController.swift in Sources */,
-				1B33A59024060C930018325A /* BaseTableView.swift in Sources */,
 				FF6605D623F7BC5E0052BCD7 /* TemplateList.swift in Sources */,
 				FF6727342405068F00820B6A /* BaseTextStorage.swift in Sources */,
 				1B39EB3E23F6977A00F50E0D /* NewFormViewController.swift in Sources */,
