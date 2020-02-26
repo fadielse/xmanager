@@ -254,7 +254,7 @@
 		1B33A58F24060C930018325A /* BaseTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableView.swift; sourceTree = "<group>"; };
 		1B39EB3C23F6977A00F50E0D /* NewFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewFormViewController.swift; sourceTree = "<group>"; };
 		1B39EB4023F6A55600F50E0D /* NewForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = NewForm.storyboard; sourceTree = "<group>"; };
-		1B4F2A9823F2A2E800A2A32E /* Xcode Template Manager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Xcode Template Manager.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1B4F2A9823F2A2E800A2A32E /* Xmanager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Xmanager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B4F2A9B23F2A2E800A2A32E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1B4F2A9D23F2A2E800A2A32E /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		1B4F2A9F23F2A2EA00A2A32E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -490,7 +490,7 @@
 		1B4F2A9923F2A2E800A2A32E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1B4F2A9823F2A2E800A2A32E /* Xcode Template Manager.app */,
+				1B4F2A9823F2A2E800A2A32E /* Xmanager.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -677,9 +677,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1B4F2A9723F2A2E800A2A32E /* Xcode Template Manager */ = {
+		1B4F2A9723F2A2E800A2A32E /* Xmanager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1B4F2AA823F2A2EA00A2A32E /* Build configuration list for PBXNativeTarget "Xcode Template Manager" */;
+			buildConfigurationList = 1B4F2AA823F2A2EA00A2A32E /* Build configuration list for PBXNativeTarget "Xmanager" */;
 			buildPhases = (
 				1B4F2A9423F2A2E800A2A32E /* Sources */,
 				1B4F2A9523F2A2E800A2A32E /* Frameworks */,
@@ -689,9 +689,9 @@
 			);
 			dependencies = (
 			);
-			name = "Xcode Template Manager";
+			name = Xmanager;
 			productName = "Xcode Template Manager";
-			productReference = 1B4F2A9823F2A2E800A2A32E /* Xcode Template Manager.app */;
+			productReference = 1B4F2A9823F2A2E800A2A32E /* Xmanager.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -709,7 +709,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 1B4F2A9323F2A2E800A2A32E /* Build configuration list for PBXProject "Xcode Template Manager" */;
+			buildConfigurationList = 1B4F2A9323F2A2E800A2A32E /* Build configuration list for PBXProject "Xmanager" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -722,7 +722,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1B4F2A9723F2A2E800A2A32E /* Xcode Template Manager */,
+				1B4F2A9723F2A2E800A2A32E /* Xmanager */,
 			);
 		};
 /* End PBXProject section */
@@ -1060,7 +1060,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1B4F2A9323F2A2E800A2A32E /* Build configuration list for PBXProject "Xcode Template Manager" */ = {
+		1B4F2A9323F2A2E800A2A32E /* Build configuration list for PBXProject "Xmanager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B4F2AA623F2A2EA00A2A32E /* Debug */,
@@ -1069,7 +1069,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1B4F2AA823F2A2EA00A2A32E /* Build configuration list for PBXNativeTarget "Xcode Template Manager" */ = {
+		1B4F2AA823F2A2EA00A2A32E /* Build configuration list for PBXNativeTarget "Xmanager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				1B4F2AA923F2A2EA00A2A32E /* Debug */,
