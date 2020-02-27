@@ -152,7 +152,7 @@
 		FFD7B8002408146500B486E7 /* swift.txt in Resources */ = {isa = PBXBuildFile; fileRef = FFD7B7FF2408146500B486E7 /* swift.txt */; };
 		FFD7B8022408147800B486E7 /* storyboard.txt in Resources */ = {isa = PBXBuildFile; fileRef = FFD7B8012408147800B486E7 /* storyboard.txt */; };
 		FFD7B8042408148500B486E7 /* xib.txt in Resources */ = {isa = PBXBuildFile; fileRef = FFD7B8032408148500B486E7 /* xib.txt */; };
-		FFD7B8102408210200B486E7 /* sample-mvp.zip in Resources */ = {isa = PBXBuildFile; fileRef = FFD7B80F2408210200B486E7 /* sample-mvp.zip */; };
+		FFD7B8122408233600B486E7 /* sample-mvp.zip in Resources */ = {isa = PBXBuildFile; fileRef = FFD7B8112408233600B486E7 /* sample-mvp.zip */; };
 		FFDD902023FAC07B00BD112D /* BaseWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDD901F23FAC07B00BD112D /* BaseWindow.swift */; };
 		FFDD902223FAE29F00BD112D /* BaseNSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDD902123FAE29F00BD112D /* BaseNSView.swift */; };
 /* End PBXBuildFile section */
@@ -308,7 +308,7 @@
 		FFD7B7FF2408146500B486E7 /* swift.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = swift.txt; sourceTree = "<group>"; };
 		FFD7B8012408147800B486E7 /* storyboard.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = storyboard.txt; sourceTree = "<group>"; };
 		FFD7B8032408148500B486E7 /* xib.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = xib.txt; sourceTree = "<group>"; };
-		FFD7B80F2408210200B486E7 /* sample-mvp.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "sample-mvp.zip"; sourceTree = "<group>"; };
+		FFD7B8112408233600B486E7 /* sample-mvp.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "sample-mvp.zip"; sourceTree = "<group>"; };
 		FFDD901F23FAC07B00BD112D /* BaseWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWindow.swift; sourceTree = "<group>"; };
 		FFDD902123FAE29F00BD112D /* BaseNSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNSView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -338,7 +338,7 @@
 		1B23B1C423FE821700A17C74 /* MockTemplates */ = {
 			isa = PBXGroup;
 			children = (
-				FFD7B80F2408210200B486E7 /* sample-mvp.zip */,
+				FFD7B8112408233600B486E7 /* sample-mvp.zip */,
 				1B23B1C723FE83BA00A17C74 /* TemplateInfo.txt */,
 				FFD7B7FF2408146500B486E7 /* swift.txt */,
 				FFD7B8012408147800B486E7 /* storyboard.txt */,
@@ -845,7 +845,7 @@
 				1B275C3C23FF6F6100A2514C /* arduino-light.min.css in Resources */,
 				1B275C4323FF6F6100A2514C /* github.min.css in Resources */,
 				1B65DCA723F538BF00E267AB /* XcodeTemplateCell.xib in Resources */,
-				FFD7B8102408210200B486E7 /* sample-mvp.zip in Resources */,
+				FFD7B8122408233600B486E7 /* sample-mvp.zip in Resources */,
 				1B275C6123FF6F6100A2514C /* agate.min.css in Resources */,
 				1B275C1123FF6F6100A2514C /* brown-paper.min.css in Resources */,
 				1B275C6823FF6F6100A2514C /* highlight.min.js in Resources */,
