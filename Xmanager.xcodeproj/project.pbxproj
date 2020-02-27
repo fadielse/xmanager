@@ -113,7 +113,6 @@
 		1B4F2A9E23F2A2E800A2A32E /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B4F2A9D23F2A2E800A2A32E /* DashboardViewController.swift */; };
 		1B4F2AA023F2A2EA00A2A32E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B4F2A9F23F2A2EA00A2A32E /* Assets.xcassets */; };
 		1B4F2AA323F2A2EA00A2A32E /* Dashboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1B4F2AA123F2A2EA00A2A32E /* Dashboard.storyboard */; };
-		1B537FAB24066AC200A13DA9 /* sample-mvp.zip in Resources */ = {isa = PBXBuildFile; fileRef = 1B537FAA24066AC200A13DA9 /* sample-mvp.zip */; };
 		1B537FAD24066E4500A13DA9 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B537FAC24066E4500A13DA9 /* Settings.swift */; };
 		1B65DCA023F5202900E267AB /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B65DC9F23F5202900E267AB /* BaseViewController.swift */; };
 		1B65DCA523F5383A00E267AB /* XcodeTemplateCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B65DCA423F5383A00E267AB /* XcodeTemplateCell.swift */; };
@@ -138,6 +137,7 @@
 		FF6A673923FD8F520007C877 /* TableDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6A673823FD8F520007C877 /* TableDragView.swift */; };
 		FF6A673F23FD9B510007C877 /* SourceFileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6A673E23FD9B510007C877 /* SourceFileTableCell.swift */; };
 		FF6A674123FD9B6A0007C877 /* SourceFileTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF6A674023FD9B6A0007C877 /* SourceFileTableCell.xib */; };
+		FF6E397524069FEF00A91A21 /* sample-mvp.zip in Resources */ = {isa = PBXBuildFile; fileRef = FF6E397424069FEF00A91A21 /* sample-mvp.zip */; };
 		FF7CEF9E23FEE3CE00A64524 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF9D23FEE3CE00A64524 /* EditorViewController.swift */; };
 		FF7CEFA123FEE3EE00A64524 /* Editor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7CEFA023FEE3EE00A64524 /* Editor.storyboard */; };
 		FFB3458223F8408E0060D8FE /* TemplateNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3458023F8408E0060D8FE /* TemplateNameCell.swift */; };
@@ -262,7 +262,6 @@
 		1B4F2AA223F2A2EA00A2A32E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Dashboard.storyboard; sourceTree = "<group>"; };
 		1B4F2AA423F2A2EA00A2A32E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B4F2AA523F2A2EA00A2A32E /* Xcode_Template_Manager.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Xcode_Template_Manager.entitlements; sourceTree = "<group>"; };
-		1B537FAA24066AC200A13DA9 /* sample-mvp.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; name = "sample-mvp.zip"; path = "../../../../../../../Downloads/sample-mvp.zip"; sourceTree = "<group>"; };
 		1B537FAC24066E4500A13DA9 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		1B65DC9F23F5202900E267AB /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		1B65DCA423F5383A00E267AB /* XcodeTemplateCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XcodeTemplateCell.swift; sourceTree = "<group>"; };
@@ -289,6 +288,7 @@
 		FF6A673823FD8F520007C877 /* TableDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDragView.swift; sourceTree = "<group>"; };
 		FF6A673E23FD9B510007C877 /* SourceFileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceFileTableCell.swift; sourceTree = "<group>"; };
 		FF6A674023FD9B6A0007C877 /* SourceFileTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SourceFileTableCell.xib; sourceTree = "<group>"; };
+		FF6E397424069FEF00A91A21 /* sample-mvp.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "sample-mvp.zip"; sourceTree = "<group>"; };
 		FF7CEF9D23FEE3CE00A64524 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		FF7CEFA023FEE3EE00A64524 /* Editor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Editor.storyboard; sourceTree = "<group>"; };
 		FFB3458023F8408E0060D8FE /* TemplateNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateNameCell.swift; sourceTree = "<group>"; };
@@ -328,7 +328,7 @@
 		1B23B1C423FE821700A17C74 /* MockTemplates */ = {
 			isa = PBXGroup;
 			children = (
-				1B537FAA24066AC200A13DA9 /* sample-mvp.zip */,
+				FF6E397424069FEF00A91A21 /* sample-mvp.zip */,
 				1B23B1C723FE83BA00A17C74 /* TemplateInfo.txt */,
 			);
 			path = MockTemplates;
@@ -818,7 +818,6 @@
 				1B275C6423FF6F6100A2514C /* atelier-lakeside-light.min.css in Resources */,
 				1B275C0E23FF6F6100A2514C /* vs.min.css in Resources */,
 				1B275C3C23FF6F6100A2514C /* arduino-light.min.css in Resources */,
-				1B537FAB24066AC200A13DA9 /* sample-mvp.zip in Resources */,
 				1B275C4323FF6F6100A2514C /* github.min.css in Resources */,
 				1B65DCA723F538BF00E267AB /* XcodeTemplateCell.xib in Resources */,
 				1B275C6123FF6F6100A2514C /* agate.min.css in Resources */,
@@ -828,6 +827,7 @@
 				1B23B1C823FE83BA00A17C74 /* TemplateInfo.txt in Resources */,
 				1B275C1823FF6F6100A2514C /* atelier-heath-dark.min.css in Resources */,
 				1B275C6523FF6F6100A2514C /* monokai-sublime.min.css in Resources */,
+				FF6E397524069FEF00A91A21 /* sample-mvp.zip in Resources */,
 				1B275C3823FF6F6100A2514C /* gruvbox-light.min.css in Resources */,
 				1B275C4923FF6F6100A2514C /* default.min.css in Resources */,
 				1B275C0F23FF6F6100A2514C /* atelier-seaside-dark.min.css in Resources */,

@@ -16,6 +16,7 @@ class TemplateDetailViewController: BaseViewController {
         case xcode = "Xcode"
         case textEdit = "Text Edit"
         case delete = "Delete"
+        case rename = "Rename"
     }
     
     @IBOutlet weak var viewTemplateList: NSView!
@@ -228,6 +229,7 @@ class TemplateDetailViewController: BaseViewController {
         let menuItemOpenWith = NSMenuItem(title: SourceOpenOptionMenu.openWith.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: "")
         menu.addItem(menuItemOpen)
         menu.addItem(menuItemOpenWith)
+        menu.addItem(NSMenuItem(title: SourceOpenOptionMenu.rename.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: ""))
         menu.addItem(NSMenuItem(title: SourceOpenOptionMenu.delete.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: ""))
         
         let submenu = NSMenu()
@@ -258,6 +260,8 @@ class TemplateDetailViewController: BaseViewController {
             NSWorkspace.shared.openFile(path, withApplication: "Xcode")
         case .textEdit:
             NSWorkspace.shared.openFile(path, withApplication: "TextEdit")
+        case .rename:
+            startRenameSourceFile(withIndex: sourceTableView.clickedRow)
         case .delete:
             deleteSourceFile(withIndex: sourceTableView.clickedRow)
             updateTemplateConfiguration()
@@ -265,6 +269,11 @@ class TemplateDetailViewController: BaseViewController {
         default:
             NSWorkspace.shared.openFile(path)
         }
+    }
+    
+    private func startRenameSourceFile(withIndex index: Int) {
+        guard sourceFiles.indices.contains(index) else { return }
+        
     }
     
     private func updateTemplateName(withName name: String) {
