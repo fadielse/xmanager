@@ -24,6 +24,14 @@
                 <key>Type</key>
                 <string>text</string>
             </dict>
+            <dict>
+               <key>Default</key>
+               <string>___VARIABLE_ModuleName:identifier___</string>
+               <key>Identifier</key>
+               <string>productName</string>
+               <key>Type</key>
+               <string>static</string>
+            </dict>
         </array>
     </dict>
 </plist>

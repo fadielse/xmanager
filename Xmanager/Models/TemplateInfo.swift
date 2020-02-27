@@ -11,11 +11,12 @@ import Foundation
 struct TemplateInfoOptionRows {
     
     static let properties = 0
-    static let generateFile1 = 1
-    static let generateFile2 = 2
-    static let generateFile3 = 3
-    static let generateFile4 = 4
-    static let generateFile5 = 5
+    static let productName = 1
+    static let generateFile1 = 2
+    static let generateFile2 = 3
+    static let generateFile3 = 4
+    static let generateFile4 = 5
+    static let generateFile5 = 6
 }
 
 struct TemplateInfo {
@@ -122,6 +123,14 @@ struct TemplateInfo {
         text.append("<true/>")
         text.append("<key>Type</key>")
         text.append("<string>text</string>")
+        text.append("</dict>")
+        text.append("<dict>")
+        text.append("<key>Default</key>")
+        text.append("<string>___VARIABLE_ModuleName:identifier___</string>")
+        text.append("<key>Identifier</key>")
+        text.append("<string>productName</string>")
+        text.append("<key>Type</key>")
+        text.append("<string>static</string>")
         text.append("</dict>")
         return text
     }

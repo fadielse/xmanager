@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1B03534C2407CEE800C4338B /* sample-mvp.zip in Resources */ = {isa = PBXBuildFile; fileRef = 1B03534B2407CEE800C4338B /* sample-mvp.zip */; };
 		1B23B1C323FE6AD000A17C74 /* DragAndDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B23B1C223FE6AD000A17C74 /* DragAndDropView.swift */; };
 		1B23B1C823FE83BA00A17C74 /* TemplateInfo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1B23B1C723FE83BA00A17C74 /* TemplateInfo.txt */; };
 		1B23B1CA23FE845000A17C74 /* TextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B23B1C923FE845000A17C74 /* TextParser.swift */; };
@@ -137,7 +138,6 @@
 		FF6A673923FD8F520007C877 /* TableDragView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6A673823FD8F520007C877 /* TableDragView.swift */; };
 		FF6A673F23FD9B510007C877 /* SourceFileTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6A673E23FD9B510007C877 /* SourceFileTableCell.swift */; };
 		FF6A674123FD9B6A0007C877 /* SourceFileTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FF6A674023FD9B6A0007C877 /* SourceFileTableCell.xib */; };
-		FF6E397524069FEF00A91A21 /* sample-mvp.zip in Resources */ = {isa = PBXBuildFile; fileRef = FF6E397424069FEF00A91A21 /* sample-mvp.zip */; };
 		FF7CEF9E23FEE3CE00A64524 /* EditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF7CEF9D23FEE3CE00A64524 /* EditorViewController.swift */; };
 		FF7CEFA123FEE3EE00A64524 /* Editor.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FF7CEFA023FEE3EE00A64524 /* Editor.storyboard */; };
 		FFB3458223F8408E0060D8FE /* TemplateNameCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3458023F8408E0060D8FE /* TemplateNameCell.swift */; };
@@ -153,6 +153,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B03534B2407CEE800C4338B /* sample-mvp.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "sample-mvp.zip"; sourceTree = "<group>"; };
 		1B23B1C223FE6AD000A17C74 /* DragAndDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropView.swift; sourceTree = "<group>"; };
 		1B23B1C723FE83BA00A17C74 /* TemplateInfo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateInfo.txt; sourceTree = "<group>"; };
 		1B23B1C923FE845000A17C74 /* TextParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextParser.swift; sourceTree = "<group>"; };
@@ -288,7 +289,6 @@
 		FF6A673823FD8F520007C877 /* TableDragView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDragView.swift; sourceTree = "<group>"; };
 		FF6A673E23FD9B510007C877 /* SourceFileTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceFileTableCell.swift; sourceTree = "<group>"; };
 		FF6A674023FD9B6A0007C877 /* SourceFileTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SourceFileTableCell.xib; sourceTree = "<group>"; };
-		FF6E397424069FEF00A91A21 /* sample-mvp.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "sample-mvp.zip"; sourceTree = "<group>"; };
 		FF7CEF9D23FEE3CE00A64524 /* EditorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditorViewController.swift; sourceTree = "<group>"; };
 		FF7CEFA023FEE3EE00A64524 /* Editor.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Editor.storyboard; sourceTree = "<group>"; };
 		FFB3458023F8408E0060D8FE /* TemplateNameCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateNameCell.swift; sourceTree = "<group>"; };
@@ -328,7 +328,7 @@
 		1B23B1C423FE821700A17C74 /* MockTemplates */ = {
 			isa = PBXGroup;
 			children = (
-				FF6E397424069FEF00A91A21 /* sample-mvp.zip */,
+				1B03534B2407CEE800C4338B /* sample-mvp.zip */,
 				1B23B1C723FE83BA00A17C74 /* TemplateInfo.txt */,
 			);
 			path = MockTemplates;
@@ -827,7 +827,6 @@
 				1B23B1C823FE83BA00A17C74 /* TemplateInfo.txt in Resources */,
 				1B275C1823FF6F6100A2514C /* atelier-heath-dark.min.css in Resources */,
 				1B275C6523FF6F6100A2514C /* monokai-sublime.min.css in Resources */,
-				FF6E397524069FEF00A91A21 /* sample-mvp.zip in Resources */,
 				1B275C3823FF6F6100A2514C /* gruvbox-light.min.css in Resources */,
 				1B275C4923FF6F6100A2514C /* default.min.css in Resources */,
 				1B275C0F23FF6F6100A2514C /* atelier-seaside-dark.min.css in Resources */,
@@ -855,6 +854,7 @@
 				FF7CEFA123FEE3EE00A64524 /* Editor.storyboard in Resources */,
 				1B275C4123FF6F6100A2514C /* purebasic.min.css in Resources */,
 				1B275C3123FF6F6100A2514C /* routeros.min.css in Resources */,
+				1B03534C2407CEE800C4338B /* sample-mvp.zip in Resources */,
 				1B275C6623FF6F6100A2514C /* an-old-hope.min.css in Resources */,
 				1B275C4023FF6F6100A2514C /* arta.min.css in Resources */,
 				1B275C5C23FF6F6100A2514C /* paraiso-dark.min.css in Resources */,
