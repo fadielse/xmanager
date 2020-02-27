@@ -100,7 +100,7 @@ class TemplateDetailViewController: BaseViewController {
         didSet {
             if templateList.indices.contains(selectedTemplateIndex), let url = templateList[selectedTemplateIndex].url {
                 getListTemplate(withUrl: url)
-                directoryTemplateName = "\(url.getName()).xctemplate"
+                directoryTemplateName = "\(url.getTemplateName()).xctemplate"
                 loadTemplateConfiguration()
             }
             collectionView.reloadData()
@@ -272,8 +272,10 @@ class TemplateDetailViewController: BaseViewController {
     }
     
     private func startRenameSourceFile(withIndex index: Int) {
-        guard sourceFiles.indices.contains(index) else { return }
-        
+        guard sourceFiles.indices.contains(index), let fileUrl = sourceFiles[index].url else { return }
+        if let cell = sourceTableView.view(atColumn: 0, row: index, makeIfNecessary: true) as? SourceFileTableCell {
+            cell.startEditing(withFileUrl: fileUrl)
+        }
     }
     
     private func updateTemplateName(withName name: String) {
@@ -293,13 +295,36 @@ class TemplateDetailViewController: BaseViewController {
                 getListFile()
                 
                 selectedTemplateIndex = templateList.firstIndex(where: { urlList -> Bool in
-                    return urlList.url == directoryUrl.appendingPathComponent("\(newGroupPathUrl.getName()).xctemplate")
+                    return urlList.url == directoryUrl.appendingPathComponent("\(newGroupPathUrl.getTemplateName()).xctemplate")
                 }) ?? 0
                 collectionView.reloadData()
             } catch {
                 showAlert(withMessage: error.localizedDescription)
             }
         }
+    }
+    
+    private func updateSourceFileName(withName name: String, andFileUrl fileUrl: URL) {
+        let newFilePathUrl = fileUrl.getPathOnly().appendingPathComponent("\(name)")
+        
+        let sourcefileList = contentsOf(folder: fileUrl.getPathOnly())
+        if sourcefileList.contains(newFilePathUrl) {
+            showAlert(withMessage: "File name already exists")
+        } else {
+            do {
+                try fileManager.moveItem(at: fileUrl, to: newFilePathUrl)
+                collectionView.reloadData()
+            } catch {
+                showAlert(withMessage: error.localizedDescription)
+            }
+        }
+        
+        getListFile()
+        updateTemplateConfiguration()
+        loadTemplateConfiguration()
+        updateTemplateProperties()
+        updatePreview()
+        collectionView.reloadData()
     }
     
     private func processingDropTemplateIcon(withUrls urls: [URL]) {
@@ -374,7 +399,7 @@ class TemplateDetailViewController: BaseViewController {
         }
         
         for sourceUrl in urls {
-            let sourceTemplatePath = "\(directoryTemplateName)/\(sourceUrl.getName())"
+            let sourceTemplatePath = "\(directoryTemplateName)/\(sourceUrl.getTemplateName())"
             
             if let copyUrl = directoryUrl?.appendingPathComponent(sourceTemplatePath) {
                 do {
@@ -609,7 +634,7 @@ class TemplateDetailViewController: BaseViewController {
         textFieldName.delegate = self
         textFieldName.isEditable = false
         textFieldName.isEnabled = false
-        if templateList.indices.contains(selectedTemplateIndex), let name = templateList[selectedTemplateIndex].url?.getName() {
+        if templateList.indices.contains(selectedTemplateIndex), let name = templateList[selectedTemplateIndex].url?.getTemplateName() {
             textFieldName.stringValue = name
         }
     }
@@ -671,7 +696,7 @@ extension TemplateDetailViewController: NSCollectionViewDelegate, NSCollectionVi
             cell.isSelected = selectedTemplateIndex == indexPath.item
             
             if templateList.indices.contains(indexPath.item) {
-                cell.labelName.stringValue = templateList[indexPath.item].url?.getName() ?? ""
+                cell.labelName.stringValue = templateList[indexPath.item].url?.getTemplateName() ?? ""
             }
             
             return cell
@@ -720,7 +745,7 @@ extension TemplateDetailViewController: NSTextFieldDelegate {
                     textFieldName.resignFirstResponder()
                     textFieldName.isEditable = false
                     textFieldName.isEnabled = false
-                    textFieldName.stringValue = templateList[selectedTemplateIndex].url?.getName() ?? ""
+                    textFieldName.stringValue = templateList[selectedTemplateIndex].url?.getTemplateName() ?? ""
                     return false
                 }
                 
@@ -822,8 +847,8 @@ extension TemplateDetailViewController: NSTableViewDelegate, NSTableViewDataSour
             return nil
         }
         
-        guard let fileName = sourceFiles[row].url?.getName() else { return nil }
-        
+        guard let fileName = sourceFiles[row].url?.getTemplateName() else { return nil }
+        cell.delegate = self
         cell.labelName.stringValue = fileName
         cell.labelName.toolTip = fileName
         return cell
@@ -847,5 +872,14 @@ extension TemplateDetailViewController: XMLParserDelegate {
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String] = [:]) {
         print(attributeDict)
+    }
+}
+
+// MARK: - SourceTableViewDelegate
+
+extension TemplateDetailViewController: SourceFileTableCellDelegate {
+    
+    func SourceFileTableCell(updateFileName name: String, withUrl url: URL) {
+        updateSourceFileName(withName: name, andFileUrl: url)
     }
 }

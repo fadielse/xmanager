@@ -138,7 +138,7 @@ class DashboardViewController: BaseViewController {
         templateDetailViewController.view.frame = self.containerView.bounds
         self.containerView.addSubview(templateDetailViewController.view)
         templateDetailViewController.directoryUrl = templateList[selectedRow].url
-        if let loaded = templateList[selectedRow].url?.getName() {
+        if let loaded = templateList[selectedRow].url?.getTemplateName() {
             updateLog(withMessage: "Success load templates : \(loaded)")
         } else {
             updateLog(withMessage: "Error load templates : Source not found")
@@ -218,7 +218,7 @@ extension DashboardViewController: NSTableViewDelegate, NSTableViewDataSource {
     }
 
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
-        if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "XcodeTemplateCell"), owner: nil) as? XcodeTemplateCell, let groupName = templateList[row].url?.getName() {
+        if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: "XcodeTemplateCell"), owner: nil) as? XcodeTemplateCell, let groupName = templateList[row].url?.getTemplateName() {
             cell.delegate = self
             cell.isSelected = selectedRow == row
             cell.labelName.stringValue = groupName

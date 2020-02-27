@@ -102,13 +102,13 @@
                                         <rect key="frame" x="16" y="16" width="1208" height="798"/>
                                         <subviews>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="ku5-wb-twe">
-                                                <rect key="frame" x="0.0" y="235" width="350" height="563"/>
+                                                <rect key="frame" x="0.0" y="310" width="350" height="488"/>
                                                 <subviews>
                                                     <stackView distribution="fill" orientation="vertical" alignment="leading" spacing="16" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ty8-SZ-YTU">
-                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="563"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="350" height="488"/>
                                                         <subviews>
                                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="6d4-KH-Qsd">
-                                                                <rect key="frame" x="0.0" y="533" width="350" height="30"/>
+                                                                <rect key="frame" x="0.0" y="458" width="350" height="30"/>
                                                                 <subviews>
                                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="55i-Jx-Ryw">
                                                                         <rect key="frame" x="18" y="8" width="48" height="15"/>
@@ -151,11 +151,12 @@
                                                                     <constraint firstItem="qYi-ol-Dcp" firstAttribute="leading" secondItem="55i-Jx-Ryw" secondAttribute="trailing" constant="8" id="SQ2-QR-PCI"/>
                                                                     <constraint firstAttribute="height" constant="30" id="T9G-yV-CPZ"/>
                                                                     <constraint firstItem="qYi-ol-Dcp" firstAttribute="centerY" secondItem="55i-Jx-Ryw" secondAttribute="centerY" id="YEy-Vo-KgR"/>
+                                                                    <constraint firstAttribute="width" constant="350" id="Z6J-1x-5YH"/>
                                                                     <constraint firstItem="idN-O3-ztx" firstAttribute="centerY" secondItem="qYi-ol-Dcp" secondAttribute="centerY" id="u9x-0D-bvk"/>
                                                                 </constraints>
                                                             </customView>
                                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="52V-l8-9bJ">
-                                                                <rect key="frame" x="0.0" y="487" width="350" height="30"/>
+                                                                <rect key="frame" x="0.0" y="412" width="350" height="30"/>
                                                                 <subviews>
                                                                     <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="S2S-YQ-y2N">
                                                                         <rect key="frame" x="18" y="8" width="84" height="15"/>
@@ -174,7 +175,7 @@
                                                                 </constraints>
                                                             </customView>
                                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="9x7-cq-XWl">
-                                                                <rect key="frame" x="0.0" y="321" width="293" height="150"/>
+                                                                <rect key="frame" x="0.0" y="246" width="293" height="150"/>
                                                                 <subviews>
                                                                     <stackView distribution="fill" orientation="horizontal" alignment="top" horizontalStackHuggingPriority="249.99998474121094" verticalStackHuggingPriority="249.99998474121094" detachesHiddenViews="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LA0-Qf-FvE">
                                                                         <rect key="frame" x="30" y="15" width="248" height="120"/>
@@ -294,16 +295,16 @@
                                                                 </constraints>
                                                             </customView>
                                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="Viu-XC-z3R">
-                                                                <rect key="frame" x="0.0" y="0.0" width="294" height="305"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="294" height="230"/>
                                                                 <subviews>
                                                                     <scrollView autohidesScrollers="YES" horizontalLineScroll="27" horizontalPageScroll="10" verticalLineScroll="27" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Pk-x9-6zx">
-                                                                        <rect key="frame" x="16" y="30" width="278" height="275"/>
+                                                                        <rect key="frame" x="16" y="30" width="278" height="200"/>
                                                                         <clipView key="contentView" id="k6y-9v-WFb">
-                                                                            <rect key="frame" x="1" y="0.0" width="276" height="274"/>
+                                                                            <rect key="frame" x="1" y="0.0" width="276" height="199"/>
                                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                             <subviews>
                                                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="none" columnSelection="YES" columnResizing="NO" rowHeight="25" usesAutomaticRowHeights="YES" headerView="AjA-O7-bLf" viewBased="YES" id="ji4-Av-yzb" customClass="TableDragView" customModule="Xmanager" customModuleProvider="target">
-                                                                                    <rect key="frame" x="0.0" y="0.0" width="276" height="249"/>
+                                                                                    <rect key="frame" x="0.0" y="0.0" width="276" height="174"/>
                                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                                                     <color key="backgroundColor" red="0.1333333333" green="0.15686274510000001" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -410,10 +411,10 @@
                                                                         </constraints>
                                                                     </customView>
                                                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="B6q-eK-VKf" customClass="DragAndDropView" customModule="Xmanager" customModuleProvider="target">
-                                                                        <rect key="frame" x="18" y="30" width="274" height="250"/>
+                                                                        <rect key="frame" x="18" y="30" width="274" height="175"/>
                                                                         <subviews>
                                                                             <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="nUD-se-n2R">
-                                                                                <rect key="frame" x="14" y="116" width="246" height="19"/>
+                                                                                <rect key="frame" x="14" y="78" width="246" height="19"/>
                                                                                 <constraints>
                                                                                     <constraint firstAttribute="width" constant="242" id="jsi-kN-G74"/>
                                                                                 </constraints>

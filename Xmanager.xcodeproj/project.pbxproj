@@ -145,7 +145,7 @@
 		FFB3458723F84D7F0060D8FE /* UrlList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3458623F84D7F0060D8FE /* UrlList.swift */; };
 		FFB3458923F84D980060D8FE /* UrlListDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFB3458823F84D980060D8FE /* UrlListDAO.swift */; };
 		FFC9F0FC23F82961009CDEAD /* UrlConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9F0FB23F82961009CDEAD /* UrlConstant.swift */; };
-		FFC9F0FE23F829F7009CDEAD /* Url+StringFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9F0FD23F829F7009CDEAD /* Url+StringFormat.swift */; };
+		FFC9F0FE23F829F7009CDEAD /* Url+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9F0FD23F829F7009CDEAD /* Url+Custom.swift */; };
 		FFC9F10323F83846009CDEAD /* TemplateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9F10223F83846009CDEAD /* TemplateDetailViewController.swift */; };
 		FFC9F10523F83864009CDEAD /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9F10423F83864009CDEAD /* WelcomeViewController.swift */; };
 		FFDD902023FAC07B00BD112D /* BaseWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDD901F23FAC07B00BD112D /* BaseWindow.swift */; };
@@ -296,7 +296,7 @@
 		FFB3458623F84D7F0060D8FE /* UrlList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlList.swift; sourceTree = "<group>"; };
 		FFB3458823F84D980060D8FE /* UrlListDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlListDAO.swift; sourceTree = "<group>"; };
 		FFC9F0FB23F82961009CDEAD /* UrlConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UrlConstant.swift; sourceTree = "<group>"; };
-		FFC9F0FD23F829F7009CDEAD /* Url+StringFormat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Url+StringFormat.swift"; sourceTree = "<group>"; };
+		FFC9F0FD23F829F7009CDEAD /* Url+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Url+Custom.swift"; sourceTree = "<group>"; };
 		FFC9F10223F83846009CDEAD /* TemplateDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateDetailViewController.swift; sourceTree = "<group>"; };
 		FFC9F10423F83864009CDEAD /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		FFDD901F23FAC07B00BD112D /* BaseWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWindow.swift; sourceTree = "<group>"; };
@@ -571,7 +571,7 @@
 			children = (
 				1BA08DE323F6AA4000C50619 /* NSViewController+Router.swift */,
 				FF67272B2404D4A500820B6A /* String+Format.swift */,
-				FFC9F0FD23F829F7009CDEAD /* Url+StringFormat.swift */,
+				FFC9F0FD23F829F7009CDEAD /* Url+Custom.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -923,7 +923,7 @@
 				FFB3458723F84D7F0060D8FE /* UrlList.swift in Sources */,
 				1B275C6A23FF6F6100A2514C /* Highlightr.swift in Sources */,
 				1B23B1CC23FE885F00A17C74 /* FileNameConstant.swift in Sources */,
-				FFC9F0FE23F829F7009CDEAD /* Url+StringFormat.swift in Sources */,
+				FFC9F0FE23F829F7009CDEAD /* Url+Custom.swift in Sources */,
 				1B275C6923FF6F6100A2514C /* CodeAttributedString.swift in Sources */,
 				FFB3458223F8408E0060D8FE /* TemplateNameCell.swift in Sources */,
 				FF6A673F23FD9B510007C877 /* SourceFileTableCell.swift in Sources */,

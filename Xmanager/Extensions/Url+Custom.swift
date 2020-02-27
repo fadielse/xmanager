@@ -1,5 +1,5 @@
 //
-//  Url+StringFormat.swift
+//  Url+Custom.swift
 //  Xcode Template Manager
 //
 //  Created by Fadilah Hasan on 15/02/20.
@@ -10,7 +10,11 @@ import Foundation
 
 extension URL {
     
-    func getName() -> String {
+    func getTemplateName() -> String {
         return String(absoluteString.split(separator: "/").last?.removingPercentEncoding ?? "").replacingOccurrences(of: ".xctemplate", with: "")
+    }
+    
+    func getPathOnly() -> URL {
+        return deletingLastPathComponent()
     }
 }
