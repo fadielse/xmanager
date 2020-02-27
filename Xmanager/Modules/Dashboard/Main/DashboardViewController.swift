@@ -67,6 +67,7 @@ class DashboardViewController: BaseViewController {
     }
     
     fileprivate func generateSampleTemplate() {
+        Settings.isSampleHasGenerated = false
         guard !Settings.isSampleHasGenerated else { return }
         do {
             let filePath = Bundle.main.url(forResource: "sample-mvp", withExtension: "zip")!

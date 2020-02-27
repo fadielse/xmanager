@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1B03534C2407CEE800C4338B /* sample-mvp.zip in Resources */ = {isa = PBXBuildFile; fileRef = 1B03534B2407CEE800C4338B /* sample-mvp.zip */; };
 		1B23B1C323FE6AD000A17C74 /* DragAndDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B23B1C223FE6AD000A17C74 /* DragAndDropView.swift */; };
 		1B23B1C823FE83BA00A17C74 /* TemplateInfo.txt in Resources */ = {isa = PBXBuildFile; fileRef = 1B23B1C723FE83BA00A17C74 /* TemplateInfo.txt */; };
 		1B23B1CA23FE845000A17C74 /* TextParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B23B1C923FE845000A17C74 /* TextParser.swift */; };
@@ -148,12 +147,17 @@
 		FFC9F0FE23F829F7009CDEAD /* Url+Custom.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9F0FD23F829F7009CDEAD /* Url+Custom.swift */; };
 		FFC9F10323F83846009CDEAD /* TemplateDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9F10223F83846009CDEAD /* TemplateDetailViewController.swift */; };
 		FFC9F10523F83864009CDEAD /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFC9F10423F83864009CDEAD /* WelcomeViewController.swift */; };
+		FFD7B7FC2407F18100B486E7 /* CreateFileFormViController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFD7B7FB2407F18100B486E7 /* CreateFileFormViController.swift */; };
+		FFD7B7FE2407F1A400B486E7 /* CreateFileForm.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FFD7B7FD2407F1A400B486E7 /* CreateFileForm.storyboard */; };
+		FFD7B8002408146500B486E7 /* swift.txt in Resources */ = {isa = PBXBuildFile; fileRef = FFD7B7FF2408146500B486E7 /* swift.txt */; };
+		FFD7B8022408147800B486E7 /* storyboard.txt in Resources */ = {isa = PBXBuildFile; fileRef = FFD7B8012408147800B486E7 /* storyboard.txt */; };
+		FFD7B8042408148500B486E7 /* xib.txt in Resources */ = {isa = PBXBuildFile; fileRef = FFD7B8032408148500B486E7 /* xib.txt */; };
+		FFD7B8102408210200B486E7 /* sample-mvp.zip in Resources */ = {isa = PBXBuildFile; fileRef = FFD7B80F2408210200B486E7 /* sample-mvp.zip */; };
 		FFDD902023FAC07B00BD112D /* BaseWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDD901F23FAC07B00BD112D /* BaseWindow.swift */; };
 		FFDD902223FAE29F00BD112D /* BaseNSView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDD902123FAE29F00BD112D /* BaseNSView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		1B03534B2407CEE800C4338B /* sample-mvp.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "sample-mvp.zip"; sourceTree = "<group>"; };
 		1B23B1C223FE6AD000A17C74 /* DragAndDropView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DragAndDropView.swift; sourceTree = "<group>"; };
 		1B23B1C723FE83BA00A17C74 /* TemplateInfo.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = TemplateInfo.txt; sourceTree = "<group>"; };
 		1B23B1C923FE845000A17C74 /* TextParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextParser.swift; sourceTree = "<group>"; };
@@ -299,6 +303,12 @@
 		FFC9F0FD23F829F7009CDEAD /* Url+Custom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Url+Custom.swift"; sourceTree = "<group>"; };
 		FFC9F10223F83846009CDEAD /* TemplateDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemplateDetailViewController.swift; sourceTree = "<group>"; };
 		FFC9F10423F83864009CDEAD /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		FFD7B7FB2407F18100B486E7 /* CreateFileFormViController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateFileFormViController.swift; sourceTree = "<group>"; };
+		FFD7B7FD2407F1A400B486E7 /* CreateFileForm.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateFileForm.storyboard; sourceTree = "<group>"; };
+		FFD7B7FF2408146500B486E7 /* swift.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = swift.txt; sourceTree = "<group>"; };
+		FFD7B8012408147800B486E7 /* storyboard.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = storyboard.txt; sourceTree = "<group>"; };
+		FFD7B8032408148500B486E7 /* xib.txt */ = {isa = PBXFileReference; lastKnownFileType = text; path = xib.txt; sourceTree = "<group>"; };
+		FFD7B80F2408210200B486E7 /* sample-mvp.zip */ = {isa = PBXFileReference; lastKnownFileType = archive.zip; path = "sample-mvp.zip"; sourceTree = "<group>"; };
 		FFDD901F23FAC07B00BD112D /* BaseWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseWindow.swift; sourceTree = "<group>"; };
 		FFDD902123FAE29F00BD112D /* BaseNSView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNSView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -328,8 +338,11 @@
 		1B23B1C423FE821700A17C74 /* MockTemplates */ = {
 			isa = PBXGroup;
 			children = (
-				1B03534B2407CEE800C4338B /* sample-mvp.zip */,
+				FFD7B80F2408210200B486E7 /* sample-mvp.zip */,
 				1B23B1C723FE83BA00A17C74 /* TemplateInfo.txt */,
+				FFD7B7FF2408146500B486E7 /* swift.txt */,
+				FFD7B8012408147800B486E7 /* storyboard.txt */,
+				FFD7B8032408148500B486E7 /* xib.txt */,
 			);
 			path = MockTemplates;
 			sourceTree = "<group>";
@@ -538,6 +551,7 @@
 		1B65DCA123F5206100E267AB /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				FFD7B7FA2407F15900B486E7 /* CreateFileForm */,
 				1B39EB3A23F6970700F50E0D /* Dashboard */,
 				FF7CEF9F23FEE3D400A64524 /* Editor */,
 				1B39EB3B23F6971300F50E0D /* NewForm */,
@@ -701,6 +715,15 @@
 			path = Welcome;
 			sourceTree = "<group>";
 		};
+		FFD7B7FA2407F15900B486E7 /* CreateFileForm */ = {
+			isa = PBXGroup;
+			children = (
+				FFD7B7FB2407F18100B486E7 /* CreateFileFormViController.swift */,
+				FFD7B7FD2407F1A400B486E7 /* CreateFileForm.storyboard */,
+			);
+			path = CreateFileForm;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -772,6 +795,7 @@
 				1B275C2323FF6F6100A2514C /* railscasts.min.css in Resources */,
 				1B275C1623FF6F6100A2514C /* tomorrow-night-blue.min.css in Resources */,
 				1B275C1B23FF6F6100A2514C /* qtcreator_light.min.css in Resources */,
+				FFD7B8002408146500B486E7 /* swift.txt in Resources */,
 				1B275C5823FF6F6100A2514C /* atelier-estuary-dark.min.css in Resources */,
 				1B275C1F23FF6F6100A2514C /* far.min.css in Resources */,
 				1B275C1723FF6F6100A2514C /* vs2015.min.css in Resources */,
@@ -814,12 +838,14 @@
 				1B275C4A23FF6F6100A2514C /* ascetic.min.css in Resources */,
 				1B275C3E23FF6F6100A2514C /* dracula.min.css in Resources */,
 				1B275C5523FF6F6100A2514C /* atelier-savanna-light.min.css in Resources */,
+				FFD7B8042408148500B486E7 /* xib.txt in Resources */,
 				1B275C5023FF6F6100A2514C /* darkula.min.css in Resources */,
 				1B275C6423FF6F6100A2514C /* atelier-lakeside-light.min.css in Resources */,
 				1B275C0E23FF6F6100A2514C /* vs.min.css in Resources */,
 				1B275C3C23FF6F6100A2514C /* arduino-light.min.css in Resources */,
 				1B275C4323FF6F6100A2514C /* github.min.css in Resources */,
 				1B65DCA723F538BF00E267AB /* XcodeTemplateCell.xib in Resources */,
+				FFD7B8102408210200B486E7 /* sample-mvp.zip in Resources */,
 				1B275C6123FF6F6100A2514C /* agate.min.css in Resources */,
 				1B275C1123FF6F6100A2514C /* brown-paper.min.css in Resources */,
 				1B275C6823FF6F6100A2514C /* highlight.min.js in Resources */,
@@ -833,6 +859,7 @@
 				1B275C2C23FF6F6100A2514C /* atom-one-dark.min.css in Resources */,
 				1B275C3223FF6F6100A2514C /* atelier-forest-dark.min.css in Resources */,
 				1B275C2D23FF6F6100A2514C /* qtcreator_dark.min.css in Resources */,
+				FFD7B8022408147800B486E7 /* storyboard.txt in Resources */,
 				1B275C1323FF6F6100A2514C /* school-book.min.css in Resources */,
 				1B275C1C23FF6F6100A2514C /* a11y-light.min.css in Resources */,
 				1B275C3623FF6F6100A2514C /* lightfair.min.css in Resources */,
@@ -849,12 +876,12 @@
 				1B275C5123FF6F6100A2514C /* atelier-cave-dark.min.css in Resources */,
 				1B275C1223FF6F6100A2514C /* atelier-plateau-light.min.css in Resources */,
 				1B275C5323FF6F6100A2514C /* solarized-light.min.css in Resources */,
+				FFD7B7FE2407F1A400B486E7 /* CreateFileForm.storyboard in Resources */,
 				1B275C4F23FF6F6100A2514C /* atelier-plateau-dark.min.css in Resources */,
 				1B275C3323FF6F6100A2514C /* gml.min.css in Resources */,
 				FF7CEFA123FEE3EE00A64524 /* Editor.storyboard in Resources */,
 				1B275C4123FF6F6100A2514C /* purebasic.min.css in Resources */,
 				1B275C3123FF6F6100A2514C /* routeros.min.css in Resources */,
-				1B03534C2407CEE800C4338B /* sample-mvp.zip in Resources */,
 				1B275C6623FF6F6100A2514C /* an-old-hope.min.css in Resources */,
 				1B275C4023FF6F6100A2514C /* arta.min.css in Resources */,
 				1B275C5C23FF6F6100A2514C /* paraiso-dark.min.css in Resources */,
@@ -955,6 +982,7 @@
 				FF67272C2404D4A500820B6A /* String+Format.swift in Sources */,
 				FFC9F10323F83846009CDEAD /* TemplateDetailViewController.swift in Sources */,
 				1B23B1CA23FE845000A17C74 /* TextParser.swift in Sources */,
+				FFD7B7FC2407F18100B486E7 /* CreateFileFormViController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

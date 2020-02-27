@@ -14,7 +14,7 @@
                 <key>Description</key>
                 <string>The name of Module to create.</string>
                 <key>Identifier</key>
-                <string>ModuleName</string>
+                <string>productName</string>
                 <key>Name</key>
                 <string>Module Name:</string>
                 <key>NotPersisted</key>
@@ -23,14 +23,6 @@
                 <true/>
                 <key>Type</key>
                 <string>text</string>
-            </dict>
-            <dict>
-               <key>Default</key>
-               <string>___VARIABLE_ModuleName:identifier___</string>
-               <key>Identifier</key>
-               <string>productName</string>
-               <key>Type</key>
-               <string>static</string>
             </dict>
         </array>
     </dict>

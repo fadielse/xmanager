@@ -10,13 +10,18 @@ import Cocoa
 
 class TemplateDetailViewController: BaseViewController {
     
-    enum SourceOpenOptionMenu: String {
+    enum EnumSourceOpenOptionMenu: String {
         case open = "Open"
         case openWith = "Open With"
         case xcode = "Xcode"
         case textEdit = "Text Edit"
         case delete = "Delete"
         case rename = "Rename"
+    }
+    
+    enum EnumButtonAddSourceMenu: String {
+        case createNew = "Create New File"
+        case browseFiles = "Browse File's"
     }
     
     @IBOutlet weak var viewTemplateList: NSView!
@@ -35,6 +40,7 @@ class TemplateDetailViewController: BaseViewController {
     @IBOutlet weak var sourceTableView: TableDragView!
     @IBOutlet weak var viewFooterSourceTable: NSView!
     @IBOutlet weak var dragAndDropSourceView: DragAndDropView!
+    @IBOutlet weak var buttonAddSourceFile: NSButton!
     
     // Properties Area
     @IBOutlet weak var viewProperties: NSView!
@@ -156,22 +162,11 @@ class TemplateDetailViewController: BaseViewController {
     }
     
     @IBAction func onButtonAddSourceClicked(_ sender: Any) {
-        let dialog = NSOpenPanel()
-        
-        dialog.title                   = "Choose your file's"
-        dialog.showsResizeIndicator    = true
-        dialog.showsHiddenFiles        = false
-        dialog.canChooseDirectories    = false
-        dialog.canCreateDirectories    = false
-        dialog.allowsMultipleSelection = true
-        dialog.allowedFileTypes        = ["swift", "h", "m", "storyboard", "xib"]
-
-        dialog.begin { (result) -> Void in
-            if result.rawValue == NSApplication.ModalResponse.OK.rawValue {
-                self.processingDropSourceFiles(withUrls: dialog.urls)
-            } else {
-                self.postUpdateLog(withMessage: "Failed to get file's")
-            }
+        if let event = NSApplication.shared.currentEvent {
+            let menu = NSMenu()
+            menu.addItem(NSMenuItem(title: EnumButtonAddSourceMenu.createNew.rawValue, action: #selector(openFormNewFile(_:)), keyEquivalent: ""))
+            menu.addItem(NSMenuItem(title: EnumButtonAddSourceMenu.browseFiles.rawValue, action: #selector(openPanelBrowseFile  ), keyEquivalent: ""))
+            NSMenu.popUpContextMenu(menu, with: event, for: buttonAddSourceFile)
         }
     }
     
@@ -211,30 +206,30 @@ class TemplateDetailViewController: BaseViewController {
         buttonTemplateIcon.layer?.backgroundColor = .clear
     }
     
-    // MARK: - Private Method
+    // MARK: -  Method
     
-    private func prepareTrackingArea() {
+    func prepareTrackingArea() {
         let mouseTrackingArea = myTrakingArea(control: self.buttonTemplateIcon)
         buttonTemplateIcon.addTrackingArea(mouseTrackingArea)
     }
     
-    private func setupSourceTableView() {
+    func setupSourceTableView() {
         sourceTableView.delegate = self
         sourceTableView.dataSource = self
         sourceTableView.dragDelegate = self
         sourceTableView.doubleAction = #selector(doubleClickOnSourceFileRow)
         
         let menu = NSMenu()
-        let menuItemOpen = NSMenuItem(title: SourceOpenOptionMenu.open.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: "")
-        let menuItemOpenWith = NSMenuItem(title: SourceOpenOptionMenu.openWith.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: "")
+        let menuItemOpen = NSMenuItem(title: EnumSourceOpenOptionMenu.open.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: "")
+        let menuItemOpenWith = NSMenuItem(title: EnumSourceOpenOptionMenu.openWith.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: "")
         menu.addItem(menuItemOpen)
         menu.addItem(menuItemOpenWith)
-        menu.addItem(NSMenuItem(title: SourceOpenOptionMenu.rename.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: ""))
-        menu.addItem(NSMenuItem(title: SourceOpenOptionMenu.delete.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: EnumSourceOpenOptionMenu.rename.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: ""))
+        menu.addItem(NSMenuItem(title: EnumSourceOpenOptionMenu.delete.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: ""))
         
         let submenu = NSMenu()
-        submenu.addItem(NSMenuItem(title: SourceOpenOptionMenu.xcode.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: ""))
-        submenu.addItem(NSMenuItem(title: SourceOpenOptionMenu.textEdit.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: ""))
+        submenu.addItem(NSMenuItem(title: EnumSourceOpenOptionMenu.xcode.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: ""))
+        submenu.addItem(NSMenuItem(title: EnumSourceOpenOptionMenu.textEdit.rawValue, action: #selector(selectedMenuTableRow(_:)), keyEquivalent: ""))
         
         menu.setSubmenu(submenu, for: menu.item(at: 1)!)
         sourceTableView.menu = menu
@@ -247,38 +242,14 @@ class TemplateDetailViewController: BaseViewController {
         viewFooterSourceTable.layer?.borderColor = NSColor.init(white: 0.7, alpha: 0.5).cgColor
     }
     
-    @objc func selectedMenuTableRow(_ sender: NSMenuItem) {
-        guard sourceFiles.indices.contains(sourceTableView.clickedRow) else { return }
-        guard let path = sourceFiles[sourceTableView.clickedRow].url?.path else { return }
-        
-        switch SourceOpenOptionMenu(rawValue: sender.title) {
-        case .open:
-            NSWorkspace.shared.openFile(path)
-        case .openWith:
-            print("do nothing")
-        case .xcode:
-            NSWorkspace.shared.openFile(path, withApplication: "Xcode")
-        case .textEdit:
-            NSWorkspace.shared.openFile(path, withApplication: "TextEdit")
-        case .rename:
-            startRenameSourceFile(withIndex: sourceTableView.clickedRow)
-        case .delete:
-            deleteSourceFile(withIndex: sourceTableView.clickedRow)
-            updateTemplateConfiguration()
-            reloadContent()
-        default:
-            NSWorkspace.shared.openFile(path)
-        }
-    }
-    
-    private func startRenameSourceFile(withIndex index: Int) {
+    func startRenameSourceFile(withIndex index: Int) {
         guard sourceFiles.indices.contains(index), let fileUrl = sourceFiles[index].url else { return }
         if let cell = sourceTableView.view(atColumn: 0, row: index, makeIfNecessary: true) as? SourceFileTableCell {
             cell.startEditing(withFileUrl: fileUrl)
         }
     }
     
-    private func updateTemplateName(withName name: String) {
+    func updateTemplateName(withName name: String) {
         guard let directoryUrl = directoryUrl, templateList.indices.contains(selectedTemplateIndex), let originalGroupPathUrl = templateList[selectedTemplateIndex].url else {
             showAlert(withMessage: "Original Template not exists")
             return
@@ -304,7 +275,7 @@ class TemplateDetailViewController: BaseViewController {
         }
     }
     
-    private func updateSourceFileName(withName name: String, andFileUrl fileUrl: URL) {
+    func updateSourceFileName(withName name: String, andFileUrl fileUrl: URL) {
         let newFilePathUrl = fileUrl.getPathOnly().appendingPathComponent("\(name)")
         
         let sourcefileList = contentsOf(folder: fileUrl.getPathOnly())
@@ -327,7 +298,7 @@ class TemplateDetailViewController: BaseViewController {
         collectionView.reloadData()
     }
     
-    private func processingDropTemplateIcon(withUrls urls: [URL]) {
+    func processingDropTemplateIcon(withUrls urls: [URL]) {
         
         // sort by smallest image
         let sortedUrls = urls.sorted { (a, b) -> Bool in
@@ -391,7 +362,7 @@ class TemplateDetailViewController: BaseViewController {
         collectionView.reloadData()
     }
     
-    private func processingDropSourceFiles(withUrls urls: [URL]) {
+    func processingDropSourceFiles(withUrls urls: [URL]) {
         
         guard let directoryTemplateName = directoryTemplateName else {
             self.postUpdateLog(withMessage: "Template directory not found")
@@ -424,20 +395,20 @@ class TemplateDetailViewController: BaseViewController {
         collectionView.reloadData()
     }
     
-    private func loadTemplateProperties() {
+    func loadTemplateProperties() {
         guard let templateInfo = templateInfo else { return }
         textFieldPropertyIdentifier.stringValue = templateInfo.getPropertyIdentifier()
         textFieldPropertyTitle.stringValue = templateInfo.getPropertyTitle()
         textFieldPropertyDescription.stringValue = templateInfo.getPropertyDescription()
     }
     
-    private func updateTemplateProperties() {
-        let characterSet: NSCharacterSet = NSCharacterSet(charactersIn: " abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ ").inverted as NSCharacterSet
+    func updateTemplateProperties() {
+        let characterSet: NSCharacterSet = NSCharacterSet(charactersIn: "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLKMNOPQRSTUVWXYZ ").inverted as NSCharacterSet
         textFieldPropertyTitle.stringValue =  (self.textFieldPropertyTitle.stringValue.components(separatedBy: characterSet as CharacterSet) as NSArray).componentsJoined(by: "")
-        textFieldPropertyIdentifier.stringValue = textFieldPropertyTitle.stringValue.removeWhiteSpace()
+//        textFieldPropertyIdentifier.stringValue = textFieldPropertyTitle.stringValue.removeWhiteSpace()
     }
     
-    private func updatePreview() {
+    func updatePreview() {
         guard let templateInfo = templateInfo else {
             viewGeneratedFile1.isHidden = true
             viewGeneratedFile2.isHidden = true
@@ -463,7 +434,7 @@ class TemplateDetailViewController: BaseViewController {
         labelGeneratedFile5.stringValue = viewGeneratedFile5.isHidden ? "" : getGenerateFileLabelString(withIndex: TemplateInfoOptionRows.generateFile5)
     }
     
-    private func getGenerateFileLabelString(withIndex index: Int) -> String {
+    func getGenerateFileLabelString(withIndex index: Int) -> String {
         guard let templateInfo = templateInfo else { return "" }
         let stringToRaplace = templateInfo.options[index].getDefaultValue().between("___", "___") ?? ""
         
@@ -478,7 +449,7 @@ class TemplateDetailViewController: BaseViewController {
         return newValue
     }
     
-    private func updateTemplateConfiguration() {
+    func updateTemplateConfiguration() {
         guard let templateInfo = templateInfo else { return }
         var plist = ""
         plist.append(templateInfo.getMainPlistFormat(withName: textFieldPropertyTitle.stringValue, andDescription: textFieldPropertyDescription.stringValue))
@@ -505,7 +476,7 @@ class TemplateDetailViewController: BaseViewController {
         }
     }
     
-    private func deleteTemplate() {
+    func deleteTemplate() {
         if let url = templateList[selectedTemplateIndex].url, fileManager.fileExists(atPath: url.path) {
             do {
                 try fileManager.removeItem(atPath: url.path)
@@ -515,7 +486,7 @@ class TemplateDetailViewController: BaseViewController {
         }
     }
     
-    private func deleteSourceFiles() {
+    func deleteSourceFiles() {
         var indexToRemove: [Int] = []
         for (_, index) in sourceTableView.selectedRowIndexes.enumerated() {
             if let url = sourceFiles[index].url, fileManager.fileExists(atPath: url.path) {
@@ -537,7 +508,7 @@ class TemplateDetailViewController: BaseViewController {
             .map { $0.element }
     }
     
-    private func deleteSourceFile(withIndex index: Int) {
+    func deleteSourceFile(withIndex index: Int) {
         if let url = sourceFiles[index].url, fileManager.fileExists(atPath: url.path) {
             do {
                 try fileManager.removeItem(atPath: url.path)
@@ -551,34 +522,13 @@ class TemplateDetailViewController: BaseViewController {
         }
     }
     
-    private func postUpdateLog(withMessage message: String) {
+    func postUpdateLog(withMessage message: String) {
         NotificationCenter.default.post(name: NotificationCenterConstant.updateLog, object: message)
-    }
-    
-    @objc private func doubleClickOnSourceFileRow() {
-        guard sourceFiles.indices.contains(sourceTableView.clickedRow) else { return }
-        if let filePath = sourceFiles[sourceTableView.clickedRow].url?.path {
-            openFileWithDefaultApp(path: filePath)
-        }
     }
     
     func openFileWithDefaultApp(path: String) {
         NSWorkspace.shared.openFile(path)
     }
-    
-    // MARK: - Load Template Configuration
-    
-    func loadTemplateConfiguration() {
-        guard templateList.count > 0 else {
-            return
-        }
-        
-        if let path = templateList[selectedTemplateIndex].url?.appendingPathComponent("TemplateInfo.plist").path {
-            templateInfo = TemplateInfo(withDictionary: NSDictionary(contentsOfFile: path))
-        }
-    }
-    
-    // MARK: - Method
     
     func updateSourceFiles() {
         sourceFiles = fileList.filter { (file) -> Bool in
@@ -679,6 +629,75 @@ class TemplateDetailViewController: BaseViewController {
         viewProperties.isHidden = false
         viewPreview.isHidden = false
         viewDeleteTemplate.isHidden = false
+    }
+    
+    // Load Template Configuration
+    func loadTemplateConfiguration() {
+        guard templateList.count > 0 else {
+            return
+        }
+        
+        if let path = templateList[selectedTemplateIndex].url?.appendingPathComponent("TemplateInfo.plist").path {
+            templateInfo = TemplateInfo(withDictionary: NSDictionary(contentsOfFile: path))
+        }
+    }
+    
+    @objc func openPanelBrowseFile() {
+        let dialog = NSOpenPanel()
+        
+        dialog.title                   = "Choose your file's"
+        dialog.showsResizeIndicator    = true
+        dialog.showsHiddenFiles        = false
+        dialog.canChooseDirectories    = false
+        dialog.canCreateDirectories    = false
+        dialog.allowsMultipleSelection = true
+        dialog.allowedFileTypes        = ["swift", "h", "m", "storyboard", "xib"]
+
+        dialog.begin { (result) -> Void in
+            if result.rawValue == NSApplication.ModalResponse.OK.rawValue {
+                self.processingDropSourceFiles(withUrls: dialog.urls)
+            } else {
+                self.postUpdateLog(withMessage: "Failed to get file's")
+            }
+        }
+    }
+    
+    @objc func selectedMenuTableRow(_ sender: NSMenuItem) {
+        guard sourceFiles.indices.contains(sourceTableView.clickedRow) else { return }
+        guard let path = sourceFiles[sourceTableView.clickedRow].url?.path else { return }
+        
+        switch EnumSourceOpenOptionMenu(rawValue: sender.title) {
+        case .open:
+            NSWorkspace.shared.openFile(path)
+        case .openWith:
+            print("do nothing")
+        case .xcode:
+            NSWorkspace.shared.openFile(path, withApplication: "Xcode")
+        case .textEdit:
+            NSWorkspace.shared.openFile(path, withApplication: "TextEdit")
+        case .rename:
+            startRenameSourceFile(withIndex: sourceTableView.clickedRow)
+        case .delete:
+            deleteSourceFile(withIndex: sourceTableView.clickedRow)
+            updateTemplateConfiguration()
+            reloadContent()
+        default:
+            NSWorkspace.shared.openFile(path)
+        }
+    }
+    
+    @objc func doubleClickOnSourceFileRow() {
+        guard sourceFiles.indices.contains(sourceTableView.clickedRow) else { return }
+        if let filePath = sourceFiles[sourceTableView.clickedRow].url?.path {
+            openFileWithDefaultApp(path: filePath)
+        }
+    }
+    
+    @objc func openFormNewFile(_ sender: NSMenuItem) {
+        if let createFileFormViController = goToScreen(withStoryboardId: "CreateFileForm", andViewControllerId: "CreateFileFormViController") as? CreateFileFormViController {
+            createFileFormViController.delegate = self
+            createFileFormViController.templateUrl = templateList[selectedTemplateIndex].url
+        }
     }
 }
 
@@ -808,6 +827,9 @@ extension TemplateDetailViewController: NSTextFieldDelegate {
             loadTemplateConfiguration()
             updatePreview()
         } else if textField == textFieldPropertyDescription {
+            updateTemplateProperties()
+            updateTemplateConfiguration()
+            loadTemplateConfiguration()
             updatePreview()
         } else if textField == textFieldPreviewName {
             updatePreview()
@@ -881,5 +903,18 @@ extension TemplateDetailViewController: SourceFileTableCellDelegate {
     
     func SourceFileTableCell(updateFileName name: String, withUrl url: URL) {
         updateSourceFileName(withName: name, andFileUrl: url)
+    }
+}
+
+// MARK: - CreateFileFormViControllerDelegate
+
+extension TemplateDetailViewController: CreateFileFormViControllerDelegate {
+    func createFileFormViController(didCreateFileWithVc vc: CreateFileFormViController) {
+        getListFile()
+        updateTemplateConfiguration()
+        loadTemplateConfiguration()
+        updateTemplateProperties()
+        updatePreview()
+        collectionView.reloadData()
     }
 }

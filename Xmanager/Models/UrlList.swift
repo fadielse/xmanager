@@ -43,7 +43,7 @@ struct UrlList {
         var text = ""
         text.append("<dict>")
         text.append("<key>Default</key>")
-        text.append("<string>\(fileName.replacingOccurrences(of: "___FILEBASENAME___", with: "___VARIABLE_\(identifier):identifier___"))</string>")
+        text.append("<string>\(fileName.replacingOccurrences(of: "___FILEBASENAME___", with: "___VARIABLE_productName:identifier___"))</string>")
         text.append("<key>Description</key>")
         text.append("<string>Generate File \(index)</string>")
         text.append("<key>Identifier</key>")
