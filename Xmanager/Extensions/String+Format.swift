@@ -1,6 +1,6 @@
 //
 //  String+Format.swift
-//  Xcode Template Manager
+//  Xmanager
 //
 //  Created by Fadilah Hasan on 25/02/20.
 //  Copyright © 2020 Fadilah Hasan. All rights reserved.

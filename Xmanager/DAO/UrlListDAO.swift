@@ -1,6 +1,6 @@
 //
 //  UrlListDAO.swift
-//  Xcode Template Manager
+//  Xmanager
 //
 //  Created by Fadilah Hasan on 15/02/20.
 //  Copyright © 2020 Fadilah Hasan. All rights reserved.

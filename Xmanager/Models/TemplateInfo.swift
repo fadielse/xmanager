@@ -1,6 +1,6 @@
 //
 //  TemplateInfo.swift
-//  Xcode Template Manager
+//  Xmanager
 //
 //  Created by Fadilah Hasan on 23/02/20.
 //  Copyright © 2020 Fadilah Hasan. All rights reserved.

@@ -1,6 +1,6 @@
 //
 //  DashboardViewController.swift
-//  Xcode Template Manager
+//  Xmanager
 //
 //  Created by Fadilah Hasan on 11/02/20.
 //  Copyright © 2020 Fadilah Hasan. All rights reserved.
@@ -47,7 +47,7 @@ class DashboardViewController: BaseViewController {
         setupTableView()
         setupContainerView()
         generateSampleTemplate()
-        updateLog(withMessage: "Finished running Xcode Template Manager")
+        updateLog(withMessage: "Finished running Xmanager")
     }
 
     override var representedObject: Any? {

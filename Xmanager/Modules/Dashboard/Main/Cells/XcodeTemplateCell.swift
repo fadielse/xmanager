@@ -1,6 +1,6 @@
 //
 //  XcodeTemplateCell.swift
-//  Xcode Template Manager
+//  Xmanager
 //
 //  Created by Fadilah Hasan on 13/02/20.
 //  Copyright © 2020 Fadilah Hasan. All rights reserved.

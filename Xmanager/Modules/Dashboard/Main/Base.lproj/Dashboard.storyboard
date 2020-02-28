@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
         <deployment identifier="macosx"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15705"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="15702"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -12,11 +12,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="Xcode Template Manager" id="1Xt-HY-uBw">
+                            <menuItem title="Xmanager" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Xcode Template Manager" systemMenu="apple" id="WXU-ES-mSR">
+                                <menu key="submenu" title="Xmanager" systemMenu="apple" id="WXU-ES-mSR">
                                     <items>
-                                        <menuItem title="About Xcode Template Manager" id="1wb-2m-bbC">
+                                        <menuItem title="About Xmanager" id="1wb-2m-bbC">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="cP6-g3-r7G"/>
@@ -30,7 +30,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="VAI-Qd-1ei"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="qeo-lU-UEN"/>
-                                        <menuItem title="Hide Xcode Template Manager" keyEquivalent="h" id="hOd-Su-VV1">
+                                        <menuItem title="Hide Xmanager" keyEquivalent="h" id="hOd-Su-VV1">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="jZE-pI-Wws"/>
                                             </connections>
@@ -48,9 +48,71 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="zmu-rb-B91"/>
-                                        <menuItem title="Quit Xcode Template Manager" keyEquivalent="q" id="vOD-ad-sos">
+                                        <menuItem title="Quit Xmanager" keyEquivalent="q" id="vOD-ad-sos">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="uGQ-wd-LQk"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="File" id="Ccv-2B-qJW">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="File" id="fEx-lD-bL5">
+                                    <items>
+                                        <menuItem title="New" keyEquivalent="n" id="U8G-LE-Vge">
+                                            <connections>
+                                                <action selector="newDocument:" target="Ady-hI-5gd" id="la2-QQ-0VN"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Open…" keyEquivalent="o" id="5DG-3Q-0cU">
+                                            <connections>
+                                                <action selector="openDocument:" target="Ady-hI-5gd" id="zAX-MH-Qh1"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Open Recent" id="OSQ-Qz-YQ2">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <menu key="submenu" title="Open Recent" systemMenu="recentDocuments" id="Vsd-f6-Lf5">
+                                                <items>
+                                                    <menuItem title="Clear Menu" id="XVO-Ga-yJg">
+                                                        <connections>
+                                                            <action selector="clearRecentDocuments:" target="Ady-hI-5gd" id="M4Y-XM-etS"/>
+                                                        </connections>
+                                                    </menuItem>
+                                                </items>
+                                            </menu>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="AK0-dO-uaW"/>
+                                        <menuItem title="Close" keyEquivalent="w" id="XOp-Ur-faZ">
+                                            <connections>
+                                                <action selector="performClose:" target="Ady-hI-5gd" id="p5k-7L-05Y"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Save" keyEquivalent="s" id="C5k-0S-7g0">
+                                            <connections>
+                                                <action selector="saveDocument:" target="Ady-hI-5gd" id="fxk-sO-qtI"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Save As…" keyEquivalent="S" id="Mk5-ob-5cf">
+                                            <connections>
+                                                <action selector="saveDocumentAs:" target="Ady-hI-5gd" id="4xN-po-YUF"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Revert to Saved" id="NDL-E2-4OE">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="revertDocumentToSaved:" target="Ady-hI-5gd" id="J6b-W5-NbW"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="1Nf-zP-8pl"/>
+                                        <menuItem title="Page Setup…" keyEquivalent="P" id="3MT-64-PxG">
+                                            <connections>
+                                                <action selector="runPageLayout:" target="Ady-hI-5gd" id="g0h-0e-sQA"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Print…" keyEquivalent="p" id="cno-I5-lAi">
+                                            <connections>
+                                                <action selector="print:" target="Ady-hI-5gd" id="neS-ve-jgs"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -275,6 +337,43 @@
                                     </items>
                                 </menu>
                             </menuItem>
+                            <menuItem title="Window" id="3a2-Gl-wII">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Window" systemMenu="window" id="ONu-Qz-lbf">
+                                    <items>
+                                        <menuItem title="Minimize" keyEquivalent="m" id="fol-Az-ydj">
+                                            <connections>
+                                                <action selector="performMiniaturize:" target="Ady-hI-5gd" id="yRV-ot-Vr3"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Zoom" id="kMz-qI-YZb">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="performZoom:" target="Ady-hI-5gd" id="Wdm-Qi-PZx"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem isSeparatorItem="YES" id="Ezk-Ec-Wsi"/>
+                                        <menuItem title="Bring All to Front" id="sfS-OD-s0K">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="arrangeInFront:" target="Ady-hI-5gd" id="71X-uS-4GE"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
+                            <menuItem title="Help" id="KBp-zL-XFx">
+                                <modifierMask key="keyEquivalentModifierMask"/>
+                                <menu key="submenu" title="Help" systemMenu="help" id="3vr-5x-32u">
+                                    <items>
+                                        <menuItem title="Application Help" keyEquivalent="?" id="W6H-Hk-H4u">
+                                            <connections>
+                                                <action selector="showHelp:" target="Ady-hI-5gd" id="KCm-Gy-lLH"/>
+                                            </connections>
+                                        </menuItem>
+                                    </items>
+                                </menu>
+                            </menuItem>
                         </items>
                     </menu>
                     <connections>
@@ -285,7 +384,7 @@
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-430" y="-338"/>
+            <point key="canvasLocation" x="-403" y="-338"/>
         </scene>
         <!--Window Controller-->
         <scene sceneID="R2V-B0-nI4">
@@ -329,10 +428,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="1803" height="280"/>
                                         <subviews>
                                             <customView translatesAutoresizingMaskIntoConstraints="NO" id="eI3-gG-j1e" userLabel="Left View">
-                                                <rect key="frame" x="0.0" y="135" width="280" height="145"/>
+                                                <rect key="frame" x="0.0" y="185" width="280" height="95"/>
                                                 <subviews>
                                                     <customView translatesAutoresizingMaskIntoConstraints="NO" id="MPV-fq-3Sd" customClass="BaseNSView" customModule="Xmanager" customModuleProvider="target">
-                                                        <rect key="frame" x="152" y="105" width="120" height="30"/>
+                                                        <rect key="frame" x="152" y="55" width="120" height="30"/>
                                                         <subviews>
                                                             <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="Gfp-rc-cZh">
                                                                 <rect key="frame" x="8" y="0.0" width="104" height="30"/>
@@ -356,13 +455,13 @@
                                                         </constraints>
                                                     </customView>
                                                     <scrollView borderType="none" autohidesScrollers="YES" horizontalLineScroll="19" horizontalPageScroll="10" verticalLineScroll="19" verticalPageScroll="10" usesPredominantAxisScrolling="NO" verticalScrollElasticity="none" translatesAutoresizingMaskIntoConstraints="NO" id="88D-hU-LTb">
-                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="95"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
                                                         <clipView key="contentView" drawsBackground="NO" id="Ol9-5s-bad">
-                                                            <rect key="frame" x="0.0" y="0.0" width="280" height="95"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="280" height="45"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
                                                                 <tableView verticalHuggingPriority="750" allowsExpansionToolTips="YES" columnAutoresizingStyle="lastColumnOnly" selectionHighlightStyle="none" columnSelection="YES" multipleSelection="NO" autosaveName="" rowSizeStyle="automatic" usesAutomaticRowHeights="YES" headerView="jps-Uy-tpn" viewBased="YES" id="X6i-HC-S1o">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="70"/>
+                                                                    <rect key="frame" x="0.0" y="0.0" width="280" height="20"/>
                                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                                     <size key="intercellSpacing" width="3" height="2"/>
                                                                     <color key="backgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
@@ -370,7 +469,7 @@
                                                                     <tableColumns>
                                                                         <tableColumn editable="NO" width="276" minWidth="40" maxWidth="1000" id="2sT-PE-39t">
                                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="    Group List">
-                                                                                <font key="font" metaFont="smallSystem"/>
+                                                                                <font key="font" metaFont="message" size="11"/>
                                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                             </tableHeaderCell>
@@ -427,7 +526,7 @@
                                                         </tableHeaderView>
                                                     </scrollView>
                                                     <box horizontalHuggingPriority="750" boxType="separator" translatesAutoresizingMaskIntoConstraints="NO" id="xkM-ph-an8">
-                                                        <rect key="frame" x="277" y="0.0" width="5" height="95"/>
+                                                        <rect key="frame" x="277" y="0.0" width="5" height="45"/>
                                                     </box>
                                                 </subviews>
                                                 <constraints>
@@ -505,7 +604,7 @@
                                                                     <constraint firstAttribute="height" constant="30" id="ysb-xK-4VO"/>
                                                                 </constraints>
                                                                 <textFieldCell key="cell" controlSize="small" enabled="NO" borderStyle="bezel" alignment="left" title="Sucsess load template : MVC" bezelStyle="round" id="d44-1b-qC3">
-                                                                    <font key="font" metaFont="controlContent" size="11"/>
+                                                                    <font key="font" metaFont="message" size="11"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.087257922535211266" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </textFieldCell>
