@@ -17,9 +17,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         createBaseFolderIfNotExists()
     }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+    
+    func applicationDidBecomeActive(_ notification: Notification) {
+        NSApplication.shared.unhide(self)
     }
 
     func createBaseFolderIfNotExists() {

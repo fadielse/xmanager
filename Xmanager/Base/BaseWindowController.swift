@@ -20,4 +20,9 @@ class BaseWindowController: NSWindowController, NSWindowDelegate {
     func windowDidEndLiveResize(_ notification: Notification) {
         NotificationCenter.default.post(name: NotificationCenterConstant.reloadContainerView, object: nil)
     }
+    
+    func windowShouldClose(_ sender: NSWindow) -> Bool {
+        NSApplication.shared.hide(self)
+        return false
+    }
 }

@@ -88,33 +88,6 @@
                                                 <action selector="performClose:" target="Ady-hI-5gd" id="p5k-7L-05Y"/>
                                             </connections>
                                         </menuItem>
-                                        <menuItem title="Save" keyEquivalent="s" id="C5k-0S-7g0">
-                                            <connections>
-                                                <action selector="saveDocument:" target="Ady-hI-5gd" id="fxk-sO-qtI"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Save As…" keyEquivalent="S" id="Mk5-ob-5cf">
-                                            <connections>
-                                                <action selector="saveDocumentAs:" target="Ady-hI-5gd" id="4xN-po-YUF"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Revert to Saved" id="NDL-E2-4OE">
-                                            <modifierMask key="keyEquivalentModifierMask"/>
-                                            <connections>
-                                                <action selector="revertDocumentToSaved:" target="Ady-hI-5gd" id="J6b-W5-NbW"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem isSeparatorItem="YES" id="1Nf-zP-8pl"/>
-                                        <menuItem title="Page Setup…" keyEquivalent="P" id="3MT-64-PxG">
-                                            <connections>
-                                                <action selector="runPageLayout:" target="Ady-hI-5gd" id="g0h-0e-sQA"/>
-                                            </connections>
-                                        </menuItem>
-                                        <menuItem title="Print…" keyEquivalent="p" id="cno-I5-lAi">
-                                            <connections>
-                                                <action selector="print:" target="Ady-hI-5gd" id="neS-ve-jgs"/>
-                                            </connections>
-                                        </menuItem>
                                     </items>
                                 </menu>
                             </menuItem>
@@ -364,15 +337,7 @@
                             </menuItem>
                             <menuItem title="Help" id="KBp-zL-XFx">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="Help" systemMenu="help" id="3vr-5x-32u">
-                                    <items>
-                                        <menuItem title="Application Help" keyEquivalent="?" id="W6H-Hk-H4u">
-                                            <connections>
-                                                <action selector="showHelp:" target="Ady-hI-5gd" id="KCm-Gy-lLH"/>
-                                            </connections>
-                                        </menuItem>
-                                    </items>
-                                </menu>
+                                <menu key="submenu" title="Help" systemMenu="help" id="3vr-5x-32u"/>
                             </menuItem>
                         </items>
                     </menu>
@@ -469,7 +434,7 @@
                                                                     <tableColumns>
                                                                         <tableColumn editable="NO" width="276" minWidth="40" maxWidth="1000" id="2sT-PE-39t">
                                                                             <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" alignment="left" title="    Group List">
-                                                                                <font key="font" metaFont="message" size="11"/>
+                                                                                <font key="font" metaFont="controlContent" size="11"/>
                                                                                 <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                                                 <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
                                                                             </tableHeaderCell>
@@ -604,7 +569,7 @@
                                                                     <constraint firstAttribute="height" constant="30" id="ysb-xK-4VO"/>
                                                                 </constraints>
                                                                 <textFieldCell key="cell" controlSize="small" enabled="NO" borderStyle="bezel" alignment="left" title="Sucsess load template : MVC" bezelStyle="round" id="d44-1b-qC3">
-                                                                    <font key="font" metaFont="message" size="11"/>
+                                                                    <font key="font" metaFont="controlContent" size="11"/>
                                                                     <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
                                                                     <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.087257922535211266" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </textFieldCell>
