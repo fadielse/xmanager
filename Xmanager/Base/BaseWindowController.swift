@@ -22,7 +22,6 @@ class BaseWindowController: NSWindowController, NSWindowDelegate {
     }
     
     func windowShouldClose(_ sender: NSWindow) -> Bool {
-        NSApplication.shared.hide(self)
-        return false
+        return true
     }
 }
