@@ -17,7 +17,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var baseWindowController: BaseWindowController?
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        baseWindowController = (NSApplication.shared.mainWindow?.windowController as! BaseWindowController)
+        baseWindowController = (NSApplication.shared.mainWindow?.windowController as? BaseWindowController)
         createBaseFolderIfNotExists()
     }
     
